@@ -12,6 +12,36 @@ const container: string = style({
 });
 ```
 
+For creating a style for specific conditions:
+
+```ts
+import { style } from "ammolite";
+
+const containerMobile: string = style({
+    display: "block",
+    "@media (min-width: 600px)": {
+        display: "none",
+    },
+});
+
+const containerDesktop: string = style({
+    display: "none",
+    "@media (min-width: 600px)": {
+        display: "block",
+    },
+});
+```
+
+It is possible to create a style with fallback values by using an array:
+
+```ts
+import { style } from "ammolite";
+
+const container: string = style({
+    display: ["flex", "grid"],
+});
+```
+
 For using the style in pure JavaScript/TypeScript:
 
 ```ts
