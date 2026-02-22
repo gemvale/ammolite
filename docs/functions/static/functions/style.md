@@ -59,5 +59,5 @@ import * as React from "react";
 
 const Component = (): React.JSX.Element => {
     return <div className={container} />;
-}
+};
 ```

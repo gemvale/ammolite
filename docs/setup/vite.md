@@ -31,7 +31,9 @@ import { defineConfig } from "vite";
 import { ammolite } from "@ammolite/vite";
 
 export default defineConfig({
-    plugins: [ammolite()],
+    plugins: [
+        ammolite(),
+    ],
 });
 ```
 
@@ -74,7 +76,7 @@ export default defineConfig({
             plugins: [
                 ammolitePostCSS(),
             ],
-        }
+        },
     },
 });
 ```

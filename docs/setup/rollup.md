@@ -31,6 +31,8 @@ import { defineConfig } from "rollup";
 import { ammolite } from "@ammolite/rollup";
 
 export default defineConfig({
-    plugins: [ammolite()],
+    plugins: [
+        ammolite(),
+    ],
 });
 ```

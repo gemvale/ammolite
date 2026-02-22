@@ -29,7 +29,9 @@ Add the following code into `webpack.config.js`:
 const { AmmolitePlugin } = require("@ammolite/webpack");
 
 module.exports = {
-    plugins: [new AmmolitePlugin()],
+    plugins: [
+        new AmmolitePlugin(),
+    ],
 };
 ```
 
