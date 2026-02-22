@@ -5,6 +5,7 @@ export default defineConfig(
     {
         entry: {
             index: "./src/index.ts",
+            create: "./src/create.ts",
         },
         platform: "node",
     },
