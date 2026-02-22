@@ -8,6 +8,11 @@
             "import": "./dist/index.mjs",
             "require": "./dist/index.js"
         },
+        "./create": {
+            "types": "./dist/create.d.ts",
+            "import": "./dist/create.mjs",
+            "require": "./dist/create.js"
+        },
         "./package.json": "./package.json"
     },
     "main": "./dist/index.js",
