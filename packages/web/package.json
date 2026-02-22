@@ -8,6 +8,11 @@
             "import": "./dist/index.mjs",
             "require": "./dist/index.js"
         },
+        "./errors/transform": {
+            "types": "./dist/errors/transform.d.ts",
+            "import": "./dist/errors/transform.mjs",
+            "require": "./dist/errors/transform.js"
+        },
         "./package.json": "./package.json"
     },
     "main": "./dist/index.js",
