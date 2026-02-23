@@ -44,6 +44,48 @@ const child = "djcd17uu";
 }
 ```
 
+## Static But Dynamic
+
+Even the style declarations are static, their values can be assigned dynamically.
+
+```tsx
+import type { VariablesSetter } from "ammolite";
+import type * as React from "react";
+
+import { variables, setVariables, style } from "ammolite";
+
+const Component = (): React.JSX.Element => {
+    return (
+        <div style={themeReverse.props}>
+            <div className={container}>
+                {"Theme reversed!"}
+            </div>
+        </div>
+    );
+};
+
+type Colors = {
+    blue: string;
+}
+
+const themeDark = "html[data-theme='dark']" as const;
+
+const colors: Colors = variables({
+    blue: {
+        default: "#1591ea",
+        [themeDark]: "#0c578c",
+    },
+});
+
+const themeReverse: VariablesSetter = setVariables(colors, {
+    blue: "#ea6e15",
+});
+
+const container: string = style({
+    color: colors.blue,
+});
+```
+
 ## Style Conflict Resolution
 
 With the `merge` function, style conflicts are automatically resolved.
