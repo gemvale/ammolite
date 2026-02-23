@@ -4,6 +4,12 @@
 
 This is the documentation for Ammolite.
 
+## Why Ammolite
+
+Ammolite was born from the real world experience of building modern applications.
+
+For more information, please refer to [Why Ammolite](./why/README.md).
+
 ## Features
 
 For the features, please refer to the [features documentation](./features/README.md).
