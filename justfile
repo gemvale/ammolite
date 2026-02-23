@@ -6,6 +6,7 @@ biome := "pnpm exec biome"
 tsdown := "pnpm exec tsdown"
 vitest := "pnpm exec vitest"
 typedoc := "pnpm exec typedoc"
+publish := "pnpm publish"
 
 lsl_cfg := "-config ../../../.ls-lint.yaml"
 
@@ -143,6 +144,94 @@ bench:
     just bench-var
     just bench-kf
     just bench-style
+
+# Publish compiler package with dev tag
+publish-dev-compiler:
+    cd ./{{compiler}} && {{publish}} --no-git-checks --tag dev
+
+# Publish runtime package with dev tag
+publish-dev-runtime:
+    cd ./{{runtime}} && {{publish}} --no-git-checks --tag dev
+
+# Publish web package with dev tag
+publish-dev-web:
+    cd ./{{web}} && {{publish}} --no-git-checks --tag dev
+
+# Publish Webpack plugin with dev tag
+publish-dev-webpack:
+    cd ./{{webpack}} && {{publish}} --no-git-checks --tag dev
+
+# Publish Rsbuild plugin with dev tag
+publish-dev-rsbuild:
+    cd ./{{rsbuild}} && {{publish}} --no-git-checks --tag dev
+
+# Publish Rollup plugin with dev tag
+publish-dev-rollup:
+    cd ./{{rollup}} && {{publish}} --no-git-checks --tag dev
+
+# Publish Vite plugin with dev tag
+publish-dev-vite:
+    cd ./{{vite}} && {{publish}} --no-git-checks --tag dev
+
+# Publish PostCSS plugin with dev tag
+publish-dev-postcss:
+    cd ./{{postcss}} && {{publish}} --no-git-checks --tag dev
+
+# Publish all packages with dev tag
+publish-dev:
+    just publish-dev-compiler
+    just publish-dev-runtime
+    just publish-dev-web
+
+    just publish-dev-webpack
+    just publish-dev-rsbuild
+    just publish-dev-rollup
+    just publish-dev-vite
+    just publish-dev-postcss
+
+# Publish compiler package
+publish-compiler:
+    cd ./{{compiler}} && {{publish}}
+
+# Publish runtime package
+publish-runtime:
+    cd ./{{runtime}} && {{publish}}
+
+# Publish web package
+publish-web:
+    cd ./{{web}} && {{publish}}
+
+# Publish Webpack plugin
+publish-webpack:
+    cd ./{{webpack}} && {{publish}}
+
+# Publish Rsbuild plugin
+publish-rsbuild:
+    cd ./{{rsbuild}} && {{publish}}
+
+# Publish Rollup plugin
+publish-rollup:
+    cd ./{{rollup}} && {{publish}}
+
+# Publish Vite plugin
+publish-vite:
+    cd ./{{vite}} && {{publish}}
+
+# Publish PostCSS plugin
+publish-postcss:
+    cd ./{{postcss}} && {{publish}}
+
+# Publish all packages
+publish:
+    just publish-compiler
+    just publish-runtime
+    just publish-web
+
+    just publish-webpack
+    just publish-rsbuild
+    just publish-rollup
+    just publish-vite
+    just publish-postcss
 
 # Clean builds (Linux)
 clean-linux:
