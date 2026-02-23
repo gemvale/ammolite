@@ -2,6 +2,28 @@
     "name": "@ammolite/compiler",
     "version": "0.1.0",
     "description": "A CSS-in-JS compiler",
+    "keywords": [
+        "ammolite",
+        "css",
+        "css-in-js",
+        "compiler",
+        "ts",
+        "typescript",
+        "js",
+        "javascript"
+    ],
+    "homepage": "https://github.com/gemvale/ammolite",
+    "bugs": "https://github.com/gemvale/ammolite/issues",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/gemvale/ammolite.git",
+        "directory": "packages/compiler"
+    },
+    "license": "MIT",
+    "author": {
+        "name": "Alpheus",
+        "email": "contact@alphe.us"
+    },
     "exports": {
         ".": {
             "types": "./dist/index.d.ts",
