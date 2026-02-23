@@ -18,6 +18,8 @@ type CompleteCreatePluginOptions = {
 
 type CreatePluginOptions = Format<Partial<CompleteCreatePluginOptions>>;
 
+const FILE_PARENT = "ammolite.css" as const;
+
 const createPlugin = (
     createOptions?: CreatePluginOptions,
 ): PluginCreator<PluginOptions> => {
@@ -70,14 +72,14 @@ const createPlugin = (
                         type: "dependency",
                         plugin: name,
                         file,
-                        parent: "ammolite.css",
+                        parent: FILE_PARENT,
                     });
                 }
 
                 // append result
                 root.append(
                     postcss.parse(await runtime.getCSS(), {
-                        from: "ammolite.css",
+                        from: FILE_PARENT,
                     }),
                 );
             },
