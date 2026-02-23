@@ -66,7 +66,7 @@ module.exports = {
 
 Ammolite also supports PostCSS with the `@ammolite/postcss` package.
 
-Install this package as a dev dependency in the project:
+Install these packages as dev dependencies in the project:
 
 ```sh
 # npm
