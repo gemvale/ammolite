@@ -27,23 +27,18 @@ const createPlugin = (
         const cwd: string = options?.cwd ?? process.cwd();
 
         const include: readonly string[] =
-            options?.input?.include && (options.input.include.length ?? 0) > 0
-                ? options.input.include
-                : [
+            typeof options?.input?.include === "undefined"
+                ? [
                       "./src",
-                  ];
-
-        const exclude: readonly string[] =
-            options?.input?.exclude && (options.input.exclude.length ?? 0) > 0
-                ? options.input.exclude
-                : [];
+                  ]
+                : options.input.include;
 
         const runtime: Runtime =
             createOptions?.runtime ??
             createRuntime({
                 cwd,
                 include,
-                exclude,
+                exclude: options?.input?.exclude,
             });
 
         return {
@@ -55,9 +50,7 @@ const createPlugin = (
 
                 const included: string[] = await getPaths({
                     cwd,
-                    paths: include ?? [
-                        "./src",
-                    ],
+                    paths: include,
                 });
 
                 for await (const file of included) {

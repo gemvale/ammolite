@@ -6,6 +6,8 @@ type CompleteInputOptions = {
      *
      * Packages/paths in `include` option will be
      * overwritten by `exclude` option.
+     *
+     * By default, it is `["./src"]`.
      */
     include: readonly string[];
     /**
