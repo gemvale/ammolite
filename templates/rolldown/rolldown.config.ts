@@ -6,6 +6,7 @@ import { defineConfig } from "rolldown";
 const options: RolldownOptions = {
     input: "./src/index.ts",
     output: {
+        cleanDir: true,
         dir: "./dist/esm",
         format: "esm",
         entryFileNames: "[name].mjs",
