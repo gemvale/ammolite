@@ -1,4 +1,4 @@
-import type { CompileResult, Runtime } from "@ammolite/runtime";
+import type { CompileResult, Runtime } from "@ammolite/integration/runtime";
 import type {
     IndexHtmlTransformContext,
     IndexHtmlTransformResult,
@@ -16,9 +16,9 @@ import type {
 import * as Fsp from "node:fs/promises";
 import * as Path from "node:path";
 
+import { FILTER_CSS, FILTER_JS_ADVANCED } from "@ammolite/integration/filter";
+import { createRuntime } from "@ammolite/integration/runtime";
 import { createPlugin } from "@ammolite/rollup/create";
-import { createRuntime } from "@ammolite/runtime";
-import { FILTER_CSS, FILTER_JS_ADVANCED } from "@ammolite/runtime/helper";
 
 import { getOutput } from "#/functions/output";
 import { name, version } from "../package.json";

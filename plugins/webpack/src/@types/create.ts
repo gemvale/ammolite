@@ -1,4 +1,4 @@
-import type { Runtime } from "@ammolite/runtime";
+import type { Runtime } from "@ammolite/integration/runtime";
 import type { Format, Partial } from "ts-vista";
 
 type CompleteCreatePluginOptions = {

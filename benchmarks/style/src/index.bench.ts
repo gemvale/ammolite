@@ -5,7 +5,7 @@ import { compile } from "@ammolite/compiler";
 import {
     INCLUDED_FUNCTIONS_DEFAULT,
     PACKAGE_NAME_DEFAULT,
-} from "@ammolite/runtime/helper";
+} from "@ammolite/integration/runtime";
 import { bench } from "vitest";
 
 const file: string = Path.resolve(process.cwd(), "src", "index.ts");

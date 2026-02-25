@@ -1,12 +1,12 @@
 {
-    "name": "@ammolite/runtime",
+    "name": "@ammolite/integration",
     "version": "0.1.0",
-    "description": "A CSS-in-JS runtime",
+    "description": "An integration for Ammolite",
     "keywords": [
         "ammolite",
         "css",
         "css-in-js",
-        "runtime",
+        "integration",
         "ts",
         "typescript",
         "js",
@@ -17,7 +17,7 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/gemvale/ammolite.git",
-        "directory": "packages/runtime"
+        "directory": "packages/integration"
     },
     "license": "MIT",
     "author": {
@@ -25,21 +25,21 @@
         "email": "contact@alphe.us"
     },
     "exports": {
-        ".": {
-            "types": "./dist/index.d.ts",
-            "import": "./dist/index.mjs",
-            "require": "./dist/index.js"
+        "./runtime": {
+            "types": "./dist/runtime/index.d.ts",
+            "import": "./dist/runtime/index.mjs",
+            "require": "./dist/runtime/index.js"
         },
-        "./helper": {
-            "types": "./dist/helper.d.ts",
-            "import": "./dist/helper.mjs",
-            "require": "./dist/helper.js"
+        "./filter": {
+            "types": "./dist/filter/index.d.ts",
+            "import": "./dist/filter/index.mjs",
+            "require": "./dist/filter/index.js"
         },
         "./package.json": "./package.json"
     },
-    "main": "./dist/index.js",
-    "module": "./dist/index.mjs",
-    "types": "./dist/index.d.ts",
+    "main": "./dist/runtime.js",
+    "module": "./dist/runtime.mjs",
+    "types": "./dist/runtime.d.ts",
     "files": [
         "dist"
     ],

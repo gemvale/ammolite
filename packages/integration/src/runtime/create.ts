@@ -11,7 +11,10 @@ import { compile } from "@ammolite/compiler";
 import { transformCssList } from "@ammolite/compiler/processor/css";
 import { toMerged } from "es-toolkit";
 
-import { INCLUDED_FUNCTIONS_DEFAULT, PACKAGE_NAME_DEFAULT } from "#/helper";
+import {
+    INCLUDED_FUNCTIONS_DEFAULT,
+    PACKAGE_NAME_DEFAULT,
+} from "#/runtime/const";
 import { getMD5 } from "#/runtime/hash";
 
 const OPTIONS_DEFAULT: ResolvedOptions = {

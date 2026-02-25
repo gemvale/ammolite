@@ -45,7 +45,7 @@
         "dist"
     ],
     "dependencies": {
-        "@ammolite/runtime": "workspace:~",
+        "@ammolite/integration": "workspace:~",
         "ts-vista": "catalog:dep"
     },
     "devDependencies": {

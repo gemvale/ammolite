@@ -4,11 +4,10 @@ import { cjsPreset, dtsPreset, esmPreset } from "@apst/tsdown/presets";
 export default defineConfig(
     {
         entry: {
-            index: "./src/index.ts",
-            helper: "./src/helper.ts",
+            "runtime/index": "./src/runtime/index.ts",
+            "filter/index": "./src/filter/index.ts",
         },
         platform: "node",
-        unbundle: false,
     },
     [
         esmPreset(),

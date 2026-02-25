@@ -1,4 +1,4 @@
-import type { Runtime } from "@ammolite/runtime";
+import type { Runtime } from "@ammolite/integration/runtime";
 import type { PluginCreator, Root } from "postcss";
 import type { Format, Partial } from "ts-vista";
 
@@ -6,7 +6,7 @@ import type { PluginOptions } from "#/@types/options";
 
 import * as Fsp from "node:fs/promises";
 
-import { createRuntime } from "@ammolite/runtime";
+import { createRuntime } from "@ammolite/integration/runtime";
 
 import { getPaths } from "#/functions/path";
 import { name } from "../package.json";

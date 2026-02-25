@@ -11,7 +11,7 @@ publish := "pnpm publish"
 lsl_cfg := "-config ../../../.ls-lint.yaml"
 
 compiler := "packages/compiler"
-runtime := "packages/runtime"
+integ := "packages/integration"
 web := "packages/web"
 
 webpack := "plugins/webpack"
@@ -57,7 +57,7 @@ if:
 # Lint with ls-lint
 lslint:
     cd ./{{compiler}}/src && ls-lint {{lsl_cfg}}
-    cd ./{{runtime}}/src && ls-lint {{lsl_cfg}}
+    cd ./{{integ}}/src && ls-lint {{lsl_cfg}}
     cd ./{{web}}/src && ls-lint {{lsl_cfg}}
 
     cd ./{{webpack}}/src && ls-lint {{lsl_cfg}}
@@ -87,7 +87,7 @@ lslint:
 # Lint with TypeScript Compiler
 tsc:
     cd ./{{compiler}} && {{tsc}} --noEmit
-    cd ./{{runtime}} && {{tsc}} --noEmit
+    cd ./{{integ}} && {{tsc}} --noEmit
     cd ./{{web}} && {{tsc}} --noEmit
 
     cd ./{{webpack}} && {{tsc}} --noEmit
@@ -113,7 +113,7 @@ fmt:
 # Build packages
 build:
     cd ./{{compiler}} && {{tsdown}} -c tsdown.config.ts
-    cd ./{{runtime}} && {{tsdown}} -c tsdown.config.ts
+    cd ./{{integ}} && {{tsdown}} -c tsdown.config.ts
     cd ./{{web}} && {{tsdown}} -c tsdown.config.ts
 
     cd ./{{webpack}} && {{tsdown}} -c tsdown.config.ts
@@ -149,9 +149,9 @@ bench:
 publish-dev-compiler:
     cd ./{{compiler}} && {{publish}} --no-git-checks --tag dev
 
-# Publish runtime package with dev tag
-publish-dev-runtime:
-    cd ./{{runtime}} && {{publish}} --no-git-checks --tag dev
+# Publish integration package with dev tag
+publish-dev-integ:
+    cd ./{{integ}} && {{publish}} --no-git-checks --tag dev
 
 # Publish web package with dev tag
 publish-dev-web:
@@ -180,7 +180,7 @@ publish-dev-postcss:
 # Publish all packages with dev tag
 publish-dev:
     just publish-dev-compiler
-    just publish-dev-runtime
+    just publish-dev-integ
     just publish-dev-web
 
     just publish-dev-webpack
@@ -193,9 +193,9 @@ publish-dev:
 publish-compiler:
     cd ./{{compiler}} && {{publish}}
 
-# Publish runtime package
-publish-runtime:
-    cd ./{{runtime}} && {{publish}}
+# Publish integration package
+publish-integ:
+    cd ./{{integ}} && {{publish}}
 
 # Publish web package
 publish-web:
@@ -224,7 +224,7 @@ publish-postcss:
 # Publish all packages
 publish:
     just publish-compiler
-    just publish-runtime
+    just publish-integ
     just publish-web
 
     just publish-webpack

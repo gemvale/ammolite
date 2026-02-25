@@ -1,4 +1,4 @@
-import type { CompileResult, Runtime } from "@ammolite/runtime";
+import type { CompileResult, Runtime } from "@ammolite/integration/runtime";
 import type { LoaderContext } from "webpack";
 
 type InternalLoaderOptions = {

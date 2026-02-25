@@ -2,11 +2,11 @@ import type {
     CompileResult,
     CreateRuntimeOptions,
     Runtime,
-} from "@ammolite/runtime";
+} from "@ammolite/integration/runtime";
 import type { Format, Partial } from "ts-vista";
 import type { LoaderContext } from "webpack";
 
-import { createRuntime } from "@ammolite/runtime";
+import { createRuntime } from "@ammolite/integration/runtime";
 
 let runtime: Runtime | null = null;
 

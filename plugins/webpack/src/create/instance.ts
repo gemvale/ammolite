@@ -1,4 +1,4 @@
-import type { Runtime } from "@ammolite/runtime";
+import type { Runtime } from "@ammolite/integration/runtime";
 import type {
     Asset,
     Compilation,
@@ -15,8 +15,8 @@ import type { InternalLoaderOptions } from "#/loader-internal";
 
 import * as Path from "node:path";
 
-import { createRuntime } from "@ammolite/runtime";
-import { FILTER_JS_ADVANCED } from "@ammolite/runtime/helper";
+import { FILTER_JS_ADVANCED } from "@ammolite/integration/filter";
+import { createRuntime } from "@ammolite/integration/runtime";
 
 import { getHtmlHooks } from "#/create/functions/html";
 import { name as currentName } from "../../package.json";
