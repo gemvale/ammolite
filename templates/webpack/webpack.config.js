@@ -1,9 +1,9 @@
 const path = require("node:path");
 
-const { AmmolitePlugin } = require("@ammolite/webpack");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { AmmolitePlugin } = require("@ammolite/webpack");
 
 /** @type {import("webpack").Configuration} */
 const config = (_, argv) => {
@@ -24,7 +24,6 @@ const config = (_, argv) => {
                 react: {
                     runtime: "automatic",
                     development: isDev,
-                    refresh: isDev,
                 },
             },
         },
@@ -33,15 +32,15 @@ const config = (_, argv) => {
     /** @type {import("webpack").Configuration["plugins"]} */
     const plugins = [
         !isDev && new CleanWebpackPlugin(),
+        new HtmlWebpackPlugin({
+            template: "./public/index.html",
+            hash: true,
+        }),
         new MiniCssExtractPlugin({
             filename: "index.css",
         }),
         new AmmolitePlugin({
             dev: isDev,
-        }),
-        new HtmlWebpackPlugin({
-            template: "./public/index.html",
-            hash: true,
         }),
     ];
 
