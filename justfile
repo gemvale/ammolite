@@ -110,17 +110,24 @@ lint-biome:
 fmt:
     {{biome}} check --write .
 
-# Build packages
-build:
+# Build core packages
+build-core:
     cd ./{{compiler}} && {{tsdown}} -c tsdown.config.ts
     cd ./{{integ}} && {{tsdown}} -c tsdown.config.ts
     cd ./{{web}} && {{tsdown}} -c tsdown.config.ts
 
+# Build plugins:
+build-plugins:
     cd ./{{webpack}} && {{tsdown}} -c tsdown.config.ts
     cd ./{{rsbuild}} && {{tsdown}} -c tsdown.config.ts
     cd ./{{rollup}} && {{tsdown}} -c tsdown.config.ts
     cd ./{{vite}} && {{tsdown}} -c tsdown.config.ts
     cd ./{{postcss}} && {{tsdown}} -c tsdown.config.ts
+
+# Build packages
+build:
+    just build-core
+    just build-plugins
 
 # Run tests
 test:
