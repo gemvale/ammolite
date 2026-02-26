@@ -46,7 +46,7 @@ const App = (): React.JSX.Element => {
                 </button>
                 <p>
                     {"Edit "}
-                    <code>{"src/App.tsx"}</code>
+                    <code>{"src/app.tsx"}</code>
                     {" and save to test HMR"}
                 </p>
             </div>
