@@ -7,9 +7,9 @@ type PluginOptions = LoaderOptions;
 
 const plugin = (
     options?: PluginOptions,
-): ((nextConfig: NextConfig) => NextConfig) => {
-    return (nextConfig: NextConfig): NextConfig => {
-        return toMerged(nextConfig, {
+): ((nextConfig?: NextConfig) => NextConfig) => {
+    return (nextConfig?: NextConfig): NextConfig => {
+        return toMerged(nextConfig ?? {}, {
             turbopack: {
                 rules: {
                     "*.{js,jsx,ts,tsx}": {
