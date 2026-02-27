@@ -42,7 +42,6 @@ _:
     just build
     just lint
     just fmt
-    just build
     just test
 
 # Install
