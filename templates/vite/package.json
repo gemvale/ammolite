@@ -8,12 +8,12 @@
         "preview": "vite preview"
     },
     "dependencies": {
-        "@ammolite/vite": "workspace:*",
         "ammolite": "workspace:*",
         "react": "catalog:dep",
         "react-dom": "catalog:dep"
     },
     "devDependencies": {
+        "@ammolite/unplugin": "workspace:*",
         "@types/react": "catalog:dep",
         "@types/react-dom": "catalog:dep",
         "@vitejs/plugin-react": "^5.1.4",

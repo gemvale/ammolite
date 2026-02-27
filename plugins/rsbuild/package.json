@@ -45,7 +45,7 @@
         "dist"
     ],
     "dependencies": {
-        "@ammolite/webpack": "workspace:~",
+        "@ammolite/unplugin": "workspace:~",
         "ts-vista": "catalog:dep"
     },
     "devDependencies": {

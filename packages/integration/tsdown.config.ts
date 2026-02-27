@@ -5,6 +5,7 @@ export default defineConfig(
     {
         entry: {
             "runtime/index": "./src/runtime/index.ts",
+            "cache/index": "./src/cache/index.ts",
             "filter/index": "./src/filter/index.ts",
         },
         platform: "node",

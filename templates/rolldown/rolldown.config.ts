@@ -1,6 +1,6 @@
 import type { RolldownOptions } from "rolldown";
 
-import { ammolite } from "@ammolite/rollup";
+import { ammolite } from "@ammolite/unplugin/rollup";
 import { defineConfig } from "rolldown";
 
 const options: RolldownOptions = {

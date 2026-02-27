@@ -1,0 +1,65 @@
+{
+    "name": "@ammolite/next",
+    "version": "0.1.0",
+    "description": "A Next.js plugin for Ammolite",
+    "keywords": [
+        "ammolite",
+        "css",
+        "css-in-js",
+        "next",
+        "next.js",
+        "plugin",
+        "ts",
+        "typescript",
+        "js",
+        "javascript"
+    ],
+    "homepage": "https://github.com/gemvale/ammolite",
+    "bugs": "https://github.com/gemvale/ammolite/issues",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/gemvale/ammolite.git",
+        "directory": "plugins/next"
+    },
+    "license": "MIT",
+    "author": {
+        "name": "Alpheus",
+        "email": "contact@alphe.us"
+    },
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.mjs",
+            "require": "./dist/index.js"
+        },
+        "./package.json": "./package.json"
+    },
+    "main": "./dist/index.js",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "dependencies": {
+        "@ammolite/integration": "workspace:~",
+        "@ammolite/unplugin": "workspace:~",
+        "es-toolkit": "catalog:dep",
+        "ts-vista": "catalog:dep"
+    },
+    "devDependencies": {
+        "next": "catalog:dev",
+        "webpack": "catalog:dev"
+    },
+    "peerDependencies": {
+        "next": "catalog:peer",
+        "webpack": "catalog:peer"
+    },
+    "peerDependenciesMeta": {
+        "next": {
+            "optional": true
+        },
+        "webpack": {
+            "optional": true
+        }
+    }
+}

@@ -14,10 +14,9 @@ compiler := "packages/compiler"
 integ := "packages/integration"
 web := "packages/web"
 
-webpack := "plugins/webpack"
+unplugin := "plugins/unplugin"
 rsbuild := "plugins/rsbuild"
-rollup := "plugins/rollup"
-vite := "plugins/vite"
+next := "plugins/next"
 postcss := "plugins/postcss"
 
 test_compiler := "tests/compiler"
@@ -60,10 +59,9 @@ lslint:
     cd ./{{integ}}/src && ls-lint {{lsl_cfg}}
     cd ./{{web}}/src && ls-lint {{lsl_cfg}}
 
-    cd ./{{webpack}}/src && ls-lint {{lsl_cfg}}
+    cd ./{{unplugin}}/src && ls-lint {{lsl_cfg}}
     cd ./{{rsbuild}}/src && ls-lint {{lsl_cfg}}
-    cd ./{{rollup}}/src && ls-lint {{lsl_cfg}}
-    cd ./{{vite}}/src && ls-lint {{lsl_cfg}}
+    cd ./{{next}}/src && ls-lint {{lsl_cfg}}
     cd ./{{postcss}}/src && ls-lint {{lsl_cfg}}
 
     cd ./{{test_compiler}}/src && ls-lint {{lsl_cfg}}
@@ -90,10 +88,9 @@ tsc:
     cd ./{{integ}} && {{tsc}} --noEmit
     cd ./{{web}} && {{tsc}} --noEmit
 
-    cd ./{{webpack}} && {{tsc}} --noEmit
+    cd ./{{unplugin}} && {{tsc}} --noEmit
     cd ./{{rsbuild}} && {{tsc}} --noEmit
-    cd ./{{rollup}} && {{tsc}} --noEmit
-    cd ./{{vite}} && {{tsc}} --noEmit
+    cd ./{{next}} && {{tsc}} --noEmit
     cd ./{{postcss}} && {{tsc}} --noEmit
 
 # Lint code
@@ -118,10 +115,9 @@ build-core:
 
 # Build plugins:
 build-plugins:
-    cd ./{{webpack}} && {{tsdown}} -c tsdown.config.ts
+    cd ./{{unplugin}} && {{tsdown}} -c tsdown.config.ts
     cd ./{{rsbuild}} && {{tsdown}} -c tsdown.config.ts
-    cd ./{{rollup}} && {{tsdown}} -c tsdown.config.ts
-    cd ./{{vite}} && {{tsdown}} -c tsdown.config.ts
+    cd ./{{next}} && {{tsdown}} -c tsdown.config.ts
     cd ./{{postcss}} && {{tsdown}} -c tsdown.config.ts
 
 # Build packages
@@ -164,21 +160,17 @@ publish-dev-integ:
 publish-dev-web:
     cd ./{{web}} && {{publish}} --no-git-checks --tag dev
 
-# Publish Webpack plugin with dev tag
-publish-dev-webpack:
-    cd ./{{webpack}} && {{publish}} --no-git-checks --tag dev
+# Publish Unplugin with dev tag
+publish-dev-unplugin:
+    cd ./{{unplugin}} && {{publish}} --no-git-checks --tag dev
 
 # Publish Rsbuild plugin with dev tag
 publish-dev-rsbuild:
     cd ./{{rsbuild}} && {{publish}} --no-git-checks --tag dev
 
-# Publish Rollup plugin with dev tag
-publish-dev-rollup:
-    cd ./{{rollup}} && {{publish}} --no-git-checks --tag dev
-
-# Publish Vite plugin with dev tag
-publish-dev-vite:
-    cd ./{{vite}} && {{publish}} --no-git-checks --tag dev
+# Publish Next plugin with dev tag
+publish-dev-next:
+    cd ./{{next}} && {{publish}} --no-git-checks --tag dev
 
 # Publish PostCSS plugin with dev tag
 publish-dev-postcss:
@@ -190,10 +182,9 @@ publish-dev:
     just publish-dev-integ
     just publish-dev-web
 
-    just publish-dev-webpack
+    just publish-dev-unplugin
     just publish-dev-rsbuild
-    just publish-dev-rollup
-    just publish-dev-vite
+    just publish-dev-next
     just publish-dev-postcss
 
 # Publish compiler package
@@ -208,21 +199,17 @@ publish-integ:
 publish-web:
     cd ./{{web}} && {{publish}}
 
-# Publish Webpack plugin
-publish-webpack:
-    cd ./{{webpack}} && {{publish}}
+# Publish Unplugin
+publish-unplugin:
+    cd ./{{unplugin}} && {{publish}}
 
 # Publish Rsbuild plugin
 publish-rsbuild:
     cd ./{{rsbuild}} && {{publish}}
 
-# Publish Rollup plugin
-publish-rollup:
-    cd ./{{rollup}} && {{publish}}
-
-# Publish Vite plugin
-publish-vite:
-    cd ./{{vite}} && {{publish}}
+# Publish Next plugin
+publish-next:
+    cd ./{{next}} && {{publish}}
 
 # Publish PostCSS plugin
 publish-postcss:
@@ -234,10 +221,9 @@ publish:
     just publish-integ
     just publish-web
 
-    just publish-webpack
+    just publish-unplugin
     just publish-rsbuild
-    just publish-rollup
-    just publish-vite
+    just publish-next
     just publish-postcss
 
 # Clean builds (Linux)

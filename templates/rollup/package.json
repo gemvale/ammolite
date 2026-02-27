@@ -8,7 +8,7 @@
         "ammolite": "workspace:*"
     },
     "devDependencies": {
-        "@ammolite/rollup": "workspace:*",
+        "@ammolite/unplugin": "workspace:*",
         "@rollup/plugin-typescript": "^12.3.0",
         "rollup": "catalog:dev"
     }

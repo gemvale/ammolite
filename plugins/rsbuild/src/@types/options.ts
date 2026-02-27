@@ -2,7 +2,7 @@ import type {
     InputOptions,
     OutputOptions as WebpackOutputOptions,
     PluginOptions as WebpackPluginOptions,
-} from "@ammolite/webpack";
+} from "@ammolite/unplugin/webpack";
 import type { Format, Omit } from "ts-vista";
 
 type OutputOptions = Format<Omit<WebpackOutputOptions, "dir">>;

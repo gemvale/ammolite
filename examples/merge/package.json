@@ -9,7 +9,7 @@
         "react": "catalog:dep"
     },
     "devDependencies": {
-        "@ammolite/rollup": "workspace:*",
+        "@ammolite/unplugin": "workspace:*",
         "@types/react": "catalog:dep"
     }
 }

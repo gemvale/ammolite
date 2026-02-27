@@ -30,6 +30,11 @@
             "import": "./dist/runtime/index.mjs",
             "require": "./dist/runtime/index.js"
         },
+        "./cache": {
+            "types": "./dist/cache/index.d.ts",
+            "import": "./dist/cache/index.mjs",
+            "require": "./dist/cache/index.js"
+        },
         "./filter": {
             "types": "./dist/filter/index.d.ts",
             "import": "./dist/filter/index.mjs",
@@ -46,6 +51,7 @@
     "dependencies": {
         "@ammolite/compiler": "workspace:~",
         "es-toolkit": "catalog:dep",
-        "ts-vista": "catalog:dep"
+        "ts-vista": "catalog:dep",
+        "unstorage": "^1.17.4"
     }
 }

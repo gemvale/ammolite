@@ -3,7 +3,7 @@ const path = require("node:path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const { AmmolitePlugin } = require("@ammolite/webpack");
+const { AmmolitePlugin } = require("@ammolite/unplugin/webpack");
 
 /** @type {import("webpack").Configuration} */
 const config = (_, argv) => {

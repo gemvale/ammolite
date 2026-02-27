@@ -1,0 +1,98 @@
+{
+    "name": "@ammolite/unplugin",
+    "version": "0.1.0",
+    "description": "A unified plugin for Ammolite",
+    "keywords": [
+        "ammolite",
+        "css",
+        "css-in-js",
+        "unplugin",
+        "plugin",
+        "ts",
+        "typescript",
+        "js",
+        "javascript"
+    ],
+    "homepage": "https://github.com/gemvale/ammolite",
+    "bugs": "https://github.com/gemvale/ammolite/issues",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/gemvale/ammolite.git",
+        "directory": "plugins/unplugin"
+    },
+    "license": "MIT",
+    "author": {
+        "name": "Alpheus",
+        "email": "contact@alphe.us"
+    },
+    "exports": {
+        "./rollup": {
+            "types": "./dist/rollup.d.ts",
+            "import": "./dist/rollup.mjs",
+            "require": "./dist/rollup.js"
+        },
+        "./vite": {
+            "types": "./dist/vite.d.ts",
+            "import": "./dist/vite.mjs",
+            "require": "./dist/vite.js"
+        },
+        "./webpack": {
+            "types": "./dist/webpack.d.ts",
+            "import": "./dist/webpack.mjs",
+            "require": "./dist/webpack.js"
+        },
+        "./rollup/create": {
+            "types": "./dist/rollup/create.d.ts",
+            "import": "./dist/rollup/create.mjs",
+            "require": "./dist/rollup/create.js"
+        },
+        "./vite/create": {
+            "types": "./dist/vite/create.d.ts",
+            "import": "./dist/vite/create.mjs",
+            "require": "./dist/vite/create.js"
+        },
+        "./webpack/create": {
+            "types": "./dist/webpack/create.d.ts",
+            "import": "./dist/webpack/create.mjs",
+            "require": "./dist/webpack/create.js"
+        },
+        "./webpack/loader": {
+            "types": "./dist/webpack/loader.d.ts",
+            "import": "./dist/webpack/loader.mjs",
+            "require": "./dist/webpack/loader.js"
+        },
+        "./package.json": "./package.json"
+    },
+    "main": "./dist/rollup.js",
+    "module": "./dist/rollup.js",
+    "types": "./dist/rollup.d.ts",
+    "files": [
+        "dist"
+    ],
+    "dependencies": {
+        "@ammolite/integration": "workspace:~",
+        "ts-vista": "catalog:dep",
+        "unplugin": "^3.0.0"
+    },
+    "devDependencies": {
+        "rollup": "catalog:dev",
+        "vite": "catalog:dev",
+        "webpack": "catalog:dev"
+    },
+    "peerDependencies": {
+        "rollup": "catalog:peer",
+        "vite": "catalog:peer",
+        "webpack": "catalog:peer"
+    },
+    "peerDependenciesMeta": {
+        "rollup": {
+            "optional": true
+        },
+        "vite": {
+            "optional": true
+        },
+        "webpack": {
+            "optional": true
+        }
+    }
+}

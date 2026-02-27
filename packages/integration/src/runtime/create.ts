@@ -46,6 +46,10 @@ type CompileResult = {
     map: SourceMap;
 };
 
+type GetCSSOptions = {
+    file: string;
+};
+
 const createRuntime = (coreOptions?: CreateRuntimeOptions) => {
     const coreOpts: ResolvedOptions = toMerged(
         OPTIONS_DEFAULT,
@@ -97,14 +101,27 @@ const createRuntime = (coreOptions?: CreateRuntimeOptions) => {
                 result,
             });
 
+            cssCache = "";
+
             return {
                 code: result.code,
                 css: result.css,
                 map: result.map,
             };
         },
-        getCSS: async (): Promise<string> => {
-            if (cssCache) return cssCache;
+        getCSS: async (options: GetCSSOptions): Promise<string | undefined> => {
+            if (cache.has(options.file)) {
+                const vl: CacheValues | undefined = cache.get(options.file);
+
+                if (vl) {
+                    return vl.result.css;
+                }
+            }
+
+            return void 0;
+        },
+        getAllCSS: async (): Promise<string> => {
+            if (cssCache !== "") return cssCache;
 
             const cssList: string[] = [];
 

@@ -1,4 +1,4 @@
-import { ammolite } from "@ammolite/vite";
+import { ammolite } from "@ammolite/unplugin/vite";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 

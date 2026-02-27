@@ -27,30 +27,30 @@ catalogs:
         "@types/react-dom": ^19.2.0
         react: ^19.2.0
         react-dom: ^19.2.0
+        # next
+        next: ^16.1.6
     dev:
-        # webpack
+        # unplugin
         webpack: 5.76.0
+        rollup: 4.40.0
+        rolldown: 1.0.0-rc.5
+        vite: 7.0.0
         # rsbuild
         "@rsbuild/core": 1.5.0
-        # rollup
-        rollup: 4.40.0
-        # rolldown
-        rolldown: 1.0.0-rc.5
-        # vite
-        vite: 7.0.0
+        # next
+        next: 16.0.0
         # postcss
         postcss: 8.5.0
     peer:
         # webpack
         webpack: ^5.76.0
+        rollup: ^4.40.0
+        rolldown: 1.0.0-rc.5
+        vite: ^7.0.0
         # rsbuild
         "@rsbuild/core": ^1.5.0
-        # rollup
-        rollup: ^4.40.0
-        # rolldown
-        rolldown: 1.0.0-rc.5
-        # vite
-        vite: ^7.0.0
+        # next
+        next: ^15.0.0 | ^16.0.0
         # postcss
         postcss: ^8.5.0
 

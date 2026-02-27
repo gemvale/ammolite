@@ -1,4 +1,4 @@
-import { ammolite } from "@ammolite/rollup";
+import { ammolite } from "@ammolite/unplugin/rollup";
 import { defineConfig } from "tsdown";
 
 export default defineConfig({

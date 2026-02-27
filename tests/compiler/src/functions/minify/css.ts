@@ -1,5 +1,5 @@
 import { Processor } from "postcss";
-// @ts-expect-error
+// @ts-expect-error no types
 import { default as minify } from "postcss-minify";
 
 type MinifyCSSOptions = {

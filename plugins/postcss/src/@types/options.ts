@@ -2,12 +2,14 @@ import type { Format, Omit, Partial } from "ts-vista";
 
 type CompleteInputOptions = {
     /**
+     * Path to entry file(s).
+     */
+    entry: string | string[];
+    /**
      * Array of packages/paths to include.
      *
      * Packages/paths in `include` option will be
      * overwritten by `exclude` option.
-     *
-     * By default, it is `["./src"]`.
      */
     include: readonly string[];
     /**

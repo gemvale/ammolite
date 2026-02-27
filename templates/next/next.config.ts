@@ -1,5 +1,7 @@
 import type { NextConfig } from "next/dist/types";
 
+import { ammolite } from "@ammolite/next";
+
 const nextConfig: NextConfig = {
     trailingSlash: false,
     images: {
@@ -16,15 +18,9 @@ const nextConfig: NextConfig = {
         unoptimized: true,
     },
     reactStrictMode: true,
-    turbopack: {
-        rules: {
-            "*.{js,jsx,ts,tsx}": {
-                loaders: [
-                    "@ammolite/webpack/loader",
-                ],
-            },
-        },
-    },
 };
 
-export default nextConfig;
+const withAmmolite = ammolite();
+
+// @ts-expect-error next version unmatched
+export default withAmmolite(nextConfig);

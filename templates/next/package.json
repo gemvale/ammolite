@@ -7,13 +7,13 @@
     },
     "dependencies": {
         "ammolite": "workspace:*",
-        "next": "^16.1.6",
+        "next": "catalog:dep",
         "react": "catalog:dep",
         "react-dom": "catalog:dep"
     },
     "devDependencies": {
+        "@ammolite/next": "workspace:*",
         "@ammolite/postcss": "workspace:*",
-        "@ammolite/webpack": "workspace:*",
         "@types/react": "catalog:dep",
         "@types/react-dom": "catalog:dep",
         "postcss-flexbugs-fixes": "catalog:dep",

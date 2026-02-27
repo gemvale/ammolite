@@ -1,4 +1,4 @@
-import { ammolite } from "@ammolite/rollup";
+import { ammolite } from "@ammolite/unplugin/rollup";
 import typescript from "@rollup/plugin-typescript";
 import { defineConfig } from "rollup";
 
