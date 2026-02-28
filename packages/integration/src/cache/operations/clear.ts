@@ -15,7 +15,11 @@ const clearCache = async (options: ClearCacheOptions): Promise<void> => {
         cwd: options?.cwd,
     });
 
-    await storage.clear();
+    try {
+        await storage.clear();
+    } catch (_: unknown) {
+        // ignore rm errors
+    }
 };
 
 export type { ClearCacheOptions };
