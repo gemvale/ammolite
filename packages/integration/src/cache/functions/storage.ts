@@ -4,7 +4,7 @@ import type { Storage as UnStorage } from "unstorage";
 import { createStorage as createUnstorage } from "unstorage";
 import fsDriver from "unstorage/drivers/fs";
 
-import { resolveCachePath } from "#/cache/functions/path";
+import { resolveCacheDir } from "#/cache/functions/path";
 
 type CompleteCreateStorageOptions = {
     cwd: string;
@@ -23,7 +23,7 @@ const createStorage = (
 ): UnStorage<CacheResult> => {
     return createUnstorage<CacheResult>({
         driver: fsDriver({
-            base: resolveCachePath({
+            base: resolveCacheDir({
                 cwd: options?.cwd,
             }),
         }),

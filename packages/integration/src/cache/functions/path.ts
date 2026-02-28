@@ -2,13 +2,13 @@ import type { Format, Partial } from "ts-vista";
 
 import * as Path from "node:path";
 
-type CompleteResolveCachePathOptions = {
+type CompleteResolveCacheDirOptions = {
     cwd: string;
 };
 
-type ResolveCachePathOptions = Format<Partial<CompleteResolveCachePathOptions>>;
+type ResolveCacheDirOptions = Format<Partial<CompleteResolveCacheDirOptions>>;
 
-const resolveCachePath = (options?: ResolveCachePathOptions): string => {
+const resolveCacheDir = (options?: ResolveCacheDirOptions): string => {
     return Path.join(
         options?.cwd ?? process.cwd(),
         "node_modules",
@@ -17,5 +17,5 @@ const resolveCachePath = (options?: ResolveCachePathOptions): string => {
     );
 };
 
-export type { ResolveCachePathOptions };
-export { resolveCachePath };
+export type { ResolveCacheDirOptions };
+export { resolveCacheDir };
