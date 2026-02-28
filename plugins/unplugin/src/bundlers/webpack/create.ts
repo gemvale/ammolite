@@ -44,18 +44,18 @@ const createPlugin = (createOptions?: CreatePluginOptions): Plugin => {
 
         return [
             // compile
-            compilePlugin({
+            ...compilePlugin({
                 name,
                 runtime,
             }),
             // cache
-            cachePlugin({
+            ...cachePlugin({
                 name,
                 runtime,
                 cwd: options?.cwd,
             }),
             // emit
-            emitPlugin({
+            ...emitPlugin({
                 name,
                 emit,
                 runtime,
@@ -63,7 +63,7 @@ const createPlugin = (createOptions?: CreatePluginOptions): Plugin => {
                 output: options?.output,
             }),
             // html
-            htmlPlugin({
+            ...htmlPlugin({
                 name,
                 emit,
                 runtime,

@@ -25,7 +25,7 @@ type HtmlPluginOptions = Format<
     Partial<CompleteHtmlPluginOptions, "cwd" | "output">
 >;
 
-const htmlPlugin = (options: HtmlPluginOptions): UnpluginOptions => {
+const htmlPlugin = (options: HtmlPluginOptions): UnpluginOptions[] => {
     const version: string = options.version;
 
     const emit: boolean = options.emit;
@@ -70,17 +70,19 @@ const htmlPlugin = (options: HtmlPluginOptions): UnpluginOptions => {
         };
     }
 
-    return {
-        name: `${options.name}/html`,
-        vite: {
-            version,
-            transformIndexHtml,
+    return [
+        {
+            name: `${options.name}/html`,
+            vite: {
+                version,
+                transformIndexHtml,
+            },
+            farm: {
+                version,
+                transformIndexHtml,
+            },
         },
-        farm: {
-            version,
-            transformIndexHtml,
-        },
-    };
+    ];
 };
 
 export type { HtmlPluginOptions };

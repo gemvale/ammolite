@@ -11,42 +11,43 @@ type CompilePluginOptions = {
 const compilePlugin = ({
     name,
     runtime,
-}: CompilePluginOptions): UnpluginOptions => {
-    return {
-        name: `${name}/compile`,
-        transform: {
-            filter: {
-                id: {
-                    include: [
-                        FILTER_JS_ADVANCED,
-                    ],
+}: CompilePluginOptions): UnpluginOptions[] => {
+    return [
+        {
+            name: `${name}/compile`,
+            transform: {
+                filter: {
+                    id: {
+                        include: [
+                            FILTER_JS_ADVANCED,
+                        ],
+                    },
+                },
+                async handler(
+                    code: string,
+                    id: string,
+                ): Promise<TransformResult | undefined> {
+                    const file: string = id;
+
+                    const result: CompileResult | undefined =
+                        await runtime.compile({
+                            file,
+                            code,
+                        });
+
+                    if (!result) return void 0;
+
+                    return {
+                        code: result.code,
+                        map: {
+                            ...result.map,
+                            file,
+                        },
+                    };
                 },
             },
-            async handler(
-                code: string,
-                id: string,
-            ): Promise<TransformResult | undefined> {
-                const file: string = id;
-
-                const result: CompileResult | undefined = await runtime.compile(
-                    {
-                        file,
-                        code,
-                    },
-                );
-
-                if (!result) return void 0;
-
-                return {
-                    code: result.code,
-                    map: {
-                        ...result.map,
-                        file,
-                    },
-                };
-            },
         },
-    };
+    ];
 };
 
 export type { CompilePluginOptions };

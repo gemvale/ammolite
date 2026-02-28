@@ -29,7 +29,7 @@ type EmitPluginOptions = Format<
     Partial<CompleteEmitPluginOptions, "cwd" | "output">
 >;
 
-const emitPlugin = (options: EmitPluginOptions): UnpluginOptions => {
+const emitPlugin = (options: EmitPluginOptions): UnpluginOptions[] => {
     const emit: boolean = options.emit;
 
     const runtime: Runtime = options.runtime;
@@ -77,27 +77,29 @@ const emitPlugin = (options: EmitPluginOptions): UnpluginOptions => {
         });
     }
 
-    return {
-        name: `${options.name}/emit`,
-        rollup: {
-            version: options.version,
-            generateBundle,
+    return [
+        {
+            name: `${options.name}/emit`,
+            rollup: {
+                version: options.version,
+                generateBundle,
+            },
+            rolldown: {
+                version: options.version,
+                // @ts-expect-error rollup version unmatched
+                generateBundle,
+            },
+            vite: {
+                version: options.version,
+                // @ts-expect-error rollup version unmatched
+                generateBundle,
+            },
+            farm: {
+                version: options.version,
+                generateBundle,
+            },
         },
-        rolldown: {
-            version: options.version,
-            // @ts-expect-error rollup version unmatched
-            generateBundle,
-        },
-        vite: {
-            version: options.version,
-            // @ts-expect-error rollup version unmatched
-            generateBundle,
-        },
-        farm: {
-            version: options.version,
-            generateBundle,
-        },
-    };
+    ];
 };
 
 export type { EmitPluginOptions };

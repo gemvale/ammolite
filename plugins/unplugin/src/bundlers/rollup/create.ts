@@ -36,36 +36,20 @@ const createPlugin = (createOptions?: CreatePluginOptions): Plugin => {
                 exclude: options?.input?.exclude,
             });
 
-        const compiler: UnpluginOptions = compilePlugin({
-            name,
-            runtime,
-        });
-
-        const cache: UnpluginOptions = cachePlugin({
-            name,
-            runtime,
-            cwd: options?.cwd,
-        });
-
         return [
             // compile
-            {
-                ...compiler,
-                rollup: {
-                    ...compiler.rollup,
-                    version,
-                },
-            },
+            ...compilePlugin({
+                name,
+                runtime,
+            }),
             // cache
-            {
-                ...cache,
-                rollup: {
-                    ...cache.rollup,
-                    version,
-                },
-            },
+            ...cachePlugin({
+                name,
+                runtime,
+                cwd: options?.cwd,
+            }),
             // emit
-            emitPlugin({
+            ...emitPlugin({
                 name,
                 version,
                 emit,

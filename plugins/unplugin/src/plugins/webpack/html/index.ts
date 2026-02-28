@@ -25,7 +25,7 @@ type HtmlPluginOptions = Format<
     Partial<CompleteHtmlPluginOptions, "cwd" | "output">
 >;
 
-const htmlPlugin = (options: HtmlPluginOptions): UnpluginOptions => {
+const htmlPlugin = (options: HtmlPluginOptions): UnpluginOptions[] => {
     const name = `${options.name}/html` as const;
 
     const emit: boolean = options.emit;
@@ -108,16 +108,18 @@ const htmlPlugin = (options: HtmlPluginOptions): UnpluginOptions => {
         });
     };
 
-    return {
-        name,
-        webpack(compiler: Compiler) {
-            injectHtml(compiler);
+    return [
+        {
+            name,
+            webpack(compiler: Compiler) {
+                injectHtml(compiler);
+            },
+            // @ts-expect-error compiler type unmatched
+            rspack(compiler: Compiler) {
+                injectHtml(compiler);
+            },
         },
-        // @ts-expect-error compiler type unmatched
-        rspack(compiler: Compiler) {
-            injectHtml(compiler);
-        },
-    };
+    ];
 };
 
 export type { HtmlPluginOptions };

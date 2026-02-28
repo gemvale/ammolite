@@ -25,7 +25,7 @@ type EmitPluginOptions = Format<
     Partial<CompleteEmitPluginOptions, "cwd" | "output">
 >;
 
-const emitPlugin = (options: EmitPluginOptions): UnpluginOptions => {
+const emitPlugin = (options: EmitPluginOptions): UnpluginOptions[] => {
     const name = `${options.name}/emit` as const;
 
     const emit: boolean = options.emit;
@@ -119,16 +119,18 @@ const emitPlugin = (options: EmitPluginOptions): UnpluginOptions => {
         });
     };
 
-    return {
-        name,
-        webpack(compiler: Compiler) {
-            emitAsset(compiler);
+    return [
+        {
+            name,
+            webpack(compiler: Compiler) {
+                emitAsset(compiler);
+            },
+            // @ts-expect-error compiler type unmatched
+            rspack(compiler: Compiler) {
+                emitAsset(compiler);
+            },
         },
-        // @ts-expect-error compiler type unmatched
-        rspack(compiler: Compiler) {
-            emitAsset(compiler);
-        },
-    };
+    ];
 };
 
 export type { EmitPluginOptions };

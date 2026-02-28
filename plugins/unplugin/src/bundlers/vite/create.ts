@@ -40,12 +40,12 @@ const createPlugin = (createOptions?: CreatePluginOptions): Plugin => {
                 exclude: options?.input?.exclude,
             });
 
-        const compiler: UnpluginOptions = compilePlugin({
+        const compiler: UnpluginOptions[] = compilePlugin({
             name,
             runtime,
         });
 
-        const cache: UnpluginOptions = cachePlugin({
+        const cache: UnpluginOptions[] = cachePlugin({
             name,
             runtime,
             cwd: options?.cwd,
@@ -54,21 +54,9 @@ const createPlugin = (createOptions?: CreatePluginOptions): Plugin => {
         if (dev) {
             return [
                 // compile
-                {
-                    ...compiler,
-                    vite: {
-                        ...compiler.vite,
-                        version,
-                    },
-                },
+                ...compiler,
                 // cache
-                {
-                    ...cache,
-                    vite: {
-                        ...cache.vite,
-                        version,
-                    },
-                },
+                ...cache,
                 // hmr
                 ...hmrPlugin({
                     name,
@@ -81,23 +69,11 @@ const createPlugin = (createOptions?: CreatePluginOptions): Plugin => {
 
         return [
             // compile
-            {
-                ...compiler,
-                vite: {
-                    ...compiler.vite,
-                    version,
-                },
-            },
+            ...compiler,
             // cache
-            {
-                ...cache,
-                vite: {
-                    ...cache.vite,
-                    version,
-                },
-            },
+            ...cache,
             // emit
-            emitPlugin({
+            ...emitPlugin({
                 name,
                 version,
                 emit,
@@ -106,7 +82,7 @@ const createPlugin = (createOptions?: CreatePluginOptions): Plugin => {
                 output: options?.output,
             }),
             // html inject
-            htmlPlugin({
+            ...htmlPlugin({
                 name,
                 version,
                 emit,
