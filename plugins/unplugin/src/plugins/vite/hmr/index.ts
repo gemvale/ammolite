@@ -1,3 +1,4 @@
+import type { Logger } from "@ammolite/integration/log";
 import type { Runtime } from "@ammolite/integration/runtime";
 import type { InputOption } from "rollup";
 import type { UnpluginOptions } from "unplugin";
@@ -16,19 +17,17 @@ import { FILTER_JS_ADVANCED } from "@ammolite/integration/filter";
 const PREFIX = "ammolite" as const;
 
 type HmrPluginOptions = {
+    logger: Logger;
     name: string;
-    version: string;
     emit: boolean;
     runtime: Runtime;
 };
 
-const hmrPlugin = (options: HmrPluginOptions): UnpluginOptions[] => {
-    const version: string = options.version;
-
-    const emit: boolean = options.emit;
-
-    const runtime: Runtime = options.runtime;
-
+const hmrPlugin = ({
+    name,
+    emit,
+    runtime,
+}: HmrPluginOptions): UnpluginOptions[] => {
     const entries: string[] = [];
 
     let server: ViteDevServer | null = null;
@@ -147,40 +146,34 @@ const hmrPlugin = (options: HmrPluginOptions): UnpluginOptions[] => {
     return [
         // resolve entry
         {
-            name: `${options.name}/hmr/resolve-entry`,
+            name: `${name}/hmr/resolve-entry`,
             vite: {
-                version,
                 configResolved: resolveEntryConfigResolved,
                 transform: resolveEntryTransform,
             },
             farm: {
-                version,
                 configResolved: resolveEntryConfigResolved,
                 transform: resolveEntryTransform,
             },
         },
         // inject HMR
         {
-            name: `${options.name}/hmr/inject`,
+            name: `${name}/hmr/inject`,
             vite: {
-                version,
                 transform: injectHmrTransform,
             },
             farm: {
-                version,
                 transform: injectHmrTransform,
             },
         },
         // emit HMR
         {
-            name: `${options.name}/hmr/emit`,
+            name: `${name}/hmr/emit`,
             vite: {
-                version,
                 configureServer: emitHmrConfigureServer,
                 transform: emitHmrTransform,
             },
             farm: {
-                version,
                 configureServer: emitHmrConfigureServer,
                 transform: emitHmrTransform,
             },

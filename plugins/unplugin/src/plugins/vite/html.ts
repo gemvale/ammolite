@@ -1,3 +1,4 @@
+import type { Logger } from "@ammolite/integration/log";
 import type { OutputAsset, OutputBundle } from "rollup";
 import type { Format, Partial } from "ts-vista";
 import type { UnpluginOptions } from "unplugin";
@@ -14,24 +15,21 @@ import { getOutput } from "#/functions/output";
 import { pickAsset } from "#/functions/rollup/pick";
 
 type CompleteHtmlPluginOptions = {
+    logger: Logger;
     name: string;
-    version: string;
     emit: boolean;
-    cwd: string;
     output: OutputOptions;
 };
 
-type HtmlPluginOptions = Format<
-    Partial<CompleteHtmlPluginOptions, "cwd" | "output">
->;
+type HtmlPluginOptions = Format<Partial<CompleteHtmlPluginOptions, "output">>;
 
-const htmlPlugin = (options: HtmlPluginOptions): UnpluginOptions[] => {
-    const version: string = options.version;
-
-    const emit: boolean = options.emit;
-
+const htmlPlugin = ({
+    name,
+    emit,
+    output: rawOutput,
+}: HtmlPluginOptions): UnpluginOptions[] => {
     const output: Output = getOutput({
-        output: options.output,
+        output: rawOutput,
     });
 
     function transformIndexHtml(
@@ -72,13 +70,11 @@ const htmlPlugin = (options: HtmlPluginOptions): UnpluginOptions[] => {
 
     return [
         {
-            name: `${options.name}/html`,
+            name: `${name}/html`,
             vite: {
-                version,
                 transformIndexHtml,
             },
             farm: {
-                version,
                 transformIndexHtml,
             },
         },

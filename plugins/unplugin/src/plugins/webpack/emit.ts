@@ -1,3 +1,4 @@
+import type { Logger } from "@ammolite/integration/log";
 import type { Runtime } from "@ammolite/integration/runtime";
 import type { Format, Partial } from "ts-vista";
 import type { UnpluginOptions } from "unplugin";
@@ -14,26 +15,25 @@ import { createGetHashContent } from "#/functions/webpack/hash";
 import { pickAsset } from "#/functions/webpack/pick";
 
 type CompleteEmitPluginOptions = {
+    logger: Logger;
     name: string;
     emit: boolean;
     runtime: Runtime;
-    cwd: string;
     output: OutputOptions;
 };
 
-type EmitPluginOptions = Format<
-    Partial<CompleteEmitPluginOptions, "cwd" | "output">
->;
+type EmitPluginOptions = Format<Partial<CompleteEmitPluginOptions, "output">>;
 
-const emitPlugin = (options: EmitPluginOptions): UnpluginOptions[] => {
-    const name = `${options.name}/emit` as const;
-
-    const emit: boolean = options.emit;
-
-    const runtime: Runtime = options.runtime;
+const emitPlugin = ({
+    name: rawName,
+    emit,
+    runtime,
+    output: rawOutput,
+}: EmitPluginOptions): UnpluginOptions[] => {
+    const name = `${rawName}/emit` as const;
 
     const output: Output = getOutput({
-        output: options.output,
+        output: rawOutput,
     });
 
     const emitAsset = (compiler: Compiler): void => {

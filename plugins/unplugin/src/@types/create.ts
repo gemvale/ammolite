@@ -3,7 +3,6 @@ import type { Format, Partial } from "ts-vista";
 
 type CompleteCreatePluginOptions = {
     name: string;
-    version: string;
     runtime: Runtime;
 };
 

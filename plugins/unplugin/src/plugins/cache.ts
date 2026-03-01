@@ -2,6 +2,7 @@
  * This is a caching plugin for collaboration with PostCSS plugin.
  */
 
+import type { Logger } from "@ammolite/integration/log";
 import type { Runtime } from "@ammolite/integration/runtime";
 import type { Format, Partial } from "ts-vista";
 import type { UnpluginOptions } from "unplugin";
@@ -10,6 +11,7 @@ import { clearCaches, writeCache } from "@ammolite/integration/cache";
 import { FILTER_JS_ADVANCED } from "@ammolite/integration/filter";
 
 type CompleteCachePluginOptions = {
+    logger: Logger;
     name: string;
     cwd: string;
     runtime: Runtime;

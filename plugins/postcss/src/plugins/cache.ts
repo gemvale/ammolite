@@ -1,4 +1,5 @@
 import type { KeyValueCache } from "@ammolite/integration/cache";
+import type { Logger } from "@ammolite/integration/log";
 import type { Plugin, Root, TransformCallback, Transformer } from "postcss";
 import type { Format, Partial } from "ts-vista";
 
@@ -53,6 +54,7 @@ const readCachesWithRetry = async ({
 };
 
 type CompleteCachePluginOptions = {
+    logger: Logger;
     name: string;
     emit: boolean;
     cwd: string;
@@ -60,13 +62,13 @@ type CompleteCachePluginOptions = {
 
 type CachePluginOptions = Format<Partial<CompleteCachePluginOptions, "cwd">>;
 
-const cachePlugin = (
-    options: CachePluginOptions,
-): (Plugin | TransformCallback | Transformer)[] => {
-    const name: string = options.name;
-
+const cachePlugin = ({
+    name,
+    emit,
+    cwd,
+}: CachePluginOptions): (Plugin | TransformCallback | Transformer)[] => {
     const signalFile: string = resolveCacheSignalFile({
-        cwd: options.cwd,
+        cwd,
     });
 
     return [
@@ -74,10 +76,10 @@ const cachePlugin = (
         {
             postcssPlugin: `${name}/cache/read`,
             async Once(root: Root, { postcss }): Promise<void> {
-                if (!options.emit) return void 0;
+                if (!emit) return void 0;
 
                 const result: KeyValueCache[] = await readCachesWithRetry({
-                    cwd: options.cwd,
+                    cwd,
                 });
 
                 if (result.length === 0) return void 0;

@@ -11,7 +11,7 @@ import * as Path from "node:path";
 
 import { createPlugin as createWebpackPlugin } from "@ammolite/unplugin/webpack/create";
 
-import { name, version } from "../package.json";
+import { name } from "../package.json";
 
 type CreatePluginOptions = CreateWebpackPluginOptions;
 
@@ -50,7 +50,6 @@ const createPlugin = (createOptions?: CreatePluginOptions) => {
             async setup(api: RsbuildPluginAPI): Promise<void> {
                 const Plugin = createWebpackPlugin({
                     name: createOptions?.name ?? name,
-                    version: createOptions?.version ?? version,
                     runtime: createOptions?.runtime,
                 });
 

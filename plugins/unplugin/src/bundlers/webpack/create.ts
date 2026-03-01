@@ -1,3 +1,4 @@
+import type { Logger } from "@ammolite/integration/log";
 import type { Runtime } from "@ammolite/integration/runtime";
 import type { Format, Omit } from "ts-vista";
 import type {
@@ -10,6 +11,7 @@ import type { Compiler } from "webpack";
 import type { CreatePluginOptions } from "#/@types/create";
 import type { PluginOptions as RawPluginOptions } from "#/@types/options";
 
+import { createLogger } from "@ammolite/integration/log";
 import { createRuntime } from "@ammolite/integration/runtime";
 import { createUnplugin } from "unplugin";
 
@@ -31,43 +33,52 @@ const createPlugin = (createOptions?: CreatePluginOptions): Plugin => {
     const factory: UnpluginFactory<PluginOptions | undefined> = (
         options?: PluginOptions,
     ): UnpluginOptions[] => {
+        const emit: boolean =
+            typeof options?.emit === "boolean" ? options.emit : true;
+
+        const cwd: string | undefined = options?.cwd;
+
         const runtime: Runtime =
             createOptions?.runtime ??
             createRuntime({
-                cwd: options?.cwd,
+                cwd,
                 include: options?.input?.include,
                 exclude: options?.input?.exclude,
             });
 
-        const emit: boolean =
-            typeof options?.emit === "boolean" ? options.emit : true;
+        const logger: Logger = createLogger({
+            cwd,
+            fileName: name,
+        });
 
         return [
             // compile
             ...compilePlugin({
                 name,
                 runtime,
+                logger,
             }),
             // cache
             ...cachePlugin({
                 name,
                 runtime,
-                cwd: options?.cwd,
+                cwd,
+                logger,
             }),
             // emit
             ...emitPlugin({
+                logger,
                 name,
                 emit,
                 runtime,
-                cwd: options?.cwd,
                 output: options?.output,
             }),
             // html
             ...htmlPlugin({
+                logger,
                 name,
                 emit,
                 runtime,
-                cwd: options?.cwd,
                 output: options?.output,
             }),
         ];

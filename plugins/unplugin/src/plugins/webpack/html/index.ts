@@ -1,3 +1,4 @@
+import type { Logger } from "@ammolite/integration/log";
 import type { Runtime } from "@ammolite/integration/runtime";
 import type { Format, Partial } from "ts-vista";
 import type { UnpluginOptions } from "unplugin";
@@ -14,26 +15,25 @@ import { pickAsset } from "#/functions/webpack/pick";
 import { getHtmlHooks } from "#/plugins/webpack/html/hook";
 
 type CompleteHtmlPluginOptions = {
+    logger: Logger;
     name: string;
     emit: boolean;
     runtime: Runtime;
-    cwd: string;
     output: OutputOptions;
 };
 
-type HtmlPluginOptions = Format<
-    Partial<CompleteHtmlPluginOptions, "cwd" | "output">
->;
+type HtmlPluginOptions = Format<Partial<CompleteHtmlPluginOptions, "output">>;
 
-const htmlPlugin = (options: HtmlPluginOptions): UnpluginOptions[] => {
-    const name = `${options.name}/html` as const;
-
-    const emit: boolean = options.emit;
-
-    const runtime: Runtime = options.runtime;
+const htmlPlugin = ({
+    name: rawName,
+    emit,
+    runtime,
+    output: rawOutput,
+}: HtmlPluginOptions): UnpluginOptions[] => {
+    const name = `${rawName}/html` as const;
 
     const output: Output = getOutput({
-        output: options.output,
+        output: rawOutput,
     });
 
     const injectHtml = (compiler: Compiler): void => {

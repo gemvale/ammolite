@@ -1,3 +1,4 @@
+import type { Logger } from "@ammolite/integration/log";
 import type { Runtime } from "@ammolite/integration/runtime";
 import type {
     NormalizedOutputOptions,
@@ -17,25 +18,23 @@ import { getOutput } from "#/functions/output";
 import { pickAsset } from "#/functions/rollup/pick";
 
 type CompleteEmitPluginOptions = {
+    logger: Logger;
     name: string;
-    version: string;
     emit: boolean;
     runtime: Runtime;
-    cwd: string;
     output: OutputOptions;
 };
 
-type EmitPluginOptions = Format<
-    Partial<CompleteEmitPluginOptions, "cwd" | "output">
->;
+type EmitPluginOptions = Format<Partial<CompleteEmitPluginOptions, "output">>;
 
-const emitPlugin = (options: EmitPluginOptions): UnpluginOptions[] => {
-    const emit: boolean = options.emit;
-
-    const runtime: Runtime = options.runtime;
-
+const emitPlugin = ({
+    name,
+    emit,
+    runtime,
+    output: rawOutput,
+}: EmitPluginOptions): UnpluginOptions[] => {
     const output: Output = getOutput({
-        output: options.output,
+        output: rawOutput,
     });
 
     async function generateBundle(
@@ -79,23 +78,19 @@ const emitPlugin = (options: EmitPluginOptions): UnpluginOptions[] => {
 
     return [
         {
-            name: `${options.name}/emit`,
+            name: `${name}/emit`,
             rollup: {
-                version: options.version,
                 generateBundle,
             },
             rolldown: {
-                version: options.version,
                 // @ts-expect-error rollup version unmatched
                 generateBundle,
             },
             vite: {
-                version: options.version,
                 // @ts-expect-error rollup version unmatched
                 generateBundle,
             },
             farm: {
-                version: options.version,
                 generateBundle,
             },
         },

@@ -1,9 +1,11 @@
+import type { Logger } from "@ammolite/integration/log";
 import type { CompileResult, Runtime } from "@ammolite/integration/runtime";
 import type { TransformResult, UnpluginOptions } from "unplugin";
 
 import { FILTER_JS_ADVANCED } from "@ammolite/integration/filter";
 
 type CompilePluginOptions = {
+    logger: Logger;
     name: string;
     runtime: Runtime;
 };

@@ -7,6 +7,7 @@ export default defineConfig(
             "runtime/index": "./src/runtime/index.ts",
             "cache/index": "./src/cache/index.ts",
             "filter/index": "./src/filter/index.ts",
+            "log/index": "./src/log/index.ts",
         },
         platform: "node",
     },

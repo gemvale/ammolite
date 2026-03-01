@@ -40,6 +40,11 @@
             "import": "./dist/filter/index.mjs",
             "require": "./dist/filter/index.js"
         },
+        "./log": {
+            "types": "./dist/log/index.d.ts",
+            "import": "./dist/log/index.mjs",
+            "require": "./dist/log/index.js"
+        },
         "./package.json": "./package.json"
     },
     "main": "./dist/runtime.js",
@@ -52,6 +57,7 @@
         "@ammolite/compiler": "workspace:~",
         "es-toolkit": "catalog:dep",
         "ts-vista": "catalog:dep",
-        "unstorage": "^1.17.4"
+        "unstorage": "^1.17.4",
+        "winston": "^3.19.0"
     }
 }
