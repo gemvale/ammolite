@@ -32,14 +32,20 @@ const cachePlugin = ({
      */
     if (emit) return [];
 
+    let isInit: boolean = false;
+
     return [
         {
             name: `${name}/cache/clear`,
             enforce: "pre",
             async buildStart(): Promise<void> {
+                if (isInit) return void 0;
+
                 await clearCaches({
                     cwd,
                 });
+
+                isInit = true;
             },
         },
         {
