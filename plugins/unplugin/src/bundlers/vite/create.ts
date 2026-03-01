@@ -49,16 +49,17 @@ const createPlugin = (createOptions?: CreatePluginOptions): Plugin => {
         });
 
         const compiler: UnpluginOptions[] = compilePlugin({
+            logger,
             name,
             runtime,
-            logger,
         });
 
         const cache: UnpluginOptions[] = cachePlugin({
+            logger,
+            emit,
             name,
             runtime,
             cwd,
-            logger,
         });
 
         if (dev) {

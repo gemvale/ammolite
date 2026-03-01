@@ -1,5 +1,5 @@
 /**
- * This is a caching plugin for collaboration with PostCSS plugin.
+ * This is a caching plugin for collaboration with other CSS processors.
  */
 
 import type { Logger } from "@ammolite/integration/log";
@@ -12,6 +12,7 @@ import { FILTER_JS_ADVANCED } from "@ammolite/integration/filter";
 
 type CompleteCachePluginOptions = {
     logger: Logger;
+    emit: boolean;
     name: string;
     cwd: string;
     runtime: Runtime;
@@ -20,10 +21,17 @@ type CompleteCachePluginOptions = {
 type CachePluginOptions = Format<Partial<CompleteCachePluginOptions, "cwd">>;
 
 const cachePlugin = ({
+    emit,
     name,
     cwd,
     runtime,
 }: CachePluginOptions): UnpluginOptions[] => {
+    /**
+     *  emit: render css directly
+     * !emit: cache css for other processors
+     */
+    if (emit) return [];
+
     return [
         {
             name: `${name}/cache/clear`,

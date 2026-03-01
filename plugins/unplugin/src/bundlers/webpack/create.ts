@@ -54,16 +54,17 @@ const createPlugin = (createOptions?: CreatePluginOptions): Plugin => {
         return [
             // compile
             ...compilePlugin({
+                logger,
                 name,
                 runtime,
-                logger,
             }),
             // cache
             ...cachePlugin({
+                logger,
+                emit,
                 name,
                 runtime,
                 cwd,
-                logger,
             }),
             // emit
             ...emitPlugin({

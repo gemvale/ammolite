@@ -54,6 +54,7 @@ const createPlugin = (createOptions?: CreatePluginOptions): Plugin => {
             // cache
             ...cachePlugin({
                 logger,
+                emit,
                 name,
                 runtime,
                 cwd,
