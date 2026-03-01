@@ -6,6 +6,9 @@ import type { Compiler } from "webpack";
 const SNAPSHOT_MANAGED_PATHS_NODE_MODULES: RegExp =
     /^(.+?[\\/]node_modules[\\/](?!\.ammolite(?:[\\/]|$)))/;
 
+const WATCH_IGNORED_NODE_MODULES: RegExp =
+    /[/\\]node_modules[/\\](?!\.ammolite(?:[/\\]|$))/;
+
 type CompleteWatchPluginOptions = {
     logger: Logger;
     name: string;
@@ -67,6 +70,15 @@ const watchConfigPlugin = ({
             compiler.options.snapshot = {
                 ...snapshot,
                 managedPaths: resolveManagedPaths(snapshot.managedPaths),
+            };
+
+            const watchOptions: NonNullable<
+                Compiler["options"]["watchOptions"]
+            > = compiler.options.watchOptions ?? {};
+
+            compiler.options.watchOptions = {
+                ...watchOptions,
+                ignored: WATCH_IGNORED_NODE_MODULES,
             };
         });
     };
