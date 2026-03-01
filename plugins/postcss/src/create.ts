@@ -1,4 +1,3 @@
-// import type { Runtime } from "@ammolite/integration/runtime";
 import type { PluginCreator } from "postcss";
 import type { Format, Partial } from "ts-vista";
 
@@ -9,7 +8,6 @@ import { name as pkgName } from "../package.json";
 
 type CompleteCreatePluginOptions = {
     name: string;
-    // runtime: Runtime;
 };
 
 type CreatePluginOptions = Format<Partial<CompleteCreatePluginOptions>>;

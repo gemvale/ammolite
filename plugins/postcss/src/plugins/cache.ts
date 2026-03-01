@@ -2,7 +2,10 @@ import type { KeyValueCache } from "@ammolite/integration/cache";
 import type { Plugin, Root, TransformCallback, Transformer } from "postcss";
 import type { Format, Partial } from "ts-vista";
 
-import { readCaches, resolveCacheDir } from "@ammolite/integration/cache";
+import {
+    readCaches,
+    resolveCacheSignalFile,
+} from "@ammolite/integration/cache";
 
 const FILE = "ammolite.css" as const;
 
@@ -11,7 +14,7 @@ const RETRY_MAX = 6 as const;
 const RETRY_DELAY_BASE = 50 as const;
 
 const wait = (ms: number): Promise<void> => {
-    return new Promise((resolve) => {
+    return new Promise((resolve): void => {
         setTimeout(resolve, ms);
     });
 };
@@ -41,6 +44,7 @@ const readCachesWithRetry = async ({
         attempt += 1;
 
         if (attempt < RETRY_MAX) {
+            // incremental delay: 50ms, 100ms, 200ms, 400ms
             await wait(RETRY_DELAY_BASE * 2 ** attempt);
         }
     }
@@ -61,7 +65,12 @@ const cachePlugin = (
 ): (Plugin | TransformCallback | Transformer)[] => {
     const name: string = options.name;
 
+    const signalFile: string = resolveCacheSignalFile({
+        cwd: options.cwd,
+    });
+
     return [
+        // initialize
         {
             postcssPlugin: `${name}/cache/read`,
             async Once(root: Root, { postcss }): Promise<void> {
@@ -84,15 +93,14 @@ const cachePlugin = (
                 }
             },
         },
+        // watch signal
         {
-            postcssPlugin: `${name}/cache/watch`,
+            postcssPlugin: `${name}/cache/signal`,
             async Once(_: Root, { result }): Promise<void> {
                 result.messages.push({
-                    type: "dir-dependency",
+                    type: "dependency",
                     plugin: name,
-                    dir: resolveCacheDir({
-                        cwd: options.cwd,
-                    }),
+                    file: signalFile,
                     parent: result.opts.from,
                 });
             },

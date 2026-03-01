@@ -1,4 +1,7 @@
-export type { ResolveCacheDirOptions } from "#/cache/functions/dir";
+export type {
+    ResolveCacheDirOptions,
+    ResolveCacheSignalFileOptions,
+} from "#/cache/functions/dir";
 export type { CacheResult } from "#/cache/functions/storage";
 export type {
     ClearCacheOptions,
@@ -11,7 +14,7 @@ export type {
 } from "#/cache/operations/read";
 export type { WriteCacheOptions } from "#/cache/operations/write";
 
-export { resolveCacheDir } from "#/cache/functions/dir";
+export { resolveCacheDir, resolveCacheSignalFile } from "#/cache/functions/dir";
 export { clearCache, clearCaches } from "#/cache/operations/clear";
 export { readCache, readCaches } from "#/cache/operations/read";
 export { writeCache } from "#/cache/operations/write";
