@@ -15,6 +15,7 @@ import { compilePlugin } from "#/plugins/compile";
 import { emitPlugin } from "#/plugins/rollup/emit";
 import { hmrPlugin } from "#/plugins/vite/hmr";
 import { htmlPlugin } from "#/plugins/vite/html";
+import { watchConfigPlugin } from "#/plugins/vite/watch-config";
 import { name as pkgName } from "#/root/package.json";
 
 type Plugin = (options?: PluginOptions) => VitePlugin | VitePlugin[];
@@ -48,6 +49,11 @@ const createPlugin = (createOptions?: CreatePluginOptions): Plugin => {
             fileName: name,
         });
 
+        const watchConfig: UnpluginOptions[] = watchConfigPlugin({
+            logger,
+            name,
+        });
+
         const compiler: UnpluginOptions[] = compilePlugin({
             logger,
             name,
@@ -64,6 +70,8 @@ const createPlugin = (createOptions?: CreatePluginOptions): Plugin => {
 
         if (dev) {
             return [
+                // watch config
+                ...watchConfig,
                 // compile
                 ...compiler,
                 // cache
@@ -79,6 +87,8 @@ const createPlugin = (createOptions?: CreatePluginOptions): Plugin => {
         }
 
         return [
+            // watch config
+            ...watchConfig,
             // compile
             ...compiler,
             // cache

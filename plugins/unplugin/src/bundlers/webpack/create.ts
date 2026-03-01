@@ -19,6 +19,7 @@ import { cachePlugin } from "#/plugins/cache";
 import { compilePlugin } from "#/plugins/compile";
 import { emitPlugin } from "#/plugins/webpack/emit";
 import { htmlPlugin } from "#/plugins/webpack/html";
+import { watchConfigPlugin } from "#/plugins/webpack/watch-config";
 import { name as pkgName } from "#/root/package.json";
 
 type PluginOptions = Format<Omit<RawPluginOptions, "dev">>;
@@ -52,6 +53,11 @@ const createPlugin = (createOptions?: CreatePluginOptions): Plugin => {
         });
 
         return [
+            // watch config
+            ...watchConfigPlugin({
+                logger,
+                name,
+            }),
             // compile
             ...compilePlugin({
                 logger,
