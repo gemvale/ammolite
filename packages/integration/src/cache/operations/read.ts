@@ -4,6 +4,23 @@ import type { CacheResult, Storage } from "#/cache/functions/storage";
 
 import { createStorage } from "#/cache/functions/storage";
 
+type CompleteReadCacheOptions = {
+    cwd: string;
+    file: string;
+};
+
+type ReadCacheOptions = Format<Partial<CompleteReadCacheOptions, "cwd">>;
+
+const readCache = async (
+    options: ReadCacheOptions,
+): Promise<CacheResult | undefined> => {
+    const storage: Storage = createStorage({
+        cwd: options?.cwd,
+    });
+
+    return (await storage.get(options.file)) ?? void 0;
+};
+
 type CompleteReadCachesOptions = {
     cwd: string;
 };
@@ -27,22 +44,5 @@ const readCaches = async (
     return await storage.getItems(keys);
 };
 
-type CompleteReadCacheOptions = {
-    cwd: string;
-    file: string;
-};
-
-type ReadCacheOptions = Format<Partial<CompleteReadCacheOptions, "cwd">>;
-
-const readCache = async (
-    options: ReadCacheOptions,
-): Promise<CacheResult | undefined> => {
-    const storage: Storage = createStorage({
-        cwd: options?.cwd,
-    });
-
-    return (await storage.get(options.file)) ?? void 0;
-};
-
-export type { ReadCachesOptions, KeyValueCache, ReadCacheOptions };
-export { readCaches, readCache };
+export type { ReadCacheOptions, ReadCachesOptions, KeyValueCache };
+export { readCache, readCaches };

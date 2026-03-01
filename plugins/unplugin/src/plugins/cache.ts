@@ -6,7 +6,7 @@ import type { Runtime } from "@ammolite/integration/runtime";
 import type { Format, Partial } from "ts-vista";
 import type { UnpluginOptions } from "unplugin";
 
-import { clearCache, writeCache } from "@ammolite/integration/cache";
+import { clearCaches, writeCache } from "@ammolite/integration/cache";
 import { FILTER_JS_ADVANCED } from "@ammolite/integration/filter";
 
 type CompleteCachePluginOptions = {
@@ -27,13 +27,7 @@ const cachePlugin = ({
             name: `${name}/cache/clear`,
             enforce: "pre",
             async buildStart(): Promise<void> {
-                await clearCache({
-                    cwd,
-                });
-            },
-            async watchChange(): Promise<void> {
-                // clear cache, avoid the reader to read previous cache
-                await clearCache({
+                await clearCaches({
                     cwd,
                 });
             },
