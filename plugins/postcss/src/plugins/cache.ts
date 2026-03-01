@@ -2,7 +2,7 @@ import type { KeyValueCache } from "@ammolite/integration/cache";
 import type { Plugin, Root, TransformCallback, Transformer } from "postcss";
 import type { Format, Partial } from "ts-vista";
 
-import { readCaches } from "@ammolite/integration/cache";
+import { readCaches, resolveCacheDir } from "@ammolite/integration/cache";
 
 const FILE = "ammolite.css" as const;
 
@@ -63,7 +63,7 @@ const cachePlugin = (
 
     return [
         {
-            postcssPlugin: `${name}/cache`,
+            postcssPlugin: `${name}/cache/read`,
             async Once(root: Root, { postcss }): Promise<void> {
                 if (!options.emit) return void 0;
 
@@ -82,6 +82,19 @@ const cachePlugin = (
                         }),
                     );
                 }
+            },
+        },
+        {
+            postcssPlugin: `${name}/cache/watch`,
+            async Once(_: Root, { result }): Promise<void> {
+                result.messages.push({
+                    type: "dir-dependency",
+                    plugin: name,
+                    dir: resolveCacheDir({
+                        cwd: options.cwd,
+                    }),
+                    parent: result.opts.from,
+                });
             },
         },
     ];
