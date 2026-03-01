@@ -1,0 +1,31 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "webpack serve --port 3001",
+        "build": "webpack --mode=production",
+        "start": "serve ./dist -p 3000"
+    },
+    "dependencies": {
+        "ammolite": "workspace:*",
+        "react": "catalog:dep",
+        "react-dom": "catalog:dep"
+    },
+    "devDependencies": {
+        "@ammolite/postcss": "workspace:*",
+        "@ammolite/unplugin": "workspace:*",
+        "@swc/core": "^1.15.13",
+        "@types/react": "catalog:dep",
+        "@types/react-dom": "catalog:dep",
+        "clean-webpack-plugin": "^4.0.0",
+        "css-loader": "^7.1.4",
+        "html-webpack-plugin": "^5.6.6",
+        "mini-css-extract-plugin": "^2.10.0",
+        "postcss": "^8.5.6",
+        "postcss-loader": "^8.2.1",
+        "serve": "^14.2.5",
+        "swc-loader": "~0.2.7",
+        "webpack": "catalog:dev",
+        "webpack-cli": "^6.0.1",
+        "webpack-dev-server": "^5.2.3"
+    }
+}

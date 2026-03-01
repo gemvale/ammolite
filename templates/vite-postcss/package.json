@@ -12,6 +12,7 @@
         "react-dom": "catalog:dep"
     },
     "devDependencies": {
+        "@ammolite/postcss": "workspace:*",
         "@ammolite/unplugin": "workspace:*",
         "@types/react": "catalog:dep",
         "@types/react-dom": "catalog:dep",

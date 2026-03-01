@@ -435,6 +435,37 @@ importers:
         specifier: catalog:dep
         version: 19.2.3(@types/react@19.2.14)
 
+  templates/rsbuild-postcss:
+    dependencies:
+      ammolite:
+        specifier: workspace:*
+        version: link:../../packages/web
+      react:
+        specifier: catalog:dep
+        version: 19.2.4
+      react-dom:
+        specifier: catalog:dep
+        version: 19.2.4(react@19.2.4)
+    devDependencies:
+      '@ammolite/postcss':
+        specifier: workspace:*
+        version: link:../../plugins/postcss
+      '@ammolite/rsbuild':
+        specifier: workspace:*
+        version: link:../../plugins/rsbuild
+      '@rsbuild/core':
+        specifier: catalog:dev
+        version: 1.5.0
+      '@rsbuild/plugin-react':
+        specifier: ^1.4.2
+        version: 1.4.5(@rsbuild/core@1.5.0)
+      '@types/react':
+        specifier: catalog:dep
+        version: 19.2.14
+      '@types/react-dom':
+        specifier: catalog:dep
+        version: 19.2.3(@types/react@19.2.14)
+
   templates/vite:
     dependencies:
       ammolite:
@@ -447,6 +478,37 @@ importers:
         specifier: catalog:dep
         version: 19.2.4(react@19.2.4)
     devDependencies:
+      '@ammolite/unplugin':
+        specifier: workspace:*
+        version: link:../../plugins/unplugin
+      '@types/react':
+        specifier: catalog:dep
+        version: 19.2.14
+      '@types/react-dom':
+        specifier: catalog:dep
+        version: 19.2.3(@types/react@19.2.14)
+      '@vitejs/plugin-react':
+        specifier: ^5.1.4
+        version: 5.1.4(vite@7.0.0(@types/node@25.2.3)(jiti@2.6.1)(terser@5.46.0)(yaml@2.8.2))
+      vite:
+        specifier: catalog:dev
+        version: 7.0.0(@types/node@25.2.3)(jiti@2.6.1)(terser@5.46.0)(yaml@2.8.2)
+
+  templates/vite-postcss:
+    dependencies:
+      ammolite:
+        specifier: workspace:*
+        version: link:../../packages/web
+      react:
+        specifier: catalog:dep
+        version: 19.2.4
+      react-dom:
+        specifier: catalog:dep
+        version: 19.2.4(react@19.2.4)
+    devDependencies:
+      '@ammolite/postcss':
+        specifier: workspace:*
+        version: link:../../plugins/postcss
       '@ammolite/unplugin':
         specifier: workspace:*
         version: link:../../plugins/unplugin
@@ -499,6 +561,67 @@ importers:
       mini-css-extract-plugin:
         specifier: ^2.10.0
         version: 2.10.0(webpack@5.76.0)
+      serve:
+        specifier: ^14.2.5
+        version: 14.2.5
+      swc-loader:
+        specifier: ~0.2.7
+        version: 0.2.7(@swc/core@1.15.13(@swc/helpers@0.5.18))(webpack@5.76.0)
+      webpack:
+        specifier: catalog:dev
+        version: 5.76.0(@swc/core@1.15.13(@swc/helpers@0.5.18))(webpack-cli@6.0.1)
+      webpack-cli:
+        specifier: ^6.0.1
+        version: 6.0.1(webpack-dev-server@5.2.3)(webpack@5.76.0)
+      webpack-dev-server:
+        specifier: ^5.2.3
+        version: 5.2.3(webpack-cli@6.0.1)(webpack@5.76.0)
+
+  templates/webpack-postcss:
+    dependencies:
+      ammolite:
+        specifier: workspace:*
+        version: link:../../packages/web
+      react:
+        specifier: catalog:dep
+        version: 19.2.4
+      react-dom:
+        specifier: catalog:dep
+        version: 19.2.4(react@19.2.4)
+    devDependencies:
+      '@ammolite/postcss':
+        specifier: workspace:*
+        version: link:../../plugins/postcss
+      '@ammolite/unplugin':
+        specifier: workspace:*
+        version: link:../../plugins/unplugin
+      '@swc/core':
+        specifier: ^1.15.13
+        version: 1.15.13(@swc/helpers@0.5.18)
+      '@types/react':
+        specifier: catalog:dep
+        version: 19.2.14
+      '@types/react-dom':
+        specifier: catalog:dep
+        version: 19.2.3(@types/react@19.2.14)
+      clean-webpack-plugin:
+        specifier: ^4.0.0
+        version: 4.0.0(webpack@5.76.0)
+      css-loader:
+        specifier: ^7.1.4
+        version: 7.1.4(@rspack/core@1.5.0(@swc/helpers@0.5.18))(webpack@5.76.0)
+      html-webpack-plugin:
+        specifier: ^5.6.6
+        version: 5.6.6(@rspack/core@1.5.0(@swc/helpers@0.5.18))(webpack@5.76.0)
+      mini-css-extract-plugin:
+        specifier: ^2.10.0
+        version: 2.10.0(webpack@5.76.0)
+      postcss:
+        specifier: ^8.5.6
+        version: 8.5.6
+      postcss-loader:
+        specifier: ^8.2.1
+        version: 8.2.1(@rspack/core@1.5.0(@swc/helpers@0.5.18))(postcss@8.5.6)(typescript@5.9.3)(webpack@5.76.0)
       serve:
         specifier: ^14.2.5
         version: 14.2.5
@@ -3223,6 +3346,10 @@ packages:
     resolution: {integrity: sha512-+ys997U96po4Kx/ABpBCqhA9EuxJaQWDQg7295H4hBphv3IZg0boBKuwYpt4YXp6MZ5AmZQnU/tyMTlRpaSejg==}
     engines: {node: '>= 0.4'}
 
+  callsites@3.1.0:
+    resolution: {integrity: sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==}
+    engines: {node: '>=6'}
+
   camel-case@4.1.2:
     resolution: {integrity: sha512-gxGWBrTT1JuMx6R+o5PTXMmUnhnVzLQ9SNutD4YqKtI6ap897t3tKECYla6gCWEkplXnlNybEkZg9GEGxKFCgw==}
 
@@ -3368,6 +3495,15 @@ packages:
 
   core-util-is@1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
+
+  cosmiconfig@9.0.0:
+    resolution: {integrity: sha512-itvL5h8RETACmOTFc4UfIyB2RfEHi71Ax6E/PivVxq9NseKbOWpeyHEOIbmAw1rs8Ak0VursQNww7lf7YtUwzg==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      typescript: '>=4.9.5'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
 
   cross-spawn@7.0.6:
     resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
@@ -3559,10 +3695,17 @@ packages:
     resolution: {integrity: sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw==}
     engines: {node: '>=0.12'}
 
+  env-paths@2.2.1:
+    resolution: {integrity: sha512-+h1lkLKhZMTYjog1VEpJNG7NZJWcuc2DDk/qsqSTRRCOXiLjeQ1d1/udrUGhqMxUgAlwKNZ0cf2uqan5GLuS2A==}
+    engines: {node: '>=6'}
+
   envinfo@7.21.0:
     resolution: {integrity: sha512-Lw7I8Zp5YKHFCXL7+Dz95g4CcbMEpgvqZNNq3AmlT5XAV6CgAAk6gyAMqn2zjw08K9BHfcNuKrMiCPLByGafow==}
     engines: {node: '>=4'}
     hasBin: true
+
+  error-ex@1.3.4:
+    resolution: {integrity: sha512-sqQamAnR14VgCr1A618A3sGrygcpK+HEbenA/HiEAkkUwcZIIB/tgWqHFxWgOyDh4nB4JCRimh79dR5Ywc9MDQ==}
 
   error-stack-parser@2.1.4:
     resolution: {integrity: sha512-Sk5V6wVazPhq5MhpO+AUxJn5x7XSXGl1R93Vn7i+zS15KDVxQijejNCrz8340/2bgLBjR9GtEG8ZVKONDjcqGQ==}
@@ -3881,6 +4024,10 @@ packages:
     peerDependencies:
       postcss: ^8.1.0
 
+  import-fresh@3.3.1:
+    resolution: {integrity: sha512-TR3KfrTZTYLPB6jUjfx6MF9WcWrHL9su5TObK4ZkYgBdWKPOFoSoQIdEuTuR82pmtxH2spWG9h6etwfr1pLBqQ==}
+    engines: {node: '>=6'}
+
   import-local@3.2.0:
     resolution: {integrity: sha512-2SPlun1JUPWoM6t3F0dw0FkCF/jWY8kttcY4f599GLTSjh2OCuuhdTkJQsEcZzBqbXZGKMK2OqW1oZsjtf/gQA==}
     engines: {node: '>=8'}
@@ -3914,6 +4061,9 @@ packages:
 
   iron-webcrypto@1.2.1:
     resolution: {integrity: sha512-feOM6FaSr6rEABp/eDfVseKyTMDt+KGpeB35SkVn9Tyn0CqvVsY3EwI0v5i8nMHyJnzCIQf7nsy3p41TPkJZhg==}
+
+  is-arrayish@0.2.1:
+    resolution: {integrity: sha512-zz06S8t0ozoDXMG+ube26zeCTNXcKIPJZJi8hBrF4idCLms4CG9QtK7qBl1boi5ODzFpjswb5JPmHCbMpjaYzg==}
 
   is-binary-path@2.1.0:
     resolution: {integrity: sha512-ZMERYes6pDydyuGidse7OsHxtbI7WVeUEozgR/g7rd0xUimYNlvZRE/K2MgZTjWy725IfelLeVcEM97mmtRGXw==}
@@ -4019,6 +4169,10 @@ packages:
   js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
 
+  js-yaml@4.1.1:
+    resolution: {integrity: sha512-qQKT4zQxXl8lLwBtHMWwaTcGfFOZviOJet3Oy/xmGk2gZH677CJM9EvtfdSkgWcATZhj/55JZ0rmy3myCT5lsA==}
+    hasBin: true
+
   jsesc@3.1.0:
     resolution: {integrity: sha512-/sM3dO2FOzXjKQhJuo0Q173wf2KOo8t4I8vHy6lF9poUp7bKT0/NHE8fPX23PwfhnykfqnC2xRxOnVw5XuGIaA==}
     engines: {node: '>=6'}
@@ -4051,6 +4205,9 @@ packages:
   lilconfig@3.1.3:
     resolution: {integrity: sha512-/vlFKAoH5Cgt3Ie+JLhRbwOsCQePABiU3tJ1egGvyQ+33R/vcwM2Zl2QR/LzjsBeItPt3oSVXapn+m4nQDvpzw==}
     engines: {node: '>=14'}
+
+  lines-and-columns@1.2.4:
+    resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
 
   linkify-it@5.0.0:
     resolution: {integrity: sha512-5aHCbzQRADcdP+ATqnDuhhJ/MRIqDkZX5pyjFHRRysS8vZ5AbqGEoFIb6pYHPZ+L/OC2Lc+xT8uHVVR5CAK/wQ==}
@@ -4336,6 +4493,14 @@ packages:
   param-case@3.0.4:
     resolution: {integrity: sha512-RXlj7zCYokReqWpOPH9oYivUzLYZ5vAPIfEmCTNViosC78F8F0H9y7T7gG2M39ymgutxF5gcFEsyZQSph9Bp3A==}
 
+  parent-module@1.0.1:
+    resolution: {integrity: sha512-GQ2EWRpQV8/o+Aw8YqtfZZPfNRWZYkbidE9k5rpl/hC3vtHHBfGm2Ifi6qWV+coDGkrUKZAxE3Lot5kcsRlh+g==}
+    engines: {node: '>=6'}
+
+  parse-json@5.2.0:
+    resolution: {integrity: sha512-ayCKvm/phCGxOkYRSCM82iDwct8/EonSEgCSxWxD7ve6jHggsFl4fZVQBPRNgQoKiuV/odhFrGzQXZwbifC8Rg==}
+    engines: {node: '>=8'}
+
   parseurl@1.3.3:
     resolution: {integrity: sha512-CiyeOxFT/JZyN5m0z9PfXw4SCBJ6Sygz1Dpl0wqjlhDEGGBP1GnsUVEL0p63hoG1fcj3fHynXi9NYO4nWOL+qQ==}
     engines: {node: '>= 0.8'}
@@ -4521,6 +4686,19 @@ packages:
       tsx:
         optional: true
       yaml:
+        optional: true
+
+  postcss-loader@8.2.1:
+    resolution: {integrity: sha512-k98jtRzthjj3f76MYTs9JTpRqV1RaaMhEU0Lpw9OTmQZQdppg4B30VZ74BojuBHt3F4KyubHJoXCMUeM8Bqeow==}
+    engines: {node: '>= 18.12.0'}
+    peerDependencies:
+      '@rspack/core': 0.x || ^1.0.0 || ^2.0.0-0
+      postcss: ^7.0.0 || ^8.0.1
+      webpack: ^5.0.0
+    peerDependenciesMeta:
+      '@rspack/core':
+        optional: true
+      webpack:
         optional: true
 
   postcss-logical@9.0.0:
@@ -4742,6 +4920,10 @@ packages:
   resolve-cwd@3.0.0:
     resolution: {integrity: sha512-OrZaX2Mb+rJCpH/6CpSqt9xFVpN++x01XnN2ie9g6P5/3xelLAkXWVADpdz1IHD/KFfEXyE6V0U01OQ3UO2rEg==}
     engines: {node: '>=8'}
+
+  resolve-from@4.0.0:
+    resolution: {integrity: sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g==}
+    engines: {node: '>=4'}
 
   resolve-from@5.0.0:
     resolution: {integrity: sha512-qYg9KP24dD5qka9J47d0aVky0N+b4fTU89LN9iDnjB5waksiC49rvMB0PrUJQGoTmH50XPiqOvAjDfaijGxYZw==}
@@ -7743,6 +7925,8 @@ snapshots:
       call-bind-apply-helpers: 1.0.2
       get-intrinsic: 1.3.0
 
+  callsites@3.1.0: {}
+
   camel-case@4.1.2:
     dependencies:
       pascal-case: 3.1.2
@@ -7876,6 +8060,15 @@ snapshots:
   core-js@3.45.1: {}
 
   core-util-is@1.0.3: {}
+
+  cosmiconfig@9.0.0(typescript@5.9.3):
+    dependencies:
+      env-paths: 2.2.1
+      import-fresh: 3.3.1
+      js-yaml: 4.1.1
+      parse-json: 5.2.0
+    optionalDependencies:
+      typescript: 5.9.3
 
   cross-spawn@7.0.6:
     dependencies:
@@ -8041,7 +8234,13 @@ snapshots:
 
   entities@4.5.0: {}
 
+  env-paths@2.2.1: {}
+
   envinfo@7.21.0: {}
+
+  error-ex@1.3.4:
+    dependencies:
+      is-arrayish: 0.2.1
 
   error-stack-parser@2.1.4:
     dependencies:
@@ -8436,6 +8635,11 @@ snapshots:
     dependencies:
       postcss: 8.5.6
 
+  import-fresh@3.3.1:
+    dependencies:
+      parent-module: 1.0.1
+      resolve-from: 4.0.0
+
   import-local@3.2.0:
     dependencies:
       pkg-dir: 4.2.0
@@ -8459,6 +8663,8 @@ snapshots:
   ipaddr.js@2.3.0: {}
 
   iron-webcrypto@1.2.1: {}
+
+  is-arrayish@0.2.1: {}
 
   is-binary-path@2.1.0:
     dependencies:
@@ -8536,6 +8742,10 @@ snapshots:
 
   js-tokens@4.0.0: {}
 
+  js-yaml@4.1.1:
+    dependencies:
+      argparse: 2.0.1
+
   jsesc@3.1.0: {}
 
   json-parse-even-better-errors@2.3.1: {}
@@ -8556,6 +8766,8 @@ snapshots:
       shell-quote: 1.8.3
 
   lilconfig@3.1.3: {}
+
+  lines-and-columns@1.2.4: {}
 
   linkify-it@5.0.0:
     dependencies:
@@ -8876,6 +9088,17 @@ snapshots:
       dot-case: 3.0.4
       tslib: 2.8.1
 
+  parent-module@1.0.1:
+    dependencies:
+      callsites: 3.1.0
+
+  parse-json@5.2.0:
+    dependencies:
+      '@babel/code-frame': 7.29.0
+      error-ex: 1.3.4
+      json-parse-even-better-errors: 2.3.1
+      lines-and-columns: 1.2.4
+
   parseurl@1.3.3: {}
 
   pascal-case@3.1.2:
@@ -9040,6 +9263,18 @@ snapshots:
       jiti: 2.6.1
       postcss: 8.5.6
       yaml: 2.8.2
+
+  postcss-loader@8.2.1(@rspack/core@1.5.0(@swc/helpers@0.5.18))(postcss@8.5.6)(typescript@5.9.3)(webpack@5.76.0):
+    dependencies:
+      cosmiconfig: 9.0.0(typescript@5.9.3)
+      jiti: 2.6.1
+      postcss: 8.5.6
+      semver: 7.7.4
+    optionalDependencies:
+      '@rspack/core': 1.5.0(@swc/helpers@0.5.18)
+      webpack: 5.76.0(@swc/core@1.15.13(@swc/helpers@0.5.18))(webpack-cli@6.0.1)
+    transitivePeerDependencies:
+      - typescript
 
   postcss-logical@9.0.0(postcss@8.5.6):
     dependencies:
@@ -9329,6 +9564,8 @@ snapshots:
   resolve-cwd@3.0.0:
     dependencies:
       resolve-from: 5.0.0
+
+  resolve-from@4.0.0: {}
 
   resolve-from@5.0.0: {}
 
