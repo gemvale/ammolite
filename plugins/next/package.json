@@ -27,16 +27,21 @@
         "email": "contact@alphe.us"
     },
     "exports": {
-        ".": {
-            "types": "./dist/index.d.ts",
-            "import": "./dist/index.mjs",
-            "require": "./dist/index.js"
+        "./webpack": {
+            "types": "./dist/webpack.d.ts",
+            "import": "./dist/webpack.mjs",
+            "require": "./dist/webpack.js"
+        },
+        "./turbopack": {
+            "types": "./dist/turbopack.d.ts",
+            "import": "./dist/turbopack.mjs",
+            "require": "./dist/turbopack.js"
         },
         "./package.json": "./package.json"
     },
-    "main": "./dist/index.js",
-    "module": "./dist/index.mjs",
-    "types": "./dist/index.d.ts",
+    "main": "./dist/webpack.js",
+    "module": "./dist/webpack.mjs",
+    "types": "./dist/webpack.d.ts",
     "files": [
         "dist"
     ],

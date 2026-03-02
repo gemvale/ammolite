@@ -9,6 +9,9 @@ const presetEnvOptions = {
     },
 };
 
+/** @type {import("@ammolite/postcss").PluginOptions} */
+const ammoliteOptions = {};
+
 /** @type {import("postcss-load-config").Config} */
 export default {
     plugins: [
@@ -17,6 +20,9 @@ export default {
             presetEnvOptions,
         ],
         "postcss-flexbugs-fixes",
-        "@ammolite/postcss",
+        [
+            "@ammolite/postcss",
+            ammoliteOptions,
+        ],
     ],
 };

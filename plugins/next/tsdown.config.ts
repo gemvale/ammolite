@@ -4,7 +4,8 @@ import { cjsPreset, dtsPreset, esmPreset } from "@apst/tsdown/presets";
 export default defineConfig(
     {
         entry: {
-            index: "./src/index.ts",
+            webpack: "./src/webpack.ts",
+            turbopack: "./src/turbopack.ts",
         },
         platform: "node",
         unbundle: false,

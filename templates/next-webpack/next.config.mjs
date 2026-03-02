@@ -1,8 +1,7 @@
-import type { NextConfig } from "next/dist/types";
+import { ammolite } from "@ammolite/next/webpack";
 
-import { ammolite } from "@ammolite/next";
-
-const nextConfig: NextConfig = {
+/** @type {import("next").NextConfig} */
+const nextConfig = {
     trailingSlash: false,
     images: {
         remotePatterns: [
