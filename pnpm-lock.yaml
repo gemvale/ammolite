@@ -341,7 +341,44 @@ importers:
         specifier: catalog:dev
         version: 5.76.0
 
-  templates/next:
+  templates/next-turbopack:
+    dependencies:
+      ammolite:
+        specifier: workspace:*
+        version: link:../../packages/web
+      next:
+        specifier: catalog:dep
+        version: 16.1.6(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      react:
+        specifier: catalog:dep
+        version: 19.2.4
+      react-dom:
+        specifier: catalog:dep
+        version: 19.2.4(react@19.2.4)
+    devDependencies:
+      '@ammolite/next':
+        specifier: workspace:*
+        version: link:../../plugins/next
+      '@ammolite/postcss':
+        specifier: workspace:*
+        version: link:../../plugins/postcss
+      '@types/react':
+        specifier: catalog:dep
+        version: 19.2.14
+      '@types/react-dom':
+        specifier: catalog:dep
+        version: 19.2.3(@types/react@19.2.14)
+      postcss-flexbugs-fixes:
+        specifier: catalog:dep
+        version: 5.0.2(postcss@8.5.6)
+      postcss-load-config:
+        specifier: catalog:dep
+        version: 6.0.1(jiti@2.6.1)(postcss@8.5.6)(yaml@2.8.2)
+      postcss-preset-env:
+        specifier: catalog:dep
+        version: 11.2.0(postcss@8.5.6)
+
+  templates/next-webpack:
     dependencies:
       ammolite:
         specifier: workspace:*
