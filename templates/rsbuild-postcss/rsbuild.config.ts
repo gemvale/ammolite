@@ -1,3 +1,5 @@
+import type { PostCSSLoaderOptions } from "@rsbuild/core";
+
 import { pluginAmmolite } from "@ammolite/rsbuild";
 import { defineConfig } from "@rsbuild/core";
 import { pluginReact } from "@rsbuild/plugin-react";
@@ -11,7 +13,7 @@ export default defineConfig({
         pluginReact(),
     ],
     tools: {
-        postcss: (_, { addPlugins }): void => {
+        postcss: (_: PostCSSLoaderOptions, { addPlugins }): void => {
             addPlugins(require("@ammolite/postcss"));
         },
     },
