@@ -151,31 +151,31 @@ bench:
 
 # Publish compiler package with dev tag
 publish-dev-compiler:
-    cd ./{{compiler}} && {{publish}} --no-git-checks --tag dev
+    cd ./{{compiler}} && {{publish}} --no-git-checks --tag dev --access public
 
 # Publish integration package with dev tag
 publish-dev-integ:
-    cd ./{{integ}} && {{publish}} --no-git-checks --tag dev
+    cd ./{{integ}} && {{publish}} --no-git-checks --tag dev --access public
 
 # Publish web package with dev tag
 publish-dev-web:
-    cd ./{{web}} && {{publish}} --no-git-checks --tag dev
+    cd ./{{web}} && {{publish}} --no-git-checks --tag dev --access public
 
 # Publish Unplugin with dev tag
 publish-dev-unplugin:
-    cd ./{{unplugin}} && {{publish}} --no-git-checks --tag dev
+    cd ./{{unplugin}} && {{publish}} --no-git-checks --tag dev --access public
 
 # Publish Rsbuild plugin with dev tag
 publish-dev-rsbuild:
-    cd ./{{rsbuild}} && {{publish}} --no-git-checks --tag dev
+    cd ./{{rsbuild}} && {{publish}} --no-git-checks --tag dev --access public
 
 # Publish Next plugin with dev tag
 publish-dev-next:
-    cd ./{{next}} && {{publish}} --no-git-checks --tag dev
+    cd ./{{next}} && {{publish}} --no-git-checks --tag dev --access public
 
 # Publish PostCSS plugin with dev tag
 publish-dev-postcss:
-    cd ./{{postcss}} && {{publish}} --no-git-checks --tag dev
+    cd ./{{postcss}} && {{publish}} --no-git-checks --tag dev --access public
 
 # Publish all packages with dev tag
 publish-dev:
@@ -190,31 +190,31 @@ publish-dev:
 
 # Publish compiler package
 publish-compiler:
-    cd ./{{compiler}} && {{publish}}
+    cd ./{{compiler}} && {{publish}} --access public
 
 # Publish integration package
 publish-integ:
-    cd ./{{integ}} && {{publish}}
+    cd ./{{integ}} && {{publish}} --access public
 
 # Publish web package
 publish-web:
-    cd ./{{web}} && {{publish}}
+    cd ./{{web}} && {{publish}} --access public
 
 # Publish Unplugin
 publish-unplugin:
-    cd ./{{unplugin}} && {{publish}}
+    cd ./{{unplugin}} && {{publish}} --access public
 
 # Publish Rsbuild plugin
 publish-rsbuild:
-    cd ./{{rsbuild}} && {{publish}}
+    cd ./{{rsbuild}} && {{publish}} --access public
 
 # Publish Next plugin
 publish-next:
-    cd ./{{next}} && {{publish}}
+    cd ./{{next}} && {{publish}} --access public
 
 # Publish PostCSS plugin
 publish-postcss:
-    cd ./{{postcss}} && {{publish}}
+    cd ./{{postcss}} && {{publish}} --access public
 
 # Publish all packages
 publish:
