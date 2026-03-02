@@ -32,7 +32,8 @@ ex_merge := "examples/merge"
 
 tmpl_webpack := "templates/webpack"
 tmpl_rsbuild := "templates/rsbuild"
-tmpl_next := "templates/next"
+tmpl_next_tp := "templates/next-turbopack"
+tmpl_next_wp := "templates/next-webpack"
 tmpl_rollup := "templates/rollup"
 tmpl_rolldown := "templates/rolldown"
 tmpl_vite := "templates/vite"
@@ -76,7 +77,8 @@ lslint:
 
     cd ./{{tmpl_webpack}}/src && ls-lint {{lsl_cfg}}
     cd ./{{tmpl_rsbuild}}/src && ls-lint {{lsl_cfg}}
-    cd ./{{tmpl_next}}/src && ls-lint {{lsl_cfg}}
+    cd ./{{tmpl_next_tp}}/src && ls-lint {{lsl_cfg}}
+    cd ./{{tmpl_next_wp}}/src && ls-lint {{lsl_cfg}}
     cd ./{{tmpl_rollup}}/src && ls-lint {{lsl_cfg}}
     cd ./{{tmpl_rolldown}}/src && ls-lint {{lsl_cfg}}
     cd ./{{tmpl_vite}}/src && ls-lint {{lsl_cfg}}
