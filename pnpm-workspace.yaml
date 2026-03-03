@@ -1,9 +1,9 @@
 packages:
     - ./packages/*
-    - ./tests/*
     - ./plugins/*
-    - ./templates/*
+    - ./tests/*
     - ./examples/*
+    - ./templates/*
     - ./benchmarks/*
 
 catalogs:
