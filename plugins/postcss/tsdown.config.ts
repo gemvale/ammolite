@@ -4,8 +4,11 @@ import { cjsPreset, dtsPreset, esmPreset } from "@apst/tsdown/presets";
 export default defineConfig(
     {
         entry: {
+            // public
             index: "./src/index.ts",
+            // internal
             create: "./src/create.ts",
+            "plugins/cache": "./src/plugins/cache.ts",
         },
         platform: "node",
     },

@@ -36,6 +36,11 @@
             "import": "./dist/create.mjs",
             "require": "./dist/create.js"
         },
+        "./plugins/cache": {
+            "types": "./dist/plugins/cache.d.ts",
+            "import": "./dist/plugins/cache.mjs",
+            "require": "./dist/plugins/cache.js"
+        },
         "./package.json": "./package.json"
     },
     "main": "./dist/index.js",
