@@ -3,6 +3,8 @@ import type { Format } from "ts-vista";
 import type { UnpluginOptions } from "unplugin";
 import type { UserConfig } from "vite";
 
+import { toMerged } from "es-toolkit";
+
 const WATCH_IGNORED_PATTERN = "!**/node_modules/.ammolite/**" as const;
 
 type CompleteWatchPluginOptions = {
@@ -15,15 +17,17 @@ type WatchConfigPluginOptions = Format<CompleteWatchPluginOptions>;
 const watchConfigPlugin = ({
     name,
 }: WatchConfigPluginOptions): UnpluginOptions[] => {
-    const config = (): UserConfig => ({
-        server: {
-            watch: {
-                ignored: [
-                    WATCH_IGNORED_PATTERN,
-                ],
+    const config = (config: UserConfig): UserConfig => {
+        return toMerged(config, {
+            server: {
+                watch: {
+                    ignored: [
+                        WATCH_IGNORED_PATTERN,
+                    ],
+                },
             },
-        },
-    });
+        });
+    };
 
     return [
         {

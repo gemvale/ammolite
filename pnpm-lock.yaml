@@ -324,6 +324,9 @@ importers:
       '@ammolite/integration':
         specifier: workspace:~
         version: link:../../packages/integration
+      es-toolkit:
+        specifier: catalog:dep
+        version: 1.43.0
       ts-vista:
         specifier: catalog:dep
         version: 0.2.3

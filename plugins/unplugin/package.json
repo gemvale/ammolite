@@ -71,6 +71,7 @@
     ],
     "dependencies": {
         "@ammolite/integration": "workspace:~",
+        "es-toolkit": "catalog:dep",
         "ts-vista": "catalog:dep",
         "unplugin": "^3.0.0"
     },
