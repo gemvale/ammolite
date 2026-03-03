@@ -104,9 +104,9 @@ const externalResolver = (options: ExternalResolverOptions): Plugin => {
 
             /**
              * Check if the source is the same as the target
-             * 
+             *
              * This is to avoid the following error on Windows:
-             * 
+             *
              * [UNRESOLVED_ENTRY] Error: Entry module "src/app.tsx" cannot be external.
              */
             if (normalizeSource === normalizeTarget) {
