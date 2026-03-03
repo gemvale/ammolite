@@ -88,16 +88,31 @@ const isJsFile = (id: string): boolean => {
 
 type ExternalResolverOptions = {
     packageName: string;
+    file: string;
     exclude: readonly string[];
     include: readonly string[];
 };
 
 const externalResolver = (options: ExternalResolverOptions): Plugin => {
+    const normalizeTarget: string = Path.resolve(options.file);
     const { exclude, include } = getIncludeAndExclude(options);
 
     return {
         name: "@ammolite/transpiler/external-resolver",
         resolveId: (id: string): ResolveIdResult => {
+            const normalizeSource: string = Path.resolve(id);
+
+            /**
+             * Check if the source is the same as the target
+             * 
+             * This is to avoid the following error on Windows:
+             * 
+             * [UNRESOLVED_ENTRY] Error: Entry module "src/app.tsx" cannot be external.
+             */
+            if (normalizeSource === normalizeTarget) {
+                return void 0;
+            }
+
             // CSS-in-JS package
             if (id === options.packageName) {
                 return {

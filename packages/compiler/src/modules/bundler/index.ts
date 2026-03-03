@@ -97,6 +97,7 @@ const bundle = async (options: BundleOptions): Promise<BundleResult> => {
         plugins: [
             externalResolver({
                 packageName: options.packageName,
+                file: options.file,
                 include: options.include,
                 exclude: options.exclude,
             }),
