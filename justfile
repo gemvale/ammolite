@@ -22,10 +22,6 @@ postcss := "plugins/postcss"
 test_compiler := "tests/compiler"
 test_web := "tests/web"
 
-bench_keyframes := "benchmarks/keyframes"
-bench_style := "benchmarks/style"
-bench_variables := "benchmarks/variables"
-
 ex_var := "examples/set-variables"
 ex_fallback := "examples/fallback"
 ex_merge := "examples/merge"
@@ -37,6 +33,10 @@ tmpl_next_wp := "templates/next-webpack"
 tmpl_rollup := "templates/rollup"
 tmpl_rolldown := "templates/rolldown"
 tmpl_vite := "templates/vite"
+
+bench_keyframes := "benchmarks/keyframes"
+bench_style := "benchmarks/style"
+bench_variables := "benchmarks/variables"
 
 # Default action
 _:
@@ -253,8 +253,10 @@ clean:
 clean-all-linux:
     just clean
 
+    rm -rf ./benchmarks/*/node_modules
     rm -rf ./templates/*/node_modules
     rm -rf ./examples/*/node_modules
+    rm -rf ./tests/*/node_modules
     rm -rf ./plugins/*/node_modules
     rm -rf ./packages/*/node_modules
 
@@ -268,8 +270,10 @@ clean-all-macos:
 clean-all-windows:
     just clean
 
+    Remove-Item -Recurse -Force ./benchmarks/*/node_modules
     Remove-Item -Recurse -Force ./templates/*/node_modules
     Remove-Item -Recurse -Force ./examples/*/node_modules
+    Remove-Item -Recurse -Force ./tests/*/node_modules
     Remove-Item -Recurse -Force ./plugins/*/node_modules
     Remove-Item -Recurse -Force ./packages/*/node_modules
 
