@@ -5,13 +5,20 @@ import * as Path from "node:path";
 import { ammolite } from "@ammolite/unplugin/rollup";
 import typescript from "@rollup/plugin-typescript";
 import { rollup } from "rollup";
-import { afterAll, describe, expect, it } from "vitest";
+import { beforeAll, describe, expect, it } from "vitest";
 
 const CWD: string = process.cwd();
 
+const PATH_AMMOLITE: string = Path.join(CWD, "node_modules", ".ammolite");
+
 const PATH_DIST: string = Path.join(CWD, "dist");
 
-afterAll(async (): Promise<void> => {
+beforeAll(async (): Promise<void> => {
+    await Fsp.rm(PATH_AMMOLITE, {
+        recursive: true,
+        force: true,
+    });
+
     await Fsp.rm(PATH_DIST, {
         recursive: true,
         force: true,
