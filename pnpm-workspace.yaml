@@ -2,6 +2,7 @@ packages:
     - ./packages/*
     - ./plugins/*
     - ./tests/*
+    - ./tests/plugins/*
     - ./examples/*
     - ./templates/*
     - ./benchmarks/*

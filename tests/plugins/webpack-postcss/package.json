@@ -1,0 +1,21 @@
+{
+    "private": true,
+    "scripts": {
+        "test": "vitest run"
+    },
+    "dependencies": {
+        "ammolite": "workspace:*",
+        "vitest": "catalog:dep"
+    },
+    "devDependencies": {
+        "@ammolite/postcss": "workspace:*",
+        "@ammolite/unplugin": "workspace:*",
+        "@swc/core": "^1.15.18",
+        "css-loader": "^7.1.4",
+        "mini-css-extract-plugin": "^2.10.0",
+        "postcss": "^8.5.6",
+        "postcss-loader": "^8.2.1",
+        "swc-loader": "~0.2.7",
+        "webpack": "catalog:dev"
+    }
+}

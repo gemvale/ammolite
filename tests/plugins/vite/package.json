@@ -1,0 +1,14 @@
+{
+    "private": true,
+    "scripts": {
+        "test": "vitest run"
+    },
+    "dependencies": {
+        "ammolite": "workspace:*",
+        "vitest": "catalog:dep"
+    },
+    "devDependencies": {
+        "@ammolite/unplugin": "workspace:*",
+        "vite": "catalog:dev"
+    }
+}

@@ -20,6 +20,14 @@ next := "plugins/next"
 postcss := "plugins/postcss"
 
 test_compiler := "tests/compiler"
+test_webpack := "tests/plugins/webpack"
+test_webpack_postcss := "tests/plugins/webpack-postcss"
+test_rsbuild := "tests/plugins/rsbuild"
+test_rsbuild_postcss := "tests/plugins/rsbuild-postcss"
+test_rollup := "tests/plugins/rollup"
+test_rolldown := "tests/plugins/rolldown"
+test_vite := "tests/plugins/vite"
+test_vite_postcss := "tests/plugins/vite-postcss"
 test_web := "tests/web"
 
 ex_var := "examples/set-variables"
@@ -129,6 +137,19 @@ build:
 # Run tests
 test:
     cd ./{{test_compiler}} && {{vitest}} run
+
+    cd ./{{test_webpack}} && {{vitest}} run
+    cd ./{{test_webpack_postcss}} && {{vitest}} run
+
+    cd ./{{test_rsbuild}} && {{vitest}} run
+    cd ./{{test_rsbuild_postcss}} && {{vitest}} run
+
+    cd ./{{test_rollup}} && {{vitest}} run
+    cd ./{{test_rolldown}} && {{vitest}} run
+
+    cd ./{{test_vite}} && {{vitest}} run
+    cd ./{{test_vite_postcss}} && {{vitest}} run
+
     cd ./{{test_web}} && {{vitest}} run
 
 # Run variables benchmarks

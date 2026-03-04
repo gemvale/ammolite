@@ -1,0 +1,15 @@
+{
+    "private": true,
+    "scripts": {
+        "test": "vitest run"
+    },
+    "dependencies": {
+        "ammolite": "workspace:*",
+        "vitest": "catalog:dep"
+    },
+    "devDependencies": {
+        "@ammolite/postcss": "workspace:*",
+        "@ammolite/unplugin": "workspace:*",
+        "vite": "catalog:dev"
+    }
+}

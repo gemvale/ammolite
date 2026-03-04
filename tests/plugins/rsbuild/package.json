@@ -1,0 +1,14 @@
+{
+    "private": true,
+    "scripts": {
+        "test": "vitest run"
+    },
+    "dependencies": {
+        "ammolite": "workspace:*",
+        "vitest": "catalog:dep"
+    },
+    "devDependencies": {
+        "@ammolite/rsbuild": "workspace:*",
+        "@rsbuild/core": "catalog:dev"
+    }
+}
