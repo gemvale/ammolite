@@ -33,6 +33,15 @@ This repository is a pnpm workspace.
 ### Tests
 
 - `tests/compiler` - CSS-in-JS compiler tests
+- `tests/plugins/core` - Core package for plugin tests
+- `tests/plugins/webpack` - Webpack plugin tests
+- `tests/plugins/webpack-postcss` - Webpack PostCSS plugin tests
+- `tests/plugins/rsbuild` - Rsbuild plugin tests
+- `tests/plugins/rsbuild-postcss` - Rsbuild PostCSS plugin tests
+- `tests/plugins/rollup` - Rollup plugin tests
+- `tests/plugins/rolldown` - Rollup plugin tests (Rolldown)
+- `tests/plugins/vite` - Vite plugin tests
+- `tests/plugins/vite-postcss` - Vite PostCSS plugin tests
 - `tests/web` - User-facing API tests
 
 ## Dependency Boundaries
@@ -153,7 +162,7 @@ Test:
 ```sh
 just test
 ```
-  
+
 ## What NOT to Do
 
 - Do not migrate tooling.
