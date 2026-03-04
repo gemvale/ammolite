@@ -40,6 +40,9 @@ const buildRsbuild = async (): Promise<void> => {
                 }),
             ],
             tools: {
+                rspack: {
+                    cache: false,
+                },
                 postcss: (_: PostCSSLoaderOptions, { addPlugins }): void => {
                     addPlugins(ammolitePostCSS);
                 },

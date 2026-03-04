@@ -34,6 +34,11 @@ const buildRsbuild = async (): Promise<void> => {
             plugins: [
                 pluginAmmolite(),
             ],
+            tools: {
+                rspack: {
+                    cache: false,
+                },
+            },
             logLevel: "warn",
         },
     });
