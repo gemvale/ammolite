@@ -9,6 +9,7 @@
     },
     "devDependencies": {
         "@ammolite/postcss": "workspace:*",
+        "@ammolite/test-core": "workspace:*",
         "@ammolite/unplugin": "workspace:*",
         "vite": "catalog:dev"
     }

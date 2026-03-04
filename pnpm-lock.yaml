@@ -700,6 +700,8 @@ importers:
         specifier: catalog:dep
         version: 6.1.1(typescript@5.9.3)(vite@7.3.1(@types/node@25.2.3)(jiti@2.6.1)(terser@5.46.0)(yaml@2.8.2))
 
+  tests/plugins/core: {}
+
   tests/plugins/rolldown:
     dependencies:
       ammolite:
@@ -709,6 +711,9 @@ importers:
         specifier: catalog:dep
         version: 4.0.18(@types/node@25.2.3)(jiti@2.6.1)(terser@5.46.0)(yaml@2.8.2)
     devDependencies:
+      '@ammolite/test-core':
+        specifier: workspace:*
+        version: link:../core
       '@ammolite/unplugin':
         specifier: workspace:*
         version: link:../../../plugins/unplugin
@@ -725,6 +730,9 @@ importers:
         specifier: catalog:dep
         version: 4.0.18(@types/node@25.2.3)(jiti@2.6.1)(terser@5.46.0)(yaml@2.8.2)
     devDependencies:
+      '@ammolite/test-core':
+        specifier: workspace:*
+        version: link:../core
       '@ammolite/unplugin':
         specifier: workspace:*
         version: link:../../../plugins/unplugin
@@ -747,6 +755,9 @@ importers:
       '@ammolite/rsbuild':
         specifier: workspace:*
         version: link:../../../plugins/rsbuild
+      '@ammolite/test-core':
+        specifier: workspace:*
+        version: link:../core
       '@rsbuild/core':
         specifier: catalog:dev
         version: 1.5.0
@@ -766,6 +777,9 @@ importers:
       '@ammolite/rsbuild':
         specifier: workspace:*
         version: link:../../../plugins/rsbuild
+      '@ammolite/test-core':
+        specifier: workspace:*
+        version: link:../core
       '@rsbuild/core':
         specifier: catalog:dev
         version: 1.5.0
@@ -779,6 +793,9 @@ importers:
         specifier: catalog:dep
         version: 4.0.18(@types/node@25.2.3)(jiti@2.6.1)(terser@5.46.0)(yaml@2.8.2)
     devDependencies:
+      '@ammolite/test-core':
+        specifier: workspace:*
+        version: link:../core
       '@ammolite/unplugin':
         specifier: workspace:*
         version: link:../../../plugins/unplugin
@@ -798,6 +815,9 @@ importers:
       '@ammolite/postcss':
         specifier: workspace:*
         version: link:../../../plugins/postcss
+      '@ammolite/test-core':
+        specifier: workspace:*
+        version: link:../core
       '@ammolite/unplugin':
         specifier: workspace:*
         version: link:../../../plugins/unplugin
@@ -814,6 +834,9 @@ importers:
         specifier: catalog:dep
         version: 4.0.18(@types/node@25.2.3)(jiti@2.6.1)(terser@5.46.0)(yaml@2.8.2)
     devDependencies:
+      '@ammolite/test-core':
+        specifier: workspace:*
+        version: link:../core
       '@ammolite/unplugin':
         specifier: workspace:*
         version: link:../../../plugins/unplugin
@@ -845,6 +868,9 @@ importers:
       '@ammolite/postcss':
         specifier: workspace:*
         version: link:../../../plugins/postcss
+      '@ammolite/test-core':
+        specifier: workspace:*
+        version: link:../core
       '@ammolite/unplugin':
         specifier: workspace:*
         version: link:../../../plugins/unplugin

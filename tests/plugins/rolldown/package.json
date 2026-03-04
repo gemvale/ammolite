@@ -8,6 +8,7 @@
         "vitest": "catalog:dep"
     },
     "devDependencies": {
+        "@ammolite/test-core": "workspace:*",
         "@ammolite/unplugin": "workspace:*",
         "rolldown": "catalog:dev"
     }

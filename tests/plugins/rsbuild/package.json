@@ -9,6 +9,7 @@
     },
     "devDependencies": {
         "@ammolite/rsbuild": "workspace:*",
+        "@ammolite/test-core": "workspace:*",
         "@rsbuild/core": "catalog:dev"
     }
 }

@@ -1,0 +1,21 @@
+{
+    "name": "@ammolite/test-core",
+    "private": true,
+    "scripts": {
+        "build": "tsdown -c tsdown.config.ts"
+    },
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.mjs",
+            "require": "./dist/index.js"
+        },
+        "./package.json": "./package.json"
+    },
+    "main": "./dist/index.js",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts",
+    "files": [
+        "dist"
+    ]
+}

@@ -20,6 +20,7 @@ next := "plugins/next"
 postcss := "plugins/postcss"
 
 test_compiler := "tests/compiler"
+test_core := "tests/plugins/core"
 test_webpack := "tests/plugins/webpack"
 test_webpack_postcss := "tests/plugins/webpack-postcss"
 test_rsbuild := "tests/plugins/rsbuild"
@@ -129,10 +130,15 @@ build-plugins:
     cd ./{{next}} && {{tsdown}} -c tsdown.config.ts
     cd ./{{postcss}} && {{tsdown}} -c tsdown.config.ts
 
+# Build tests
+build-tests:
+    cd ./{{test_core}} && {{tsdown}} -c tsdown.config.ts
+
 # Build packages
 build:
     just build-core
     just build-plugins
+    just build-tests
 
 # Run tests
 test:
@@ -250,8 +256,13 @@ publish:
 
 # Clean builds (Linux)
 clean-linux:
+    rm -rf ./templates/next-webpack/next-env.d.ts
+    rm -rf ./templates/next-webpack/.next
+    rm -rf ./templates/next-turbopack/next-env.d.ts
+    rm -rf ./templates/next-turbopack/.next
     rm -rf ./templates/*/dist
     rm -rf ./examples/*/dist
+    rm -rf ./tests/plugins/*/dist
     rm -rf ./plugins/*/dist
     rm -rf ./packages/*/dist
 
@@ -261,8 +272,13 @@ clean-macos:
 
 # Clean builds (Windows)
 clean-windows:
+    Remove-Item -Recurse -Force ./templates/next-webpack/next-env.d.ts
+    Remove-Item -Recurse -Force ./templates/next-webpack/.next
+    Remove-Item -Recurse -Force ./templates/next-turbopack/next-env.d.ts
+    Remove-Item -Recurse -Force ./templates/next-turbopack/.next
     Remove-Item -Recurse -Force ./templates/*/dist
     Remove-Item -Recurse -Force ./examples/*/dist
+    Remove-Item -Recurse -Force ./tests/plugins/*/dist
     Remove-Item -Recurse -Force ./plugins/*/dist
     Remove-Item -Recurse -Force ./packages/*/dist
 
@@ -277,6 +293,7 @@ clean-all-linux:
     rm -rf ./benchmarks/*/node_modules
     rm -rf ./templates/*/node_modules
     rm -rf ./examples/*/node_modules
+    rm -rf ./tests/plugins/*/node_modules
     rm -rf ./tests/*/node_modules
     rm -rf ./plugins/*/node_modules
     rm -rf ./packages/*/node_modules
@@ -294,6 +311,7 @@ clean-all-windows:
     Remove-Item -Recurse -Force ./benchmarks/*/node_modules
     Remove-Item -Recurse -Force ./templates/*/node_modules
     Remove-Item -Recurse -Force ./examples/*/node_modules
+    Remove-Item -Recurse -Force ./tests/plugins/*/node_modules
     Remove-Item -Recurse -Force ./tests/*/node_modules
     Remove-Item -Recurse -Force ./plugins/*/node_modules
     Remove-Item -Recurse -Force ./packages/*/node_modules

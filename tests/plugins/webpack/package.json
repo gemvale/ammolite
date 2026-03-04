@@ -8,6 +8,7 @@
         "vitest": "catalog:dep"
     },
     "devDependencies": {
+        "@ammolite/test-core": "workspace:*",
         "@ammolite/unplugin": "workspace:*",
         "@swc/core": "^1.15.18",
         "css-loader": "^7.1.4",

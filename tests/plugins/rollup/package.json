@@ -8,6 +8,7 @@
         "vitest": "catalog:dep"
     },
     "devDependencies": {
+        "@ammolite/test-core": "workspace:*",
         "@ammolite/unplugin": "workspace:*",
         "@rollup/plugin-typescript": "^12.3.0",
         "rollup": "catalog:dev"
