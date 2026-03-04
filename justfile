@@ -6,7 +6,9 @@ biome := "pnpm exec biome"
 tsdown := "pnpm exec tsdown"
 vitest := "pnpm exec vitest"
 typedoc := "pnpm exec typedoc"
-publish := "pnpm publish"
+
+publish_dev := "pnpm publish --no-git-checks --tag dev --access public"
+publish := "pnpm publish --access public"
 
 lsl_cfg := "-config ../../../.ls-lint.yaml"
 
@@ -176,83 +178,49 @@ bench:
     just bench-kf
     just bench-style
 
-# Publish compiler package with dev tag
-publish-dev-compiler:
-    cd ./{{compiler}} && {{publish}} --no-git-checks --tag dev --access public
+# Publish packages with dev tag as dry-run
+publish-dev-try:
+    cd ./{{compiler}} && {{publish_dev}} --dry-run
+    cd ./{{integ}} && {{publish_dev}} --dry-run
+    cd ./{{web}} && {{publish_dev}} --dry-run
 
-# Publish integration package with dev tag
-publish-dev-integ:
-    cd ./{{integ}} && {{publish}} --no-git-checks --tag dev --access public
+    cd ./{{unplugin}} && {{publish_dev}} --dry-run
+    cd ./{{rsbuild}} && {{publish_dev}} --dry-run
+    cd ./{{next}} && {{publish_dev}} --dry-run
+    cd ./{{postcss}} && {{publish_dev}} --dry-run
 
-# Publish web package with dev tag
-publish-dev-web:
-    cd ./{{web}} && {{publish}} --no-git-checks --tag dev --access public
-
-# Publish Unplugin with dev tag
-publish-dev-unplugin:
-    cd ./{{unplugin}} && {{publish}} --no-git-checks --tag dev --access public
-
-# Publish Rsbuild plugin with dev tag
-publish-dev-rsbuild:
-    cd ./{{rsbuild}} && {{publish}} --no-git-checks --tag dev --access public
-
-# Publish Next plugin with dev tag
-publish-dev-next:
-    cd ./{{next}} && {{publish}} --no-git-checks --tag dev --access public
-
-# Publish PostCSS plugin with dev tag
-publish-dev-postcss:
-    cd ./{{postcss}} && {{publish}} --no-git-checks --tag dev --access public
-
-# Publish all packages with dev tag
+# Publish packages with dev tag
 publish-dev:
-    just publish-dev-compiler
-    just publish-dev-integ
-    just publish-dev-web
+    cd ./{{compiler}} && {{publish_dev}}
+    cd ./{{integ}} && {{publish_dev}}
+    cd ./{{web}} && {{publish_dev}}
 
-    just publish-dev-unplugin
-    just publish-dev-rsbuild
-    just publish-dev-next
-    just publish-dev-postcss
+    cd ./{{unplugin}} && {{publish_dev}}
+    cd ./{{rsbuild}} && {{publish_dev}}
+    cd ./{{next}} && {{publish_dev}}
+    cd ./{{postcss}} && {{publish_dev}}
 
-# Publish compiler package
-publish-compiler:
-    cd ./{{compiler}} && {{publish}} --access public
+# Publish packages as dry-run
+publish-try:
+    cd ./{{compiler}} && {{publish}} --dry-run
+    cd ./{{integ}} && {{publish}} --dry-run
+    cd ./{{web}} && {{publish}} --dry-run
 
-# Publish integration package
-publish-integ:
-    cd ./{{integ}} && {{publish}} --access public
+    cd ./{{unplugin}} && {{publish}} --dry-run
+    cd ./{{rsbuild}} && {{publish}} --dry-run
+    cd ./{{next}} && {{publish}} --dry-run
+    cd ./{{postcss}} && {{publish}} --dry-run
 
-# Publish web package
-publish-web:
-    cd ./{{web}} && {{publish}} --access public
-
-# Publish Unplugin
-publish-unplugin:
-    cd ./{{unplugin}} && {{publish}} --access public
-
-# Publish Rsbuild plugin
-publish-rsbuild:
-    cd ./{{rsbuild}} && {{publish}} --access public
-
-# Publish Next plugin
-publish-next:
-    cd ./{{next}} && {{publish}} --access public
-
-# Publish PostCSS plugin
-publish-postcss:
-    cd ./{{postcss}} && {{publish}} --access public
-
-# Publish all packages
+# Publish packages
 publish:
-    just publish-compiler
-    just publish-integ
-    just publish-web
+    cd ./{{compiler}} && {{publish}}
+    cd ./{{integ}} && {{publish}}
+    cd ./{{web}} && {{publish}}
 
-    just publish-unplugin
-    just publish-rsbuild
-    just publish-next
-    just publish-postcss
+    cd ./{{unplugin}} && {{publish}}
+    cd ./{{rsbuild}} && {{publish}}
+    cd ./{{next}} && {{publish}}
+    cd ./{{postcss}} && {{publish}}
 
 # Clean builds (Linux)
 clean-linux:
