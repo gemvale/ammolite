@@ -12,6 +12,7 @@ import * as Path from "node:path";
 
 import { getOutput } from "#/functions/output";
 import { createGetHashContent } from "#/functions/webpack/hash";
+import { normalizePath } from "#/functions/webpack/normalize";
 import { pickAsset } from "#/functions/webpack/pick";
 
 type CompleteEmitPluginOptions = {
@@ -60,9 +61,11 @@ const emitPlugin = ({
 
                         const contentHash: string = getHashContent(css);
 
-                        const out: string = output.dir
-                            ? Path.join(output.dir, output.name)
-                            : output.name;
+                        const out: string = normalizePath(
+                            output.dir
+                                ? Path.posix.join(output.dir, output.name)
+                                : output.name,
+                        );
 
                         const data: PathData = {
                             filename: out,
@@ -93,7 +96,7 @@ const emitPlugin = ({
                             const nextSource: string = `${previous}${css}`;
 
                             compilation.updateAsset(
-                                assetPath,
+                                asset.name,
                                 new RawSource(nextSource),
                             );
 

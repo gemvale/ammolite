@@ -4,15 +4,29 @@ import * as Path from "node:path";
 
 import { pluginAmmolite } from "@ammolite/rsbuild";
 import { createRsbuild } from "@rsbuild/core";
-import { afterAll, describe, expect, it } from "vitest";
+import { beforeAll, describe, expect, it } from "vitest";
 
 const CWD: string = process.cwd();
+
+const PATH_AMMOLITE: string = Path.join(CWD, "node_modules", ".ammolite");
 
 const PATH_DIST: string = Path.join(CWD, "dist");
 
 const PATH_JS: string = Path.join(PATH_DIST, "static/js/index.js");
 
 const PATH_CSS: string = Path.join(PATH_DIST, "static/css/index.css");
+
+beforeAll(async (): Promise<void> => {
+    await Fsp.rm(PATH_DIST, {
+        recursive: true,
+        force: true,
+    });
+
+    await Fsp.rm(PATH_AMMOLITE, {
+        recursive: true,
+        force: true,
+    });
+});
 
 const buildRsbuild = async (): Promise<void> => {
     const rsbuild = await createRsbuild({
@@ -47,13 +61,6 @@ const buildRsbuild = async (): Promise<void> => {
 
     await result.close();
 };
-
-afterAll(async (): Promise<void> => {
-    await Fsp.rm(PATH_DIST, {
-        recursive: true,
-        force: true,
-    });
-});
 
 describe("rsbuild test", (): void => {
     it("should build via Rsbuild", async (): Promise<void> => {

@@ -4,12 +4,26 @@ import * as Path from "node:path";
 
 import { AmmolitePlugin } from "@ammolite/unplugin/webpack";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import { afterAll, describe, expect, it } from "vitest";
+import { beforeAll, describe, expect, it } from "vitest";
 import webpack from "webpack";
 
 const CWD: string = process.cwd();
 
+const PATH_AMMOLITE: string = Path.join(CWD, "node_modules", ".ammolite");
+
 const PATH_DIST: string = Path.join(CWD, "dist");
+
+beforeAll(async (): Promise<void> => {
+    await Fsp.rm(PATH_DIST, {
+        recursive: true,
+        force: true,
+    });
+
+    await Fsp.rm(PATH_AMMOLITE, {
+        recursive: true,
+        force: true,
+    });
+});
 
 const buildWebpack = async (): Promise<void> => {
     const swcOptions: {
@@ -102,13 +116,6 @@ const buildWebpack = async (): Promise<void> => {
         });
     });
 };
-
-afterAll(async (): Promise<void> => {
-    await Fsp.rm(PATH_DIST, {
-        recursive: true,
-        force: true,
-    });
-});
 
 describe("webpack test", (): void => {
     it("should build via Webpack", async (): Promise<void> => {

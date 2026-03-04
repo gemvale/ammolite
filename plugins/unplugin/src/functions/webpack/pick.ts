@@ -5,6 +5,7 @@ import type { Output } from "#/functions/output";
 import * as Path from "node:path";
 
 import { getPriority } from "#/functions/rollup/pick";
+import { normalizePath } from "#/functions/webpack/normalize";
 
 type PickAssetOptions = {
     assets: Readonly<Asset>[];
@@ -26,8 +27,14 @@ const pickAsset = ({ assets, output }: PickAssetOptions): Asset | undefined => {
                 result.push(asset);
             }
         } else {
+            const parsedDir: string = normalizePath(parsed.dir);
+
+            const outputDir: string | undefined = output.dir
+                ? normalizePath(output.dir)
+                : void 0;
+
             if (
-                (output.dir ? parsed.dir.includes(output.dir) : true) &&
+                (outputDir ? parsedDir.includes(outputDir) : true) &&
                 parsed.base === output.name
             ) {
                 return asset;
