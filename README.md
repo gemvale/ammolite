@@ -12,6 +12,10 @@ Ammolite provides a scalable way to build layouts using JavaScript/TypeScript wi
 
 For the documentation, please refer to the [gemvale.github.io](https://gemvale.github.io).
 
+## Changelog
+
+For the changelog, please refer to the [changelog](./CHANGELOG.md).
+
 ## Roadmap
 
 For the full roadmap, please refer to the [roadmap](./ROADMAP.md).
