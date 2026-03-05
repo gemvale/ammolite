@@ -1,5 +1,15 @@
 [< Back](./README.md)
 
+## Next
+
+### Compiler
+
+- upgrade dependencies
+
+### PostCSS Plugin
+
+- ensure stable CSS output
+
 ## 0.1.1 (2026-03-04)
 
 ### Compiler
