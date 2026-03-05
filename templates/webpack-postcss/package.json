@@ -22,7 +22,7 @@
         "mini-css-extract-plugin": "^2.10.0",
         "postcss": "^8.5.6",
         "postcss-loader": "^8.2.1",
-        "serve": "^14.2.5",
+        "serve": "^14.2.6",
         "swc-loader": "~0.2.7",
         "webpack": "catalog:dev",
         "webpack-cli": "^6.0.1",
