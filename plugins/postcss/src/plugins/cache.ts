@@ -98,12 +98,12 @@ const readCachesWithRetry = async ({
             bestResult = result;
         }
 
-        const isSanpshotStable: boolean = isSameStringList(
+        const isSnapshotStable: boolean = isSameStringList(
             previousCacheKeys,
             currentCacheKeys,
         );
 
-        if (isSanpshotStable) {
+        if (isSnapshotStable) {
             snapshot += 1;
         } else {
             snapshot = 0;
