@@ -48,7 +48,6 @@
     "dependencies": {
         "@ammolite/integration": "workspace:~",
         "@ammolite/unplugin": "workspace:~",
-        "es-toolkit": "catalog:dep",
         "ts-vista": "catalog:dep"
     },
     "devDependencies": {
