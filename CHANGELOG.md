@@ -1,6 +1,6 @@
 [< Back](./README.md)
 
-## Next
+## 0.1.2 (2026-03-05)
 
 ### Compiler
 
