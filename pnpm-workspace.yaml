@@ -17,9 +17,9 @@ catalogs:
         postcss-load-config: ^6.0.0
         postcss-preset-env: ^11.2.0
         # oxc
-        oxc-parser: ~0.114.0
-        oxc-minify: ~0.114.0
-        rolldown: 1.0.0-rc.5
+        oxc-parser: ~0.116.0
+        oxc-minify: ~0.116.0
+        rolldown: 1.0.0-rc.6
         tsdown: ~0.20.3
         # vite
         vitest: ^4.0.18
@@ -35,7 +35,7 @@ catalogs:
         # unplugin
         webpack: 5.76.0
         rollup: 4.40.0
-        rolldown: 1.0.0-rc.5
+        rolldown: 1.0.0-rc.6
         vite: 7.0.0
         # rsbuild
         "@rsbuild/core": 1.5.0
@@ -47,7 +47,7 @@ catalogs:
         # webpack
         webpack: ^5.76.0
         rollup: ^4.40.0
-        rolldown: 1.0.0-rc.5
+        rolldown: 1.0.0-rc.6
         vite: ^7.0.0
         # rsbuild
         "@rsbuild/core": ^1.5.0
