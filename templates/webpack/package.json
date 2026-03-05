@@ -19,7 +19,7 @@
         "css-loader": "^7.1.4",
         "html-webpack-plugin": "^5.6.6",
         "mini-css-extract-plugin": "^2.10.0",
-        "serve": "^14.2.5",
+        "serve": "^14.2.6",
         "swc-loader": "~0.2.7",
         "webpack": "catalog:dev",
         "webpack-cli": "^6.0.1",
