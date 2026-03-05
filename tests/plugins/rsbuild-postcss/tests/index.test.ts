@@ -68,7 +68,7 @@ const buildRsbuild = async (): Promise<void> => {
 };
 
 describe("rsbuild test", (): void => {
-    it("should build via Rsbuild", async (): Promise<void> => {
+    it("should build via Rsbuild + PostCSS", async (): Promise<void> => {
         await buildRsbuild();
     });
 

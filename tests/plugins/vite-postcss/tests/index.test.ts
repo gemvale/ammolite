@@ -26,7 +26,7 @@ beforeAll(async (): Promise<void> => {
 });
 
 describe("vite test", (): void => {
-    it("should build via Vite", async (): Promise<void> => {
+    it("should build via Vite + PostCSS", async (): Promise<void> => {
         await build({
             root: process.cwd(),
             build: {

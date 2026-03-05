@@ -22,8 +22,8 @@ beforeAll(async (): Promise<void> => {
     await cleanupPluginArtifacts(TEST_PATHS);
 });
 
-describe("vite test", (): void => {
-    it("should build via Vite", async (): Promise<void> => {
+describe("rolldown test", (): void => {
+    it("should build via Rolldown", async (): Promise<void> => {
         await build({
             cwd: process.cwd(),
             input: "src/index.ts",

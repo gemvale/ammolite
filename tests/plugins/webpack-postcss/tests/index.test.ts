@@ -134,7 +134,7 @@ const buildWebpack = async (): Promise<void> => {
 };
 
 describe("webpack test", (): void => {
-    it("should build via Webpack", async (): Promise<void> => {
+    it("should build via webpack + PostCSS", async (): Promise<void> => {
         await buildWebpack();
     });
 
