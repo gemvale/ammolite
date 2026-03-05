@@ -9,7 +9,7 @@ import {
     createPaths,
 } from "@ammolite/test-core";
 import { ammolite } from "@ammolite/unplugin/rollup";
-import { build } from "rolldown";
+import { build } from "tsdown";
 import { beforeAll, describe, it } from "vitest";
 
 const CWD: string = process.cwd();
@@ -22,21 +22,26 @@ beforeAll(async (): Promise<void> => {
     await cleanupPluginArtifacts(TEST_PATHS);
 });
 
-describe("rolldown test", (): void => {
-    it("should build via Rolldown", async (): Promise<void> => {
+describe("tsdown test", (): void => {
+    it("should build via tsdown", async (): Promise<void> => {
         await build({
             cwd: process.cwd(),
-            input: "src/index.ts",
-            output: {
-                dir: "dist",
+            entry: "./src/index.ts",
+            inputOptions: {
+                experimental: {
+                    attachDebugInfo: "none",
+                },
+            },
+            outputOptions: {
+                dir: PATH_DIST,
+                entryFileNames: "[name].js",
+                chunkFileNames: "[name].js",
+                assetFileNames: "[name][extname]",
             },
             plugins: [
                 ammolite(),
             ],
             logLevel: "warn",
-            experimental: {
-                attachDebugInfo: "none",
-            },
         });
     });
 

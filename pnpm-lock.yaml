@@ -48,6 +48,9 @@ catalogs:
     ts-vista:
       specifier: ~0.2.3
       version: 0.2.3
+    tsdown:
+      specifier: ~0.20.3
+      version: 0.20.3
     vite-tsconfig-paths:
       specifier: ^6.1.0
       version: 6.1.1
@@ -100,7 +103,7 @@ importers:
         specifier: 7.0.0-dev.20260303.1
         version: 7.0.0-dev.20260303.1
       tsdown:
-        specifier: ~0.20.3
+        specifier: catalog:dep
         version: 0.20.3(@typescript/native-preview@7.0.0-dev.20260303.1)(typescript@5.9.3)
       typedoc:
         specifier: ~0.28.17
@@ -702,25 +705,6 @@ importers:
 
   tests/plugins/core: {}
 
-  tests/plugins/rolldown:
-    dependencies:
-      ammolite:
-        specifier: workspace:*
-        version: link:../../../packages/web
-      vitest:
-        specifier: catalog:dep
-        version: 4.0.18(@types/node@25.2.3)(jiti@2.6.1)(terser@5.46.0)(yaml@2.8.2)
-    devDependencies:
-      '@ammolite/test-core':
-        specifier: workspace:*
-        version: link:../core
-      '@ammolite/unplugin':
-        specifier: workspace:*
-        version: link:../../../plugins/unplugin
-      rolldown:
-        specifier: catalog:dev
-        version: 1.0.0-rc.5
-
   tests/plugins/rollup:
     dependencies:
       ammolite:
@@ -783,6 +767,25 @@ importers:
       '@rsbuild/core':
         specifier: catalog:dev
         version: 1.5.0
+
+  tests/plugins/tsdown:
+    dependencies:
+      ammolite:
+        specifier: workspace:*
+        version: link:../../../packages/web
+      vitest:
+        specifier: catalog:dep
+        version: 4.0.18(@types/node@25.2.3)(jiti@2.6.1)(terser@5.46.0)(yaml@2.8.2)
+    devDependencies:
+      '@ammolite/test-core':
+        specifier: workspace:*
+        version: link:../core
+      '@ammolite/unplugin':
+        specifier: workspace:*
+        version: link:../../../plugins/unplugin
+      tsdown:
+        specifier: catalog:dep
+        version: 0.20.3(@typescript/native-preview@7.0.0-dev.20260303.1)(typescript@5.9.3)
 
   tests/plugins/vite:
     dependencies:
@@ -5247,11 +5250,6 @@ packages:
 
   semver@6.3.1:
     resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
-    hasBin: true
-
-  semver@7.7.3:
-    resolution: {integrity: sha512-SdsKMrI9TdgjdweUSR9MweHA4EJ8YxHn8DFaDisvhVlUOe4BF1tLD7GAj0lIqWVl+dPb/rExr0Btby5loQm20Q==}
-    engines: {node: '>=10'}
     hasBin: true
 
   semver@7.7.4:
@@ -9972,8 +9970,6 @@ snapshots:
 
   semver@6.3.1: {}
 
-  semver@7.7.3: {}
-
   semver@7.7.4: {}
 
   send@0.19.2:
@@ -10321,7 +10317,7 @@ snapshots:
       picomatch: 4.0.3
       rolldown: 1.0.0-rc.3
       rolldown-plugin-dts: 0.22.1(@typescript/native-preview@7.0.0-dev.20260303.1)(rolldown@1.0.0-rc.3)(typescript@5.9.3)
-      semver: 7.7.3
+      semver: 7.7.4
       tinyexec: 1.0.2
       tinyglobby: 0.2.15
       tree-kill: 1.2.2

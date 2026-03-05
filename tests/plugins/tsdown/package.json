@@ -10,6 +10,6 @@
     "devDependencies": {
         "@ammolite/test-core": "workspace:*",
         "@ammolite/unplugin": "workspace:*",
-        "rolldown": "catalog:dev"
+        "tsdown": "catalog:dep"
     }
 }
