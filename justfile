@@ -27,6 +27,8 @@ test_webpack := "tests/plugins/webpack"
 test_webpack_postcss := "tests/plugins/webpack-postcss"
 test_rsbuild := "tests/plugins/rsbuild"
 test_rsbuild_postcss := "tests/plugins/rsbuild-postcss"
+test_next_turbopack := "tests/plugins/next-turbopack"
+test_next_webpack := "tests/plugins/next-webpack"
 test_rollup := "tests/plugins/rollup"
 test_tsdown := "tests/plugins/tsdown"
 test_vite := "tests/plugins/vite"
@@ -151,6 +153,9 @@ test:
 
     cd ./{{test_rsbuild}} && {{vitest}} run
     cd ./{{test_rsbuild_postcss}} && {{vitest}} run
+
+    cd ./{{test_next_webpack}} && {{vitest}} run
+    cd ./{{test_next_turbopack}} && {{vitest}} run
 
     cd ./{{test_rollup}} && {{vitest}} run
     cd ./{{test_tsdown}} && {{vitest}} run

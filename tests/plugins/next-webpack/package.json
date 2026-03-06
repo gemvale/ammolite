@@ -1,0 +1,21 @@
+{
+    "private": true,
+    "scripts": {
+        "test": "vitest run"
+    },
+    "dependencies": {
+        "ammolite": "workspace:*",
+        "next": "catalog:dep",
+        "react": "catalog:dep",
+        "react-dom": "catalog:dep",
+        "vitest": "catalog:dep"
+    },
+    "devDependencies": {
+        "@ammolite/next": "workspace:*",
+        "@ammolite/postcss": "workspace:*",
+        "@ammolite/test-core": "workspace:*",
+        "@types/react": "catalog:dep",
+        "@types/react-dom": "catalog:dep",
+        "postcss": "catalog:dev"
+    }
+}

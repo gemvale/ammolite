@@ -697,7 +697,85 @@ importers:
         specifier: catalog:dep
         version: 6.1.1(typescript@5.9.3)(vite@7.3.1(@types/node@25.2.3)(jiti@2.6.1)(terser@5.46.0)(yaml@2.8.2))
 
-  tests/plugins/core: {}
+  tests/plugins/core:
+    dependencies:
+      vitest:
+        specifier: catalog:dep
+        version: 4.0.18(@types/node@25.2.3)(jiti@2.6.1)(terser@5.46.0)(yaml@2.8.2)
+
+  tests/plugins/next-turbopack:
+    dependencies:
+      ammolite:
+        specifier: workspace:*
+        version: link:../../../packages/web
+      next:
+        specifier: catalog:dep
+        version: 16.1.6(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      react:
+        specifier: catalog:dep
+        version: 19.2.4
+      react-dom:
+        specifier: catalog:dep
+        version: 19.2.4(react@19.2.4)
+      vitest:
+        specifier: catalog:dep
+        version: 4.0.18(@types/node@25.2.3)(jiti@2.6.1)(terser@5.46.0)(yaml@2.8.2)
+    devDependencies:
+      '@ammolite/next':
+        specifier: workspace:*
+        version: link:../../../plugins/next
+      '@ammolite/postcss':
+        specifier: workspace:*
+        version: link:../../../plugins/postcss
+      '@ammolite/test-core':
+        specifier: workspace:*
+        version: link:../core
+      '@types/react':
+        specifier: catalog:dep
+        version: 19.2.14
+      '@types/react-dom':
+        specifier: catalog:dep
+        version: 19.2.3(@types/react@19.2.14)
+      postcss:
+        specifier: catalog:dev
+        version: 8.5.0
+
+  tests/plugins/next-webpack:
+    dependencies:
+      ammolite:
+        specifier: workspace:*
+        version: link:../../../packages/web
+      next:
+        specifier: catalog:dep
+        version: 16.1.6(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      react:
+        specifier: catalog:dep
+        version: 19.2.4
+      react-dom:
+        specifier: catalog:dep
+        version: 19.2.4(react@19.2.4)
+      vitest:
+        specifier: catalog:dep
+        version: 4.0.18(@types/node@25.2.3)(jiti@2.6.1)(terser@5.46.0)(yaml@2.8.2)
+    devDependencies:
+      '@ammolite/next':
+        specifier: workspace:*
+        version: link:../../../plugins/next
+      '@ammolite/postcss':
+        specifier: workspace:*
+        version: link:../../../plugins/postcss
+      '@ammolite/test-core':
+        specifier: workspace:*
+        version: link:../core
+      '@types/react':
+        specifier: catalog:dep
+        version: 19.2.14
+      '@types/react-dom':
+        specifier: catalog:dep
+        version: 19.2.3(@types/react@19.2.14)
+      postcss:
+        specifier: catalog:dev
+        version: 8.5.0
 
   tests/plugins/rollup:
     dependencies:

@@ -1,0 +1,28 @@
+{
+    "extends": "@apst/tsconfig",
+    "compilerOptions": {
+        "lib": [
+            "dom",
+            "dom.iterable",
+            "esnext"
+        ],
+        "noEmit": true,
+        "incremental": true,
+        "plugins": [
+            {
+                "name": "next"
+            }
+        ]
+    },
+    "include": [
+        "./src/**/*.ts",
+        "./src/**/*.tsx",
+        "./.next/types/**/*.ts",
+        "./next-env.d.ts",
+        "next.config.mjs"
+    ],
+    "exclude": [
+        "./node_modules/**/*",
+        "./tests/**/*"
+    ]
+}

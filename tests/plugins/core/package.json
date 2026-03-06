@@ -4,6 +4,9 @@
     "scripts": {
         "build": "tsdown -c tsdown.config.ts"
     },
+    "dependencies": {
+        "vitest": "catalog:dep"
+    },
     "exports": {
         ".": {
             "types": "./dist/index.d.ts",
