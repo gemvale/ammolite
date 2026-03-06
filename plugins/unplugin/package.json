@@ -1,6 +1,6 @@
 {
     "name": "@ammolite/unplugin",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "description": "A unified plugin for Ammolite",
     "keywords": [
         "ammolite",
