@@ -295,9 +295,6 @@ importers:
       '@ammolite/integration':
         specifier: workspace:~
         version: link:../../packages/integration
-      fdir:
-        specifier: catalog:dep
-        version: 6.5.0(picomatch@4.0.3)
       ts-vista:
         specifier: catalog:dep
         version: 0.2.3
