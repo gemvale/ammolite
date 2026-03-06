@@ -116,7 +116,9 @@ const bundle = async (options: BundleOptions): Promise<BundleResult> => {
         },
     });
 
-    const result: RolldownOutput = await bundled.generate();
+    const result: RolldownOutput = await bundled.generate({
+        minify: false,
+    });
 
     const output: OutputChunk = result.output[0];
 
