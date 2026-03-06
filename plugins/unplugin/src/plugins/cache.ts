@@ -41,7 +41,6 @@ const cachePlugin = ({
             name: `${name}/cache/clear`,
             enforce: "pre",
             async buildStart(): Promise<void> {
-
                 if (INITIALIZED_CACHE_CWDS.has(pathCwd)) return void 0;
 
                 await clearCaches({
