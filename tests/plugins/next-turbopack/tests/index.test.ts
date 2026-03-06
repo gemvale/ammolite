@@ -20,11 +20,13 @@ const TEST_PATHS: NextCreatedPaths = createNextPaths(CWD);
 
 const PATH_NEXT: string = TEST_PATHS.next;
 
-const PATH_NEXT_BIN: string = Path.join(
+const PATH_NEXT_CLI: string = Path.join(
     CWD,
     "node_modules",
-    ".bin",
-    process.platform === "win32" ? "next.cmd" : "next",
+    "next",
+    "dist",
+    "bin",
+    "next",
 );
 
 beforeAll(async (): Promise<void> => {
@@ -34,8 +36,9 @@ beforeAll(async (): Promise<void> => {
 const buildNextTurbopack = async (): Promise<void> => {
     await new Promise<void>((resolve, reject): void => {
         const child: ChildProcessWithoutNullStreams = spawn(
-            PATH_NEXT_BIN,
+            process.execPath,
             [
+                PATH_NEXT_CLI,
                 "build",
             ],
             {
