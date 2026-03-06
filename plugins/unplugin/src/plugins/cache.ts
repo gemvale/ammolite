@@ -20,6 +20,8 @@ type CompleteCachePluginOptions = {
 
 type CachePluginOptions = Format<Partial<CompleteCachePluginOptions, "cwd">>;
 
+const INITIALIZED_CACHE_CWDS: Set<string> = new Set();
+
 const cachePlugin = ({
     emit,
     name,
@@ -32,20 +34,21 @@ const cachePlugin = ({
      */
     if (emit) return [];
 
-    let isInit: boolean = false;
+    const pathCwd: string = cwd ?? process.cwd();
 
     return [
         {
             name: `${name}/cache/clear`,
             enforce: "pre",
             async buildStart(): Promise<void> {
-                if (isInit) return void 0;
+
+                if (INITIALIZED_CACHE_CWDS.has(pathCwd)) return void 0;
 
                 await clearCaches({
-                    cwd,
+                    cwd: pathCwd,
                 });
 
-                isInit = true;
+                INITIALIZED_CACHE_CWDS.add(pathCwd);
             },
         },
         {
@@ -68,7 +71,7 @@ const cachePlugin = ({
                     if (!result) return void 0;
 
                     await writeCache({
-                        cwd,
+                        cwd: pathCwd,
                         file,
                         css: result,
                     });

@@ -2,6 +2,10 @@
 
 ## Next
 
+### Unplugin
+
+- avoid duplicated cache clears per CWD
+
 ### PostCSS Plugin
 
 - remove unused options types
