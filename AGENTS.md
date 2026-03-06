@@ -38,6 +38,8 @@ This repository is a pnpm workspace.
 - `tests/plugins/webpack-postcss` - Webpack PostCSS plugin tests
 - `tests/plugins/rsbuild` - Rsbuild plugin tests
 - `tests/plugins/rsbuild-postcss` - Rsbuild PostCSS plugin tests
+- `tests/plugins/next-webpack` - Next.js webpack plugin tests
+- `tests/plugins/next-turbopack` - Next.js Turbopack plugin tests
 - `tests/plugins/rollup` - Rollup plugin tests
 - `tests/plugins/rolldown` - Rollup plugin tests (Rolldown)
 - `tests/plugins/vite` - Vite plugin tests
