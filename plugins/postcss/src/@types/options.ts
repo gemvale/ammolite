@@ -1,24 +1,4 @@
-import type { Format, Omit, Partial } from "ts-vista";
-
-type CompleteInputOptions = {
-    /**
-     * Path to entry file(s).
-     */
-    entry: string | string[];
-    /**
-     * Array of packages/paths to include.
-     *
-     * Packages/paths in `include` option will be
-     * overwritten by `exclude` option.
-     */
-    include: readonly string[];
-    /**
-     * Array of packages/paths to exclude.
-     */
-    exclude: readonly string[];
-};
-
-type InputOptions = Format<Partial<CompleteInputOptions>>;
+import type { Format, Partial } from "ts-vista";
 
 type CompletePluginOptions = {
     /**
@@ -33,24 +13,8 @@ type CompletePluginOptions = {
      * By default, it is `process.cwd()`.
      */
     cwd: string;
-    /**
-     * Input options.
-     */
-    input: CompleteInputOptions;
 };
 
-type PluginOptions = Format<
-    Partial<Omit<CompletePluginOptions, "input">> & {
-        /**
-         * Input options.
-         */
-        input?: InputOptions;
-    }
->;
+type PluginOptions = Format<Partial<CompletePluginOptions>>;
 
-export type {
-    CompletePluginOptions,
-    CompleteInputOptions,
-    InputOptions,
-    PluginOptions,
-};
+export type { CompletePluginOptions, PluginOptions };

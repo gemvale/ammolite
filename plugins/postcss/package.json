@@ -51,7 +51,6 @@
     ],
     "dependencies": {
         "@ammolite/integration": "workspace:~",
-        "fdir": "catalog:dep",
         "ts-vista": "catalog:dep"
     },
     "devDependencies": {

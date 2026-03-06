@@ -1,5 +1,12 @@
 [< Back](./README.md)
 
+## Next
+
+### PostCSS Plugin
+
+- remove unused options types
+- remove `fdir` from dependencies
+
 ## 0.1.2 (2026-03-05)
 
 ### Compiler
