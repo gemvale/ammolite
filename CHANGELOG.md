@@ -2,6 +2,10 @@
 
 ## Next
 
+### Compiler
+
+- upgrade `rolldown` to `1.0.0-rc.7`
+
 ### Unplugin
 
 - avoid duplicated cache clears per CWD
@@ -15,7 +19,8 @@
 
 ### Compiler
 
-- upgrade dependencies
+- upgrade `oxc-parser` to `~0.116.0`
+- upgrade `rolldown` to `1.0.0-rc.6`
 
 ### PostCSS Plugin
 
