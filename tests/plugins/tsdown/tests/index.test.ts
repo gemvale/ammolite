@@ -38,6 +38,9 @@ describe("tsdown test", (): void => {
                 chunkFileNames: "[name].js",
                 assetFileNames: "[name][extname]",
             },
+            css: {
+                fileName: "index.css",
+            },
             plugins: [
                 ammolite(),
             ],
