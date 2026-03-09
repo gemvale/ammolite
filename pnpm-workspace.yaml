@@ -20,7 +20,7 @@ catalogs:
         oxc-parser: ~0.116.0
         oxc-minify: ~0.116.0
         rolldown: 1.0.0-rc.7
-        tsdown: ~0.20.3
+        tsdown: ~0.21.0
         # vite
         vitest: ^4.0.18
         vite-tsconfig-paths: ^6.1.0
