@@ -53,3 +53,6 @@ updates:
           - dependency-name: "postcss-flexbugs-fixes"
           - dependency-name: "postcss-load-config"
           - dependency-name: "postcss-preset-env"
+      ignore:
+          - dependency-name: "@types/node"
+            versions: [">=21"]
