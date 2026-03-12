@@ -599,8 +599,8 @@ importers:
         specifier: ^5.6.6
         version: 5.6.6(@rspack/core@1.5.0(@swc/helpers@0.5.18))(webpack@5.76.0)
       mini-css-extract-plugin:
-        specifier: ^2.10.0
-        version: 2.10.0(webpack@5.76.0)
+        specifier: ^2.10.1
+        version: 2.10.1(webpack@5.76.0)
       serve:
         specifier: ^14.2.6
         version: 14.2.6
@@ -654,8 +654,8 @@ importers:
         specifier: ^5.6.6
         version: 5.6.6(@rspack/core@1.5.0(@swc/helpers@0.5.18))(webpack@5.76.0)
       mini-css-extract-plugin:
-        specifier: ^2.10.0
-        version: 2.10.0(webpack@5.76.0)
+        specifier: ^2.10.1
+        version: 2.10.1(webpack@5.76.0)
       postcss:
         specifier: ^8.5.6
         version: 8.5.6
@@ -928,8 +928,8 @@ importers:
         specifier: ^7.1.4
         version: 7.1.4(@rspack/core@1.5.0(@swc/helpers@0.5.18))(webpack@5.76.0(@swc/core@1.15.18(@swc/helpers@0.5.18)))
       mini-css-extract-plugin:
-        specifier: ^2.10.0
-        version: 2.10.0(webpack@5.76.0(@swc/core@1.15.18(@swc/helpers@0.5.18)))
+        specifier: ^2.10.1
+        version: 2.10.1(webpack@5.76.0(@swc/core@1.15.18(@swc/helpers@0.5.18)))
       swc-loader:
         specifier: ~0.2.7
         version: 0.2.7(@swc/core@1.15.18(@swc/helpers@0.5.18))(webpack@5.76.0(@swc/core@1.15.18(@swc/helpers@0.5.18)))
@@ -962,8 +962,8 @@ importers:
         specifier: ^7.1.4
         version: 7.1.4(@rspack/core@1.5.0(@swc/helpers@0.5.18))(webpack@5.76.0(@swc/core@1.15.18(@swc/helpers@0.5.18)))
       mini-css-extract-plugin:
-        specifier: ^2.10.0
-        version: 2.10.0(webpack@5.76.0(@swc/core@1.15.18(@swc/helpers@0.5.18)))
+        specifier: ^2.10.1
+        version: 2.10.1(webpack@5.76.0(@swc/core@1.15.18(@swc/helpers@0.5.18)))
       postcss:
         specifier: ^8.5.6
         version: 8.5.6
@@ -4640,8 +4640,8 @@ packages:
     resolution: {integrity: sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==}
     engines: {node: '>=6'}
 
-  mini-css-extract-plugin@2.10.0:
-    resolution: {integrity: sha512-540P2c5dYnJlyJxTaSloliZexv8rji6rY8FhQN+WF/82iHQfA23j/xtJx97L+mXOML27EqksSek/g4eK7jaL3g==}
+  mini-css-extract-plugin@2.10.1:
+    resolution: {integrity: sha512-k7G3Y5QOegl380tXmZ68foBRRjE9Ljavx835ObdvmZjQ639izvZD8CS7BkWw1qKPPzHsGL/JDhl0uyU1zc2rJw==}
     engines: {node: '>= 12.13.0'}
     peerDependencies:
       webpack: ^5.0.0
@@ -9221,13 +9221,13 @@ snapshots:
 
   mimic-fn@2.1.0: {}
 
-  mini-css-extract-plugin@2.10.0(webpack@5.76.0(@swc/core@1.15.18(@swc/helpers@0.5.18))):
+  mini-css-extract-plugin@2.10.1(webpack@5.76.0(@swc/core@1.15.18(@swc/helpers@0.5.18))):
     dependencies:
       schema-utils: 4.3.3
       tapable: 2.3.0
       webpack: 5.76.0(@swc/core@1.15.18(@swc/helpers@0.5.18))
 
-  mini-css-extract-plugin@2.10.0(webpack@5.76.0):
+  mini-css-extract-plugin@2.10.1(webpack@5.76.0):
     dependencies:
       schema-utils: 4.3.3
       tapable: 2.3.0
