@@ -21,7 +21,7 @@ catalogs:
         oxc-minify: ~0.118.0
         rolldown: 1.0.0-rc.9
         # tsdown
-        "@tsdown/css": ~0.21.1
+        "@tsdown/css": ~0.21.2
         tsdown: ~0.21.2
         # vite
         vitest: ^4.0.18
