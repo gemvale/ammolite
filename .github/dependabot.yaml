@@ -18,6 +18,7 @@ updates:
           - dependency-name: "@apst/tsconfig"
           - dependency-name: "@apst/tsdown"
           - dependency-name: "@biomejs/biome"
+          - dependency-name: "@tsdown/css"
           - dependency-name: "@types/node"
           - dependency-name: "@typescript/native-preview"
           - dependency-name: "tsdown"
