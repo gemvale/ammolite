@@ -7,6 +7,7 @@ export default defineConfig(
             index: "./src/index.ts",
             "errors/transform": "./src/errors/transform.ts",
         },
+        unbundle: true,
     },
     [
         esmPreset(),

@@ -8,7 +8,6 @@ export default defineConfig(
             turbopack: "./src/turbopack.ts",
         },
         platform: "node",
-        unbundle: false,
     },
     [
         cjsPreset(),

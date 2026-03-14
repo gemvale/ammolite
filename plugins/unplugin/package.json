@@ -27,19 +27,19 @@
     },
     "exports": {
         "./rollup": {
-            "types": "./dist/rollup.d.ts",
-            "import": "./dist/rollup.mjs",
-            "require": "./dist/rollup.js"
+            "types": "./dist/rollup/index.d.ts",
+            "import": "./dist/rollup/index.mjs",
+            "require": "./dist/rollup/index.js"
         },
         "./vite": {
-            "types": "./dist/vite.d.ts",
-            "import": "./dist/vite.mjs",
-            "require": "./dist/vite.js"
+            "types": "./dist/vite/index.d.ts",
+            "import": "./dist/vite/index.mjs",
+            "require": "./dist/vite/index.js"
         },
         "./webpack": {
-            "types": "./dist/webpack.d.ts",
-            "import": "./dist/webpack.mjs",
-            "require": "./dist/webpack.js"
+            "types": "./dist/webpack/index.d.ts",
+            "import": "./dist/webpack/index.mjs",
+            "require": "./dist/webpack/index.js"
         },
         "./rollup/create": {
             "types": "./dist/rollup/create.d.ts",
