@@ -8,6 +8,7 @@ export default defineConfig(
             create: "./src/create.ts",
         },
         platform: "node",
+        unbundle: true,
     },
     [
         cjsPreset(),

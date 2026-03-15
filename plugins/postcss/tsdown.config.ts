@@ -11,6 +11,7 @@ export default defineConfig(
             "plugins/cache": "./src/plugins/cache.ts",
         },
         platform: "node",
+        unbundle: true,
     },
     [
         esmPreset(),

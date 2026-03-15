@@ -21,8 +21,8 @@ catalogs:
         oxc-minify: ~0.118.0
         rolldown: 1.0.0-rc.9
         # tsdown
-        "@tsdown/css": ~0.21.2
-        tsdown: ~0.21.2
+        "@tsdown/css": ~0.21.3
+        tsdown: ~0.21.3
         # vite
         vitest: ^4.0.18
         vite-tsconfig-paths: ^6.1.0
@@ -61,7 +61,12 @@ catalogs:
 minimumReleaseAge: 1440
 
 minimumReleaseAgeExclude:
+    # config
     - "@apst/biome"
     - "@apst/tsconfig"
     - "@apst/tsdown"
+    # core
     - "ts-vista"
+    # tsdown
+    - "@tsdown/*"
+    - "tsdown"

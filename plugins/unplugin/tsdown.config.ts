@@ -13,19 +13,22 @@ export default defineConfig(
             "vite/create": "./src/bundlers/vite/create.ts",
             "webpack/create": "./src/bundlers/webpack/create.ts",
             // required
-            hmr: "./src/plugins/vite/hmr/hmr.ts",
+            "plugins/vite/hmr/hmr": "./src/plugins/vite/hmr/hmr.ts",
             // extra
             "webpack/loader": "./src/bundlers/webpack/loader.ts",
         },
         platform: "node",
+        shims: false,
+        unbundle: true,
     },
     [
         cjsPreset({
             inputOptions: {
                 transform: {
                     define: {
-                        // Vite HMR
-                        "import.meta": `{}`,
+                        "import.meta.dirname": "__dirname",
+                        "import.meta.url": "__filename",
+                        "import.meta": "{}",
                     },
                 },
             },

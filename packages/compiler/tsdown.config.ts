@@ -18,6 +18,7 @@ export default defineConfig(
             "modules/processor/css": "./src/modules/processor/css.ts",
         },
         platform: "node",
+        unbundle: true,
     },
     [
         esmPreset(),

@@ -10,6 +10,7 @@ export default defineConfig(
             "log/index": "./src/log/index.ts",
         },
         platform: "node",
+        unbundle: true,
     },
     [
         esmPreset(),
