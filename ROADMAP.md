@@ -10,7 +10,7 @@ Welcome for any suggestions if you have any ideas for the roadmap.
 
 ## Tier 1
 
-- [ ] Add support for Lynx
+- [x] Add support for Lynx
 - [ ] Add support for spread element
 - [ ] Add support for function (calculate at compile time)
 - [ ] Add support for preset (inline extension)
