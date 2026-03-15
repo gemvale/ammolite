@@ -1,4 +1,5 @@
 {
+    "$schema": "https://raw.githubusercontent.com/vitejs/vite-plugin-registry/refs/heads/main/data/schema/extended-package-json.schema.json",
     "name": "@ammolite/unplugin",
     "version": "0.1.3",
     "description": "A unified plugin for Ammolite",
@@ -94,6 +95,21 @@
         },
         "webpack": {
             "optional": true
+        }
+    },
+    "compatiblePackages": {
+        "schemaVersion": 1,
+        "rollup": {
+            "type": "compatible",
+            "versions": "^4.40.0"
+        },
+        "rolldown": {
+            "type": "compatible",
+            "versions": "^1.0.0"
+        },
+        "vite": {
+            "type": "compatible",
+            "versions": "^7.0.0 || ^8.0.0"
         }
     }
 }
