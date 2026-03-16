@@ -15,7 +15,7 @@
         "@ammolite/unplugin": "workspace:*",
         "@types/react": "catalog:dep",
         "@types/react-dom": "catalog:dep",
-        "@vitejs/plugin-react": "^5.1.4",
+        "@vitejs/plugin-react": "^6.0.1",
         "vite": "catalog:dev"
     }
 }
