@@ -32,7 +32,7 @@ catalogs:
         react: ^19.2.0
         react-dom: ^19.2.0
         # next
-        next: ^16.1.7
+        next: 16.1.7
     dev:
         # unplugin
         webpack: 5.76.0
