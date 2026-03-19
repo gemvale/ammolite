@@ -53,10 +53,7 @@ bench_variables := "benchmarks/variables"
 
 # Default action
 _:
-    just build
-    just lint
-    just fmt
-    just test
+    just --list -u
 
 # Install
 i:
@@ -65,6 +62,33 @@ i:
 # Install with frozen-lockfile
 if:
     pnpm install --frozen-lockfile
+
+# Build core packages
+build-core:
+    cd ./{{compiler}} && {{tsdown}} -c tsdown.config.ts
+    cd ./{{integ}} && {{tsdown}} -c tsdown.config.ts
+    cd ./{{web}} && {{tsdown}} -c tsdown.config.ts
+
+# Build plugins
+build-plugins:
+    cd ./{{unplugin}} && {{tsdown}} -c tsdown.config.ts
+    cd ./{{rsbuild}} && {{tsdown}} -c tsdown.config.ts
+    cd ./{{next}} && {{tsdown}} -c tsdown.config.ts
+    cd ./{{postcss}} && {{tsdown}} -c tsdown.config.ts
+
+# Build tests
+build-tests:
+    cd ./{{test_core}} && {{tsdown}} -c tsdown.config.ts
+
+# Build packages
+build:
+    just build-core
+    just build-plugins
+    just build-tests
+
+# Format code
+fmt:
+    {{biome}} check --write .
 
 # Lint with ls-lint
 lslint:
@@ -96,6 +120,10 @@ lslint:
     cd ./{{tmpl_rolldown}}/src && ls-lint {{lsl_cfg}}
     cd ./{{tmpl_vite}}/src && ls-lint {{lsl_cfg}}
 
+# Lint with typos-cli
+typos:
+    typos
+
 # Lint with TypeScript Compiler
 tsc:
     cd ./{{compiler}} && {{tsc}} --noEmit
@@ -110,39 +138,12 @@ tsc:
 # Lint code
 lint:
     just lslint
-    typos
+    just typos
     just tsc
 
 # Lint code with Biome
 lint-biome:
     {{biome}} lint .
-
-# Format code
-fmt:
-    {{biome}} check --write .
-
-# Build core packages
-build-core:
-    cd ./{{compiler}} && {{tsdown}} -c tsdown.config.ts
-    cd ./{{integ}} && {{tsdown}} -c tsdown.config.ts
-    cd ./{{web}} && {{tsdown}} -c tsdown.config.ts
-
-# Build plugins:
-build-plugins:
-    cd ./{{unplugin}} && {{tsdown}} -c tsdown.config.ts
-    cd ./{{rsbuild}} && {{tsdown}} -c tsdown.config.ts
-    cd ./{{next}} && {{tsdown}} -c tsdown.config.ts
-    cd ./{{postcss}} && {{tsdown}} -c tsdown.config.ts
-
-# Build tests
-build-tests:
-    cd ./{{test_core}} && {{tsdown}} -c tsdown.config.ts
-
-# Build packages
-build:
-    just build-core
-    just build-plugins
-    just build-tests
 
 # Run tests
 test:
@@ -164,6 +165,13 @@ test:
     cd ./{{test_vite_postcss}} && {{vitest}} run
 
     cd ./{{test_web}} && {{vitest}} run
+
+# Check code
+check:
+    just build
+    just fmt
+    just lint
+    just test
 
 # Run variables benchmarks
 bench-var:

@@ -141,10 +141,10 @@ Install dependencies:
 just i
 ```
 
-Lint:
+Build:
 
 ```sh
-just lint
+just build
 ```
 
 Format:
@@ -153,10 +153,10 @@ Format:
 just fmt
 ```
 
-Build:
+Lint:
 
 ```sh
-just build
+just lint
 ```
 
 Test:
