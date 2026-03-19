@@ -141,10 +141,10 @@ const createRuntime = (coreOptions?: CreateRuntimeOptions) => {
 type Runtime = ReturnType<typeof createRuntime>;
 
 export type {
-    CreateRuntimeOptions,
     CompileOptions,
-    SourceMap,
     CompileResult,
+    CreateRuntimeOptions,
     Runtime,
+    SourceMap,
 };
 export { createRuntime };

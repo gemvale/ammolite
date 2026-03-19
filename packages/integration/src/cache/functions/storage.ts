@@ -32,5 +32,5 @@ const createStorage = (
 
 type Storage = ReturnType<typeof createStorage>;
 
-export type { CreateStorageOptions, CacheResult, Storage };
+export type { CacheResult, CreateStorageOptions, Storage };
 export { createStorage };

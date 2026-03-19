@@ -209,5 +209,5 @@ const collect = (options: CollectOptions): CollectResult => {
     };
 };
 
-export type { CollectOptions, Specifier, CollectResult };
+export type { CollectOptions, CollectResult, Specifier };
 export { collect };

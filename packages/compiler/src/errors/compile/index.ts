@@ -41,5 +41,5 @@ class CompileError extends Error {
     }
 }
 
-export type { Span, CompleteCompileErrorOptions, CompileErrorOptions };
+export type { CompileErrorOptions, CompleteCompileErrorOptions, Span };
 export { CompileError };

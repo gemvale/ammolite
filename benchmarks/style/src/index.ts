@@ -55,14 +55,14 @@ const select: string = style({
 });
 
 export {
+    button,
     container,
+    input,
+    link,
+    select,
     subContainer,
-    title,
+    subText,
     subTitle,
     text,
-    subText,
-    link,
-    button,
-    input,
-    select,
+    title,
 };

@@ -106,5 +106,5 @@ const createPlugin = (createOptions?: CreatePluginOptions): Plugin => {
     return PluginInstance;
 };
 
-export type { CreatePluginOptions, PluginOptions, Plugin };
+export type { CreatePluginOptions, Plugin, PluginOptions };
 export { createPlugin };

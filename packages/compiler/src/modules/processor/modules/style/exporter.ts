@@ -73,4 +73,4 @@ const exportStyles = (options: ExportStylesOptions): ExportStylesResult => {
 };
 
 export type { ExportStylesOptions, ExportStylesResult };
-export { styleNodeToCss, exportStyles };
+export { exportStyles, styleNodeToCss };

@@ -73,5 +73,5 @@ const createPlugin = (createOptions?: CreatePluginOptions): Plugin => {
     return createUnplugin(factory).rollup;
 };
 
-export type { CreatePluginOptions, PluginOptions, Plugin };
+export type { CreatePluginOptions, Plugin, PluginOptions };
 export { createPlugin };

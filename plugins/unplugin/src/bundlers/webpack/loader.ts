@@ -65,4 +65,5 @@ async function loader(
 }
 
 export default loader;
+
 export type { LoaderOptions };

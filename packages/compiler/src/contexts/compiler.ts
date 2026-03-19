@@ -163,5 +163,5 @@ const updateCompilerContext = (
     return result;
 };
 
-export type { CreateCompilerContextOptions, CompilerContext };
+export type { CompilerContext, CreateCompilerContextOptions };
 export { createCompilerContext, updateCompilerContext };

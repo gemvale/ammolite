@@ -44,5 +44,5 @@ const readCaches = async (
     return await storage.getItems(keys);
 };
 
-export type { ReadCacheOptions, ReadCachesOptions, KeyValueCache };
+export type { KeyValueCache, ReadCacheOptions, ReadCachesOptions };
 export { readCache, readCaches };

@@ -124,4 +124,4 @@ const assertBuiltCss = async (pathFile: string): Promise<void> => {
     expect(fileContent).toMatch(/color:\s*var\(--([a-zA-Z0-9_-]+)\)/);
 };
 
-export { assertBuiltPageHtml, assertBuiltJs, assertBuiltCss };
+export { assertBuiltCss, assertBuiltJs, assertBuiltPageHtml };

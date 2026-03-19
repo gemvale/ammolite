@@ -129,11 +129,11 @@ const compile = async (
 };
 
 export type {
-    PresetCompileOptions,
-    UserCompileOptions,
-    DynamicCompileOptions,
     CompileOptions,
-    SourceMap,
     CompileResult,
+    DynamicCompileOptions,
+    PresetCompileOptions,
+    SourceMap,
+    UserCompileOptions,
 };
 export { compile };

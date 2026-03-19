@@ -22,4 +22,4 @@ const FILTER_JS_ADVANCED: RegExp =
  */
 const FILTER_CSS: RegExp = /.*\.(css|sass|scss|less)(\?.*)?(#.*)?$/;
 
-export { FILTER_JS, FILTER_JS_ADVANCED, FILTER_CSS };
+export { FILTER_CSS, FILTER_JS, FILTER_JS_ADVANCED };

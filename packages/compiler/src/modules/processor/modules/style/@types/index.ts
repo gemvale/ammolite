@@ -54,4 +54,4 @@ type Style = {
     children: StyleNode[];
 };
 
-export type { StyleNodePlan, StyleNode, Style };
+export type { Style, StyleNode, StyleNodePlan };

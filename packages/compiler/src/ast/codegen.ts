@@ -70,5 +70,5 @@ const codegen = (options: CodegenOptions): CodegenResult => {
     };
 };
 
-export type { CodegenOptions, SourceMap, CodegenResult };
+export type { CodegenOptions, CodegenResult, SourceMap };
 export { codegen };

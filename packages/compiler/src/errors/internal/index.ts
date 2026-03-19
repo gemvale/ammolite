@@ -50,8 +50,8 @@ class InternalCompileError extends Error {
 }
 
 export type {
-    Span,
     CompleteInternalCompileErrorOptions,
     InternalCompileErrorOptions,
+    Span,
 };
 export { InternalCompileError };

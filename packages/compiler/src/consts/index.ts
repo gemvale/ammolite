@@ -8,4 +8,4 @@ const FN = "function" as const;
 
 const ARGS = "arguments" as const;
 
-export { SIGNATURE, ID, VA, FN, ARGS };
+export { ARGS, FN, ID, SIGNATURE, VA };

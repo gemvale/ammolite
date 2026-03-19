@@ -129,10 +129,10 @@ const bundle = async (options: BundleOptions): Promise<BundleResult> => {
 };
 
 export type {
-    PresetBundleOptions,
-    UserBundleOptions,
-    DynamicBundleOptions,
     BundleOptions,
     BundleResult,
+    DynamicBundleOptions,
+    PresetBundleOptions,
+    UserBundleOptions,
 };
 export { bundle };
