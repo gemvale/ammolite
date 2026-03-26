@@ -36,6 +36,11 @@
             "sourceType": "github",
             "computedHash": "a17c0589a9b9b35482df285b2a2878880c46513a740a48fe18adc33231df3ca9"
         },
+        "using-superpowers": {
+            "source": "obra/superpowers",
+            "sourceType": "github",
+            "computedHash": "af9db85109491dbe11f36b13724835f0f03583a5e026bf496b3b257e27a3f753"
+        },
         "vite": {
             "source": "antfu/skills",
             "sourceType": "github",
