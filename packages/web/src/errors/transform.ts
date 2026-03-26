@@ -12,6 +12,8 @@ class TransformError extends Error {
         super(message);
 
         if ("captureStackTrace" in Error) {
+            // biome-ignore lint/suspicious/noTsIgnore: tsgo specific error
+            // @ts-ignore 'Error.captureStackTrace' is of type 'unknown'. ts(18046)
             Error.captureStackTrace(this, TransformError);
         }
     }

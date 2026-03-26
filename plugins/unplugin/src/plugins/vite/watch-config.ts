@@ -33,6 +33,8 @@ const watchConfigPlugin = ({
         {
             name: `${name}/watch-config`,
             vite: {
+                // biome-ignore lint/suspicious/noTsIgnore: vite version unmatched
+                // @ts-ignore vite version unmatched
                 config,
             },
             farm: {

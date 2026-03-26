@@ -111,6 +111,8 @@ const createPlugin = (createOptions?: CreatePluginOptions): Plugin => {
         ];
     };
 
+    // biome-ignore lint/suspicious/noTsIgnore: vite version unmatched
+    // @ts-ignore vite version unmatched
     return createUnplugin(factory).vite;
 };
 

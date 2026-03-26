@@ -72,6 +72,8 @@ const htmlPlugin = ({
         {
             name: `${name}/html`,
             vite: {
+                // biome-ignore lint/suspicious/noTsIgnore: vite version unmatched
+                // @ts-ignore vite version unmatched
                 transformIndexHtml,
             },
             farm: {

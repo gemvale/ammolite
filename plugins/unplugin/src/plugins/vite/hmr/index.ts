@@ -148,6 +148,8 @@ const hmrPlugin = ({
         {
             name: `${name}/hmr/resolve-entry`,
             vite: {
+                // biome-ignore lint/suspicious/noTsIgnore: vite version unmatched
+                // @ts-ignore vite version unmatched
                 configResolved: resolveEntryConfigResolved,
                 transform: resolveEntryTransform,
             },
@@ -170,6 +172,8 @@ const hmrPlugin = ({
         {
             name: `${name}/hmr/emit`,
             vite: {
+                // biome-ignore lint/suspicious/noTsIgnore: vite version unmatched
+                // @ts-ignore vite version unmatched
                 configureServer: emitHmrConfigureServer,
                 transform: emitHmrTransform,
             },
