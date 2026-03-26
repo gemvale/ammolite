@@ -4,8 +4,8 @@
 
 ### Compiler
 
-- upgrade `oxc-parser` to `~0.120.0`
-- upgrade `rolldown` to `1.0.0-rc.10`
+- upgrade `oxc-parser` to `~0.121.0`
+- upgrade `rolldown` to `1.0.0-rc.12`
 
 ### Unplugin
 
