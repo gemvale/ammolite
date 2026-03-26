@@ -113,7 +113,7 @@ const resolvePathToExpr = (
                 start: options.member.start,
                 end: options.member.end,
             },
-            message: `Inline expression not found: ${name}`,
+            message: `Inline expression not found: ${rootName}`,
         });
     }
 

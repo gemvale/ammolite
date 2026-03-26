@@ -272,4 +272,39 @@ describe("processor style tests", (): void => {
             }).code,
         );
     });
+
+    it("should report the missing root identifier for member expressions", (): void => {
+        const code = `
+            const container = {
+                ${SIGNATURE}: true,
+                id: "container",
+                variable: "container",
+                function: "style",
+                arguments: [
+                    {
+                        display: colors.block,
+                    },
+                ],
+            };
+        ` as const;
+
+        const { program } = parse({
+            file,
+            code,
+        });
+
+        const context: CompilerContext = createCompilerContext({
+            test: true,
+            file,
+            program,
+        });
+
+        expect((): void => {
+            process({
+                context,
+                program,
+                programRef: program,
+            });
+        }).toThrowError(/Inline expression not found: colors/);
+    });
 });
