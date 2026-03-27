@@ -20,6 +20,10 @@
 - add `tsconfig` option
 - extends plugin from Rspack instead of webpack
 
+### NextJS Plugin
+
+- add `tsconfig` option
+
 ## 0.1.3 (2026-03-06)
 
 ### Compiler
