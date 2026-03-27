@@ -12,6 +12,12 @@ type CompleteInputOptions = {
      * Array of packages/paths to exclude.
      */
     exclude: readonly string[];
+    /**
+     * Dedicated tsconfig file to be used.
+     *
+     * By default, it discovered automatically.
+     */
+    tsconfig: string;
 };
 
 type InputOptions = Format<Partial<CompleteInputOptions>>;

@@ -89,6 +89,7 @@
         "fdir": "catalog:dep",
         "oxc-parser": "catalog:dep",
         "rolldown": "catalog:dep",
+        "rollup-plugin-tsconfig-paths": "^1.5.2",
         "ts-vista": "catalog:dep"
     }
 }

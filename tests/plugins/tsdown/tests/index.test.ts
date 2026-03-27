@@ -25,7 +25,7 @@ beforeAll(async (): Promise<void> => {
 describe("tsdown test", (): void => {
     it("should build via tsdown", async (): Promise<void> => {
         await build({
-            cwd: process.cwd(),
+            cwd: CWD,
             entry: "./src/index.ts",
             inputOptions: {
                 experimental: {

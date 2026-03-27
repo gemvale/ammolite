@@ -6,7 +6,10 @@ import type {
 } from "rolldown";
 import type { Format } from "ts-vista";
 
+import * as Path from "node:path";
+
 import { rolldown } from "rolldown";
+import tsConfigPaths from "rollup-plugin-tsconfig-paths";
 
 import { entryOverrider } from "#/modules/bundler/plugins/entry";
 import { externalResolver } from "#/modules/bundler/plugins/external";
@@ -45,6 +48,10 @@ type UserBundleOptions = {
      * Array of packages/paths to exclude.
      */
     exclude: readonly string[];
+    /**
+     * Dedicated tsconfig file to be used.
+     */
+    tsconfig?: string;
 };
 
 /**
@@ -82,10 +89,32 @@ type BundleResult = {
     map: SourceMap | undefined;
 };
 
+type ResolveTsconfigPathOptions = {
+    cwd: string;
+    tsconfig: string | undefined;
+};
+
+const resolveTsconfigPath = (
+    options: ResolveTsconfigPathOptions,
+): string | undefined => {
+    if (!options.tsconfig) return void 0;
+
+    if (Path.isAbsolute(options.tsconfig)) {
+        return options.tsconfig;
+    }
+
+    return Path.resolve(options.cwd, options.tsconfig);
+};
+
 /**
  * Bundle function to bundle entry file for reference.
  */
 const bundle = async (options: BundleOptions): Promise<BundleResult> => {
+    const tsconfigPath: string | undefined = resolveTsconfigPath({
+        cwd: options.cwd,
+        tsconfig: options.tsconfig,
+    });
+
     const bundled: RolldownBuild = await rolldown({
         input: options.file,
         cwd: options.cwd,
@@ -94,7 +123,11 @@ const bundle = async (options: BundleOptions): Promise<BundleResult> => {
             jsx: "preserve",
         },
         treeshake: false,
+        tsconfig: tsconfigPath,
         plugins: [
+            tsConfigPaths({
+                tsConfigPath: tsconfigPath,
+            }),
             externalResolver({
                 packageName: options.packageName,
                 file: options.file,

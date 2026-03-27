@@ -4,17 +4,20 @@
 
 ### Compiler
 
+- resolve tsconfig paths
+- fix reference error: name is not defined
 - upgrade `oxc-parser` to `~0.121.0`
 - upgrade `rolldown` to `1.0.0-rc.12`
-- fix reference error: name is not defined
 
 ### Unplugin
 
+- add `tsconfig` option
 - add support for Rspack
 - update package metadata
 
 ### Rsbuild Plugin
 
+- add `tsconfig` option
 - extends plugin from Rspack instead of webpack
 
 ## 0.1.3 (2026-03-06)

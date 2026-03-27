@@ -65,6 +65,7 @@ const createPlugin = (createOptions?: CreatePluginOptions) => {
                                         new Plugin({
                                             ...options,
                                             output: {
+                                                ...userConfig.output,
                                                 dir:
                                                     userConfig.output?.distPath
                                                         ?.css ?? "./static/css",

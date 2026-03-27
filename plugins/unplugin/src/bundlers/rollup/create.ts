@@ -37,6 +37,7 @@ const createPlugin = (createOptions?: CreatePluginOptions): Plugin => {
                 cwd,
                 include: options?.input?.include,
                 exclude: options?.input?.exclude,
+                tsconfig: options?.input?.tsconfig,
             });
 
         const logger: Logger = createLogger({
@@ -70,6 +71,8 @@ const createPlugin = (createOptions?: CreatePluginOptions): Plugin => {
         ];
     };
 
+    // biome-ignore lint/suspicious/noTsIgnore: rollup version unmatched
+    // @ts-ignore rollup version unmatched
     return createUnplugin(factory).rollup;
 };
 

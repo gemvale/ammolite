@@ -243,6 +243,9 @@ importers:
       rolldown:
         specifier: catalog:dep
         version: 1.0.0-rc.12
+      rollup-plugin-tsconfig-paths:
+        specifier: ^1.5.2
+        version: 1.5.2(rollup@4.55.1)(typescript@6.0.2)
       ts-vista:
         specifier: catalog:dep
         version: 0.2.3
@@ -5314,6 +5317,11 @@ packages:
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
 
+  rollup-plugin-tsconfig-paths@1.5.2:
+    resolution: {integrity: sha512-tyS7u2Md0eXKwbDfTuDDa1izciwqhOZsHzX7zYc5gKC1L7q5ozdSt+q1jjtD1dDqWyjrt8lZoiLtOQGhMHh1OQ==}
+    peerDependencies:
+      rollup: ^2 || ^3 || ^4
+
   rollup@4.40.0:
     resolution: {integrity: sha512-Noe455xmA96nnqH5piFtLobsGbCij7Tu+tb3c1vYjNbTkfzGqXqQXG3wJaYXkRZuQ0vEYN4bhwg7QnIrqB5B+w==}
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
@@ -5679,6 +5687,11 @@ packages:
     hasBin: true
     peerDependencies:
       typescript: 5.0.x || 5.1.x || 5.2.x || 5.3.x || 5.4.x || 5.5.x || 5.6.x || 5.7.x || 5.8.x || 5.9.x || 6.0.x
+
+  typescript-paths@1.5.1:
+    resolution: {integrity: sha512-lYErSLCON2MSplVV5V/LBgD4UNjMgY3guATdFCZY2q1Nr6OZEu4q6zX/rYMsG1TaWqqQSszg6C9EU7AGWMDrIw==}
+    peerDependencies:
+      typescript: ^4.7.2 || ^5
 
   typescript@6.0.2:
     resolution: {integrity: sha512-bGdAIrZ0wiGDo5l8c++HWtbaNCWTS4UTv7RaTH/ThVIgjkveJt83m74bBHMJkuCbslY8ixgLBVZJIOiQlQTjfQ==}
@@ -9919,6 +9932,13 @@ snapshots:
       '@rolldown/binding-win32-arm64-msvc': 1.0.0-rc.12
       '@rolldown/binding-win32-x64-msvc': 1.0.0-rc.12
 
+  rollup-plugin-tsconfig-paths@1.5.2(rollup@4.55.1)(typescript@6.0.2):
+    dependencies:
+      rollup: 4.55.1
+      typescript-paths: 1.5.1(typescript@6.0.2)
+    transitivePeerDependencies:
+      - typescript
+
   rollup@4.40.0:
     dependencies:
       '@types/estree': 1.0.7
@@ -10398,6 +10418,10 @@ snapshots:
       minimatch: 10.2.4
       typescript: 6.0.2
       yaml: 2.8.3
+
+  typescript-paths@1.5.1(typescript@6.0.2):
+    dependencies:
+      typescript: 6.0.2
 
   typescript@6.0.2: {}
 

@@ -57,7 +57,12 @@ const plugin = (
                 exclude: [
                     ...(options?.exclude ?? []),
                 ],
-            },
+                ...(typeof options?.tsconfig === "string"
+                    ? {
+                          tsconfig: options.tsconfig,
+                      }
+                    : {}),
+            } satisfies LoaderOptions,
         };
 
         return {

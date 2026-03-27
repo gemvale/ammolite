@@ -101,6 +101,7 @@ const compile = async (
         cwd: options.cwd,
         include: options.include,
         exclude: options.exclude,
+        tsconfig: options.tsconfig,
     });
 
     const parsedbundle: ParseResult = parse({
