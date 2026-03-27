@@ -1,8 +1,8 @@
-import type { Format } from "ts-vista";
+import type { Format, Omit } from "ts-vista";
 
 import type { CodegenResult, SourceMap } from "#/ast/codegen";
 import type { ParseResult } from "#/ast/parse";
-import type { CompilerContext } from "#/contexts/compiler";
+import type { BundlerContext, CompilerContext } from "#/contexts/compiler";
 import type {
     BundleResult,
     DynamicBundleOptions,
@@ -20,7 +20,11 @@ import { collect } from "#/modules/collector";
 import { preprocess } from "#/modules/preprocessor";
 import { process } from "#/modules/processor";
 
-type PresetCompileOptions = PresetBundleOptions;
+type PresetCompileOptions = Format<
+    Omit<PresetBundleOptions, "context"> & {
+        bundler: BundlerContext;
+    }
+>;
 
 type UserCompileOptions = UserBundleOptions;
 
@@ -64,6 +68,7 @@ const compile = async (
     });
 
     const context: CompilerContext = createCompilerContext({
+        bundler: options.bundler,
         file: options.file,
         program: parsed.program,
     });
@@ -93,8 +98,7 @@ const compile = async (
 
     const bundled: BundleResult = await bundle({
         // preset
-        file: options.file,
-        code: codegenPreprocessed.code,
+        context,
         packageName: options.packageName,
         includedFunctions: options.includedFunctions,
         // user
@@ -102,6 +106,9 @@ const compile = async (
         include: options.include,
         exclude: options.exclude,
         tsconfig: options.tsconfig,
+        // dynamic
+        file: options.file,
+        code: codegenPreprocessed.code,
     });
 
     const parsedbundle: ParseResult = parse({

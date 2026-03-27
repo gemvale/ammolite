@@ -14,6 +14,7 @@ import { collect } from "#/modules/collector";
 import { preprocess } from "#/modules/preprocessor";
 
 type FilePreprocessorOptions = {
+    context: CompilerContext;
     packageName: string;
     file: string;
     includedFunctions: string[] | readonly string[];
@@ -33,6 +34,7 @@ const filePreprocessor = (options: FilePreprocessorOptions): Plugin => {
             });
 
             const context: CompilerContext = createCompilerContext({
+                bundler: options.context.bundler,
                 file,
                 program: parseResult.program,
             });

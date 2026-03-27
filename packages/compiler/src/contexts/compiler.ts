@@ -6,7 +6,24 @@ import type { CodegenResult } from "#/ast/codegen";
 import { codegen } from "#/ast/codegen";
 import { version } from "../../package.json";
 
+type BundlerName = "webpack" | "rspack" | "rollup" | "vite" | "unknown";
+
+type BundlerContext = {
+    /**
+     * Bundler name.
+     */
+    name: BundlerName;
+    /**
+     * Bundler version.
+     */
+    version: string;
+};
+
 type CreateCompilerContextBaseOptions = {
+    /**
+     * Current bundler.
+     */
+    bundler: BundlerContext;
     /**
      * Whether in test mode.
      */
@@ -43,7 +60,7 @@ type CompleteCreateCompilerContextOptions =
     | CreateCompilerContextProgramOptions;
 
 type CreateCompilerContextOptions = Format<
-    Partial<CompleteCreateCompilerContextOptions, "test">
+    Partial<CompleteCreateCompilerContextOptions, "bundler" | "test">
 >;
 
 /**
@@ -54,6 +71,10 @@ type CompilerContext = {
      * Compiler version.
      */
     version: string;
+    /**
+     * Current bundler.
+     */
+    bundler: BundlerContext;
     /**
      * Whether in test mode.
      */
@@ -71,11 +92,17 @@ type CompilerContext = {
 const createCompilerContext = (
     options: CreateCompilerContextOptions,
 ): CompilerContext => {
+    const bundler: BundlerContext = options.bundler ?? {
+        name: "unknown",
+        version: "unknown",
+    };
+
     const isTest: boolean = options.test ?? false;
 
     if ("code" in options) {
         return {
             version,
+            bundler,
             isTest,
             file: options.file,
             code: options.code,
@@ -89,6 +116,7 @@ const createCompilerContext = (
 
     return {
         version,
+        bundler,
         isTest,
         file: options.file,
         code: codegenResult.code,
@@ -160,8 +188,20 @@ const updateCompilerContext = (
         };
     }
 
+    if (options.bundler) {
+        result = {
+            ...result,
+            bundler: options.bundler,
+        };
+    }
+
     return result;
 };
 
-export type { CompilerContext, CreateCompilerContextOptions };
+export type {
+    BundlerContext,
+    BundlerName,
+    CompilerContext,
+    CreateCompilerContextOptions,
+};
 export { createCompilerContext, updateCompilerContext };

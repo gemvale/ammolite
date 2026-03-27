@@ -14,6 +14,7 @@ import type { PluginOptions as RawPluginOptions } from "#/@types/options";
 import { createLogger } from "@ammolite/integration/log";
 import { createRuntime } from "@ammolite/integration/runtime";
 import { createUnplugin } from "unplugin";
+import * as Webpack from "webpack";
 
 import { cachePlugin } from "#/plugins/cache";
 import { compilePlugin } from "#/plugins/compile";
@@ -42,6 +43,10 @@ const createPlugin = (createOptions?: CreatePluginOptions): Plugin => {
         const runtime: Runtime =
             createOptions?.runtime ??
             createRuntime({
+                bundler: {
+                    name: "webpack",
+                    version: Webpack.version ?? "0.0.0",
+                },
                 cwd,
                 include: options?.input?.include,
                 exclude: options?.input?.exclude,

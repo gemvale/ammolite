@@ -4,7 +4,7 @@
 
 ### Compiler
 
-- resolve tsconfig paths
+- resolve tsconfig paths in webpack and Rspack
 - fix reference error: name is not defined
 - upgrade `oxc-parser` to `~0.121.0`
 - upgrade `rolldown` to `1.0.0-rc.12`

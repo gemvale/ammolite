@@ -17,14 +17,6 @@ import {
 } from "#/runtime/const";
 import { getMD5 } from "#/runtime/hash";
 
-const OPTIONS_DEFAULT: ResolvedOptions = {
-    packageName: PACKAGE_NAME_DEFAULT,
-    includedFunctions: INCLUDED_FUNCTIONS_DEFAULT,
-    cwd: process.cwd(),
-    include: [],
-    exclude: [],
-};
-
 type CacheValues = {
     hash: string;
     result: RawCompileResult;
@@ -48,6 +40,19 @@ type CompileResult = {
 
 type GetCSSOptions = {
     file: string;
+};
+
+const OPTIONS_DEFAULT: ResolvedOptions = {
+    bundler: {
+        name: "unknown",
+        version: "0.0.0",
+    },
+    packageName: PACKAGE_NAME_DEFAULT,
+    includedFunctions: INCLUDED_FUNCTIONS_DEFAULT,
+    cwd: process.cwd(),
+    include: [],
+    exclude: [],
+    tsconfig: void 0,
 };
 
 const createRuntime = (coreOptions?: CreateRuntimeOptions) => {

@@ -6,6 +6,8 @@ import type {
 } from "rolldown";
 import type { Format } from "ts-vista";
 
+import type { CompilerContext } from "#/contexts/compiler";
+
 import * as Path from "node:path";
 
 import { rolldown } from "rolldown";
@@ -19,6 +21,10 @@ import { filePreprocessor } from "#/modules/bundler/plugins/preprocess";
  * Preset options for `bundle` function.
  */
 type PresetBundleOptions = {
+    /**
+     * Compiler context.
+     */
+    context: CompilerContext;
     /**
      * Name of the CSS-in-JS package.
      */
@@ -91,7 +97,7 @@ type BundleResult = {
 
 type ResolveTsconfigPathOptions = {
     cwd: string;
-    tsconfig: string | undefined;
+    tsconfig?: string;
 };
 
 const resolveTsconfigPath = (
@@ -110,6 +116,8 @@ const resolveTsconfigPath = (
  * Bundle function to bundle entry file for reference.
  */
 const bundle = async (options: BundleOptions): Promise<BundleResult> => {
+    const bundlerName: string = options.context.bundler.name;
+
     const tsconfigPath: string | undefined = resolveTsconfigPath({
         cwd: options.cwd,
         tsconfig: options.tsconfig,
@@ -125,9 +133,13 @@ const bundle = async (options: BundleOptions): Promise<BundleResult> => {
         treeshake: false,
         tsconfig: tsconfigPath,
         plugins: [
-            tsConfigPaths({
-                tsConfigPath: tsconfigPath,
-            }),
+            ...(bundlerName === "webpack" || bundlerName === "rspack"
+                ? [
+                      tsConfigPaths({
+                          tsConfigPath: tsconfigPath,
+                      }),
+                  ]
+                : []),
             externalResolver({
                 packageName: options.packageName,
                 file: options.file,
@@ -139,6 +151,7 @@ const bundle = async (options: BundleOptions): Promise<BundleResult> => {
                 code: options.code,
             }),
             filePreprocessor({
+                context: options.context,
                 packageName: options.packageName,
                 file: options.file,
                 includedFunctions: options.includedFunctions,

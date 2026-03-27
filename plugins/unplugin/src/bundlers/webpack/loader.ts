@@ -8,6 +8,7 @@ import type { LoaderContext } from "webpack";
 
 import { writeCache } from "@ammolite/integration/cache";
 import { createRuntime } from "@ammolite/integration/runtime";
+import * as Webpack from "webpack";
 
 let runtime: Runtime | null = null;
 
@@ -36,6 +37,10 @@ async function loader(
 
     if (!runtime) {
         runtime = createRuntime({
+            bundler: {
+                name: "webpack",
+                version: Webpack.version ?? "0.0.0",
+            },
             cwd: options.cwd,
             include: options.include,
             exclude: options.exclude,

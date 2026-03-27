@@ -9,6 +9,7 @@ import type { PluginOptions as RawPluginOptions } from "#/@types/options";
 
 import { createLogger } from "@ammolite/integration/log";
 import { createRuntime } from "@ammolite/integration/runtime";
+import { VERSION as rollupVersion } from "rollup";
 import { createUnplugin } from "unplugin";
 
 import { cachePlugin } from "#/plugins/cache";
@@ -34,6 +35,10 @@ const createPlugin = (createOptions?: CreatePluginOptions): Plugin => {
         const runtime: Runtime =
             createOptions?.runtime ??
             createRuntime({
+                bundler: {
+                    name: "rollup",
+                    version: rollupVersion,
+                },
                 cwd,
                 include: options?.input?.include,
                 exclude: options?.input?.exclude,
