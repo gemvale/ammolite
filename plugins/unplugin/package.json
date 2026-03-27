@@ -27,6 +27,16 @@
         "email": "contact@alphe.us"
     },
     "exports": {
+        "./webpack": {
+            "types": "./dist/webpack/index.d.ts",
+            "import": "./dist/webpack/index.mjs",
+            "require": "./dist/webpack/index.js"
+        },
+        "./rspack": {
+            "types": "./dist/rspack/index.d.ts",
+            "import": "./dist/rspack/index.mjs",
+            "require": "./dist/rspack/index.js"
+        },
         "./rollup": {
             "types": "./dist/rollup/index.d.ts",
             "import": "./dist/rollup/index.mjs",
@@ -37,10 +47,15 @@
             "import": "./dist/vite/index.mjs",
             "require": "./dist/vite/index.js"
         },
-        "./webpack": {
-            "types": "./dist/webpack/index.d.ts",
-            "import": "./dist/webpack/index.mjs",
-            "require": "./dist/webpack/index.js"
+        "./webpack/create": {
+            "types": "./dist/webpack/create.d.ts",
+            "import": "./dist/webpack/create.mjs",
+            "require": "./dist/webpack/create.js"
+        },
+        "./rspack/create": {
+            "types": "./dist/rspack/create.d.ts",
+            "import": "./dist/rspack/create.mjs",
+            "require": "./dist/rspack/create.js"
         },
         "./rollup/create": {
             "types": "./dist/rollup/create.d.ts",
@@ -51,11 +66,6 @@
             "types": "./dist/vite/create.d.ts",
             "import": "./dist/vite/create.mjs",
             "require": "./dist/vite/create.js"
-        },
-        "./webpack/create": {
-            "types": "./dist/webpack/create.d.ts",
-            "import": "./dist/webpack/create.mjs",
-            "require": "./dist/webpack/create.js"
         },
         "./webpack/loader": {
             "types": "./dist/webpack/loader.d.ts",
@@ -77,16 +87,21 @@
         "unplugin": "^3.0.0"
     },
     "devDependencies": {
+        "@rspack/core": "catalog:dev",
         "rollup": "catalog:dev",
         "vite": "catalog:dev",
         "webpack": "catalog:dev"
     },
     "peerDependencies": {
+        "@rspack/core": "catalog:peer",
         "rollup": "catalog:peer",
         "vite": "catalog:peer",
         "webpack": "catalog:peer"
     },
     "peerDependenciesMeta": {
+        "@rspack/core": {
+            "optional": true
+        },
         "rollup": {
             "optional": true
         },

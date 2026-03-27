@@ -1,4 +1,4 @@
-import type { CreatePluginOptions as CreateWebpackPluginOptions } from "@ammolite/unplugin/webpack/create";
+import type { CreatePluginOptions as _CreatePluginOptions } from "@ammolite/unplugin/rspack/create";
 import type {
     RsbuildConfig,
     RsbuildPlugin,
@@ -9,11 +9,11 @@ import type { PluginOptions } from "#/@types/options";
 
 import * as Path from "node:path";
 
-import { createPlugin as createWebpackPlugin } from "@ammolite/unplugin/webpack/create";
+import { createPlugin as _createPlugin } from "@ammolite/unplugin/rspack/create";
 
 import { name } from "../package.json";
 
-type CreatePluginOptions = CreateWebpackPluginOptions;
+type CreatePluginOptions = _CreatePluginOptions;
 
 const getFileName = (
     rsbuildConfig: RsbuildConfig,
@@ -48,7 +48,7 @@ const createPlugin = (createOptions?: CreatePluginOptions) => {
         return {
             name,
             async setup(api: RsbuildPluginAPI): Promise<void> {
-                const Plugin = createWebpackPlugin({
+                const Plugin = _createPlugin({
                     name: createOptions?.name ?? name,
                     runtime: createOptions?.runtime,
                 });

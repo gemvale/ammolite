@@ -10,7 +10,12 @@
 
 ### Unplugin
 
+- add support for Rspack
 - update package metadata
+
+### Rsbuild Plugin
+
+- extends plugin from Rspack instead of webpack
 
 ## 0.1.3 (2026-03-06)
 
