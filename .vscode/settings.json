@@ -3,5 +3,6 @@
         "editor.detectIndentation": false,
         "editor.insertSpaces": true,
         "editor.tabSize": 4
-    }
+    },
+    "js/ts.tsdk.path": "node_modules/typescript/lib"
 }
