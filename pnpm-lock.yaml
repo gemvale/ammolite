@@ -282,9 +282,6 @@ importers:
 
   plugins/next:
     dependencies:
-      '@ammolite/integration':
-        specifier: workspace:~
-        version: link:../../packages/integration
       '@ammolite/unplugin':
         specifier: workspace:~
         version: link:../unplugin
