@@ -57,9 +57,9 @@ const plugin = (
                 exclude: [
                     ...(options?.exclude ?? []),
                 ],
-                ...(typeof options?.tsconfig === "string"
+                ...(typeof options?.tsconfigPath === "string"
                     ? {
-                          tsconfig: options.tsconfig,
+                          tsconfigPath: options.tsconfigPath,
                       }
                     : {}),
             } satisfies LoaderOptions,

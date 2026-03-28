@@ -57,7 +57,7 @@ type UserBundleOptions = {
     /**
      * Dedicated tsconfig file to be used.
      */
-    tsconfig?: string;
+    tsconfigPath?: string;
 };
 
 /**
@@ -97,19 +97,19 @@ type BundleResult = {
 
 type ResolveTsconfigPathOptions = {
     cwd: string;
-    tsconfig?: string;
+    tsconfigPath?: string;
 };
 
 const resolveTsconfigPath = (
     options: ResolveTsconfigPathOptions,
 ): string | undefined => {
-    if (!options.tsconfig) return void 0;
+    if (!options.tsconfigPath) return void 0;
 
-    if (Path.isAbsolute(options.tsconfig)) {
-        return options.tsconfig;
+    if (Path.isAbsolute(options.tsconfigPath)) {
+        return options.tsconfigPath;
     }
 
-    return Path.resolve(options.cwd, options.tsconfig);
+    return Path.resolve(options.cwd, options.tsconfigPath);
 };
 
 /**
@@ -120,7 +120,7 @@ const bundle = async (options: BundleOptions): Promise<BundleResult> => {
 
     const tsconfigPath: string | undefined = resolveTsconfigPath({
         cwd: options.cwd,
-        tsconfig: options.tsconfig,
+        tsconfigPath: options.tsconfigPath,
     });
 
     const bundled: RolldownBuild = await rolldown({

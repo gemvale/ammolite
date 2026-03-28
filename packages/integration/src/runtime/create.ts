@@ -52,7 +52,7 @@ const OPTIONS_DEFAULT: ResolvedOptions = {
     cwd: process.cwd(),
     include: [],
     exclude: [],
-    tsconfig: void 0,
+    tsconfigPath: void 0,
 };
 
 const createRuntime = (coreOptions?: CreateRuntimeOptions) => {

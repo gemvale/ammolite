@@ -17,7 +17,7 @@ type CompleteInputOptions = {
      *
      * By default, it discovered automatically.
      */
-    tsconfig: string;
+    tsconfigPath: string;
 };
 
 type InputOptions = Format<Partial<CompleteInputOptions>>;

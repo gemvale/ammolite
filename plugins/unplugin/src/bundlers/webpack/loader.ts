@@ -17,7 +17,10 @@ let runtime: Runtime | null = null;
  */
 type LoaderOptions = Format<
     Partial<
-        Pick<CreateRuntimeOptions, "cwd" | "include" | "exclude" | "tsconfig">
+        Pick<
+            CreateRuntimeOptions,
+            "cwd" | "include" | "exclude" | "tsconfigPath"
+        >
     >
 >;
 
@@ -44,7 +47,7 @@ async function loader(
             cwd: options.cwd,
             include: options.include,
             exclude: options.exclude,
-            tsconfig: options.tsconfig,
+            tsconfigPath: options.tsconfigPath,
         });
     }
 

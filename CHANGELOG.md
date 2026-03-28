@@ -11,18 +11,18 @@
 
 ### Unplugin
 
-- add `tsconfig` option
+- add `tsconfigPath` option
 - add support for Rspack
 - update package metadata
 
 ### Rsbuild Plugin
 
-- add `tsconfig` option
+- add `tsconfigPath` option
 - extends plugin from Rspack instead of webpack
 
 ### NextJS Plugin
 
-- add `tsconfig` option
+- add `tsconfigPath` option
 
 ## 0.1.3 (2026-03-06)
 

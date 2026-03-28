@@ -105,7 +105,7 @@ const compile = async (
         cwd: options.cwd,
         include: options.include,
         exclude: options.exclude,
-        tsconfig: options.tsconfig,
+        tsconfigPath: options.tsconfigPath,
         // dynamic
         file: options.file,
         code: codegenPreprocessed.code,
