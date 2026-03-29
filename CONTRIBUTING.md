@@ -84,6 +84,9 @@ just bench-kf
 # Run style benchmarks
 just bench-style
 
+# Run merge benchmarks
+just bench-merge
+
 # Run all benchmarks
 just bench
 ```

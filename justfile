@@ -47,9 +47,10 @@ tmpl_rollup := "templates/rollup"
 tmpl_rolldown := "templates/rolldown"
 tmpl_vite := "templates/vite"
 
+bench_variables := "benchmarks/variables"
 bench_keyframes := "benchmarks/keyframes"
 bench_style := "benchmarks/style"
-bench_variables := "benchmarks/variables"
+bench_merge := "benchmarks/merge"
 
 # Default action
 _:
@@ -104,9 +105,10 @@ lslint:
     cd ./{{test_compiler}}/src && ls-lint {{lsl_cfg}}
     cd ./{{test_web}}/src && ls-lint {{lsl_cfg}}
 
+    cd ./{{bench_variables}}/src && ls-lint {{lsl_cfg}}
     cd ./{{bench_keyframes}}/src && ls-lint {{lsl_cfg}}
     cd ./{{bench_style}}/src && ls-lint {{lsl_cfg}}
-    cd ./{{bench_variables}}/src && ls-lint {{lsl_cfg}}
+    cd ./{{bench_merge}}/src && ls-lint {{lsl_cfg}}
 
     cd ./{{ex_var}}/src && ls-lint {{lsl_cfg}}
     cd ./{{ex_fallback}}/src && ls-lint {{lsl_cfg}}
@@ -185,11 +187,16 @@ bench-kf:
 bench-style:
     cd ./{{bench_style}} && {{vitest}} bench --run
 
+# Run merge benchmarks
+bench-merge:
+    cd ./{{bench_merge}} && {{vitest}} bench --run
+
 # Run all benchmarks
 bench:
     just bench-var
     just bench-kf
     just bench-style
+    just bench-merge
 
 # Set packages version
 ver VER:

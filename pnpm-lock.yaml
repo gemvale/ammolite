@@ -140,6 +140,19 @@ importers:
         specifier: catalog:dep
         version: 6.1.1(typescript@6.0.2)(vite@7.3.1(@types/node@20.19.37)(jiti@2.6.1)(lightningcss@1.32.0)(terser@5.46.0)(yaml@2.8.3))
 
+  benchmarks/merge:
+    dependencies:
+      ammolite:
+        specifier: workspace:*
+        version: link:../../packages/web
+      vitest:
+        specifier: catalog:dep
+        version: 4.1.1(@types/node@20.19.37)(jiti@2.6.1)(lightningcss@1.32.0)(terser@5.46.0)(yaml@2.8.3)
+    devDependencies:
+      vite-tsconfig-paths:
+        specifier: catalog:dep
+        version: 6.1.1(typescript@6.0.2)(vite@7.3.1(@types/node@20.19.37)(jiti@2.6.1)(lightningcss@1.32.0)(terser@5.46.0)(yaml@2.8.3))
+
   benchmarks/style:
     dependencies:
       '@ammolite/compiler':
