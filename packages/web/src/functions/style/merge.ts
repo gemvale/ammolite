@@ -1,3 +1,8 @@
+/**
+ * Style value type.
+ */
+type StyleValue = string | null | undefined;
+
 type KeyValues = {
     [key: string]: string[];
 };
@@ -64,8 +69,14 @@ const getClassFromKeyValues = (keyValues: KeyValues): string => {
  * const containerA: string = merge(styleA, styleB);
  * ```
  */
-const merge = (...styles: string[]): string => {
-    const keyValues: KeyValues = styles.reduce(
+const merge = (...styles: StyleValue[]): string => {
+    const stylesValues: string[] = styles.filter(
+        (style: StyleValue): style is string => {
+            return typeof style === "string";
+        },
+    );
+
+    const keyValues: KeyValues = stylesValues.reduce(
         (result: KeyValues, style: string): KeyValues => {
             const kvs: KeyValues = getKeyValues(style);
 
@@ -81,4 +92,5 @@ const merge = (...styles: string[]): string => {
     return getClassFromKeyValues(keyValues);
 };
 
+export type { StyleValue };
 export { merge };

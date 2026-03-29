@@ -24,6 +24,10 @@
 
 - add `tsconfigPath` option
 
+### Web
+
+- allow passing `null` and `undefined` parameters into `merge` function
+
 ## 0.1.3 (2026-03-06)
 
 ### Compiler

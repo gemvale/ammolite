@@ -1,4 +1,5 @@
 export type { CSS, Keyframes } from "#/@types/style";
+export type { StyleValue } from "#/functions/style/merge";
 export type { VariablesObject } from "#/functions/variables";
 export type { VariablesSetter } from "#/functions/variables/set";
 
