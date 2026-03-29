@@ -7,6 +7,7 @@ extend-exclude = [
     "node_modules/",
     "dist/",
     "apis/",
+    "benchmarks/merge/src/index.ts",
     "*.tsbuildinfo",
     "*.log",
     "pnpm-debug.log*",

@@ -1,25 +1,25 @@
 import type { StyleValue } from "ammolite";
 
-// Matching 4-char prefixes mirror how merge resolves later classes over earlier ones.
-const cardBase: string = "disp0001 padd0001 bord0001 colo0001 font0001";
+// These values mirror Ammolite's hashed style titles so merge collides on realistic 4-char prefixes.
+const cardBase: string = "djcd17uu pze6fwxy b8unz5j3 ch8skiaw f1jl1omc";
 
-const layoutRow: string = "disp0002 alig0001 gap_0001";
+const layoutRow: string = "djcd1agm a1am1ezc gk3nfwxy";
 
-const toneMuted: string = "colo0002 back0001";
+const toneMuted: string = "ch8sj3nx b1n4zixa";
 
-const spacingCompact: string = "padd0002 marg0001";
+const spacingCompact: string = "pze6ylju m1zjew93";
 
-const stateDefault: string = "bord0002 shad0001";
+const stateDefault: string = "b8unw8mu b1iy1s5f";
 
-const typographyStrong: string = "font0002 line0001 weig0001";
+const typographyStrong: string = "f1jlylju lox0163j fv5c1wjt";
 
-const layoutStack: string = "disp0003 gap_0002";
+const layoutStack: string = "djcd1pa1 gk3nylju";
 
-const toneAccent: string = "colo0003 back0002";
+const toneAccent: string = "ch8s14re b1n4upf2";
 
-const spacingRelaxed: string = "padd0003 marg0002";
+const spacingRelaxed: string = "pze61hln m1zj1zh7";
 
-const stateActive: string = "bord0003 shad0002";
+const stateActive: string = "b8un1m4o b1iyhgeo";
 
 const mergeValuesSmall: readonly StyleValue[] = [
     cardBase,
