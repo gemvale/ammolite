@@ -26,7 +26,7 @@
 
 ### Web
 
-- allow passing `null` and `undefined` parameters into `merge` function
+- allow passing `false`, `null` and `undefined` values into `merge` function
 
 ## 0.1.3 (2026-03-06)
 

@@ -12,6 +12,16 @@ describe("web styles merge tests", (): void => {
         expect(result).toBe("abcd4567 efgh5678");
     });
 
+    it("should merge styles with false values", (): void => {
+        const stylesA: string = "abcd1234 efgh5678";
+
+        const stylesB: false = false;
+
+        const result: string = merge(stylesA, stylesB);
+
+        expect(result).toBe("abcd1234 efgh5678");
+    });
+
     it("should merge styles with null values", (): void => {
         const stylesA: string = "abcd1234 efgh5678";
 

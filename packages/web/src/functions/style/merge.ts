@@ -1,7 +1,7 @@
 /**
  * Style value type.
  */
-type StyleValue = string | null | undefined;
+type StyleValue = string | false | null | undefined;
 
 /**
  * Merge multiple styles.
