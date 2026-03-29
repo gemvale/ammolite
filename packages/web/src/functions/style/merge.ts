@@ -3,52 +3,6 @@
  */
 type StyleValue = string | null | undefined;
 
-type KeyValues = {
-    [key: string]: string[];
-};
-
-// Turn class name into keyValues
-const getKeyValues = (input: string): KeyValues => {
-    /**
-     * From: "abcdf abcde efghi"
-     * To: ["abcdf", "abcde", "efghi"]
-     */
-    const array: string[] = input.split(" ");
-
-    /**
-     * From: ["abcdf", "abcde", "efghi"]
-     * To: { "abcd": ["abcdf", "abcde"], "efgh": ["efghi"] }
-     */
-    return array.reduce((result: KeyValues, value: string) => {
-        if (value.length < 4) {
-            throw new Error(`Invalid class: ${value}`);
-        }
-
-        // get fixed length title
-        const title: string = value.slice(0, 4);
-
-        // create if not exists
-        if (!result[title]) result[title] = [];
-
-        // push
-        result[title].push(value);
-
-        return result;
-    }, {} as KeyValues);
-};
-
-// Turn keyValues back to class name
-const getClassFromKeyValues = (keyValues: KeyValues): string => {
-    const result: string[] = [];
-
-    for (const key in keyValues) {
-        const values: string[] = keyValues[key] ?? [];
-        result.push(values.join(" "));
-    }
-
-    return result.join(" ");
-};
-
 /**
  * Merge multiple styles.
  *
@@ -70,26 +24,21 @@ const getClassFromKeyValues = (keyValues: KeyValues): string => {
  * ```
  */
 const merge = (...styles: StyleValue[]): string => {
-    const stylesValues: string[] = styles.filter(
-        (style: StyleValue): style is string => {
-            return typeof style === "string";
-        },
-    );
+    const map: Record<string, string> = Object.create(null);
 
-    const keyValues: KeyValues = stylesValues.reduce(
-        (result: KeyValues, style: string): KeyValues => {
-            const kvs: KeyValues = getKeyValues(style);
+    for (const style of styles) {
+        if (!style) continue;
 
-            for (const key in kvs) {
-                if (kvs[key]) result[key] = kvs[key];
-            }
+        for (const cls of style.split(" ")) {
+            if (!cls) continue;
 
-            return result;
-        },
-        {} as KeyValues,
-    );
+            if (cls.length < 4) throw new Error(`Invalid class: ${cls}`);
 
-    return getClassFromKeyValues(keyValues);
+            map[cls.slice(0, 4)] = cls;
+        }
+    }
+
+    return Object.values(map).join(" ");
 };
 
 export type { StyleValue };
