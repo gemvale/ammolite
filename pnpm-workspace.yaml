@@ -29,7 +29,7 @@ catalogs:
         # react
         "@types/react": ^19.2.14
         "@types/react-dom": ^19.2.0
-        react: ^19.2.0
+        react: ^19.2.5
         react-dom: ^19.2.5
         # next
         next: ^16.2.2
