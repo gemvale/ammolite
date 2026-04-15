@@ -6,7 +6,7 @@
         "@apst/tsdown": "~0.3.1",
         "@biomejs/biome": "^2.4.11",
         "@types/node": "^20.19.39",
-        "@typescript/native-preview": "7.0.0-dev.20260412.1",
+        "@typescript/native-preview": "7.0.0-dev.20260413.1",
         "tsdown": "catalog:dep",
         "typedoc": "~0.28.19",
         "typedoc-plugin-markdown": "^4.11.0",
