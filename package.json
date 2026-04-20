@@ -10,6 +10,6 @@
         "tsdown": "catalog:dep",
         "typedoc": "~0.28.19",
         "typedoc-plugin-markdown": "^4.11.0",
-        "typescript": "^6.0.2"
+        "typescript": "^6.0.3"
     }
 }
