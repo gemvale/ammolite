@@ -15,7 +15,7 @@
         "@ammolite/postcss": "workspace:*",
         "@ammolite/rsbuild": "workspace:*",
         "@rsbuild/core": "catalog:dev",
-        "@rsbuild/plugin-react": "^1.4.6",
+        "@rsbuild/plugin-react": "^2.0.0",
         "@types/react": "catalog:dep",
         "@types/react-dom": "catalog:dep"
     }
