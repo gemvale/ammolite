@@ -17,9 +17,9 @@ catalogs:
         postcss-load-config: ^6.0.0
         postcss-preset-env: ^11.2.1
         # oxc
-        oxc-parser: ~0.121.0
-        oxc-minify: ~0.121.0
-        rolldown: 1.0.0-rc.12
+        oxc-parser: ~0.127.0
+        oxc-minify: ~0.127.0
+        rolldown: 1.0.0-rc.17
         # tsdown
         "@tsdown/css": ~0.21.10
         tsdown: ~0.21.10
@@ -38,7 +38,7 @@ catalogs:
         webpack: 5.76.0
         "@rspack/core": 1.5.0
         rollup: 4.40.0
-        rolldown: 1.0.0-rc.12
+        rolldown: 1.0.0-rc.17
         vite: 7.0.0
         # rsbuild
         "@rsbuild/core": 1.5.0
@@ -49,12 +49,12 @@ catalogs:
     peer:
         # unplugin
         webpack: ^5.76.0
-        "@rspack/core": ^1.5.0
+        "@rspack/core": ^1.5.0 || ^2.0.0
         rollup: ^4.40.0
-        rolldown: 1.0.0-rc.12
+        rolldown: 1.0.0-rc.17
         vite: ^7.0.0 || ^8.0.0
         # rsbuild
-        "@rsbuild/core": ^1.5.0
+        "@rsbuild/core": ^1.5.0 || ^2.0.0
         # next
         next: ^15.0.0 || ^16.0.0
         # postcss

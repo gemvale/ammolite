@@ -1,5 +1,6 @@
 import type { CreatePluginOptions as _CreatePluginOptions } from "@ammolite/unplugin/rspack/create";
 import type {
+    DistPathConfig,
     RsbuildConfig,
     RsbuildPlugin,
     RsbuildPluginAPI,
@@ -58,6 +59,14 @@ const createPlugin = (createOptions?: CreatePluginOptions) => {
                         userConfig: RsbuildConfig,
                         { mergeRsbuildConfig },
                     ): RsbuildConfig => {
+                        const distPath: string | DistPathConfig | undefined =
+                            userConfig.output?.distPath;
+
+                        const dir: string =
+                            typeof distPath === "string"
+                                ? distPath
+                                : (distPath?.css ?? "./static/css");
+
                         const config: RsbuildConfig = {
                             tools: {
                                 rspack: {
@@ -66,9 +75,7 @@ const createPlugin = (createOptions?: CreatePluginOptions) => {
                                             ...options,
                                             output: {
                                                 ...userConfig.output,
-                                                dir:
-                                                    userConfig.output?.distPath
-                                                        ?.css ?? "./static/css",
+                                                dir,
                                                 fileName: getFileName(
                                                     userConfig,
                                                     options,
