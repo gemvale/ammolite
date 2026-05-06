@@ -22,7 +22,7 @@ catalogs:
       specifier: ^6.5.0
       version: 6.5.0
     next:
-      specifier: ^16.2.4
+      specifier: 16.2.4
       version: 16.2.4
     oxc-minify:
       specifier: ~0.127.0
