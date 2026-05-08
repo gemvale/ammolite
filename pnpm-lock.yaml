@@ -43,8 +43,8 @@ catalogs:
       specifier: ^19.2.5
       version: 19.2.5
     react-dom:
-      specifier: ^19.2.5
-      version: 19.2.5
+      specifier: ^19.2.6
+      version: 19.2.6
     rolldown:
       specifier: ^1.0.0
       version: 1.0.0
@@ -304,7 +304,7 @@ importers:
     devDependencies:
       next:
         specifier: catalog:dev
-        version: 16.0.0(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+        version: 16.0.0(react-dom@19.2.6(react@19.2.5))(react@19.2.5)
       webpack:
         specifier: catalog:dev
         version: 5.76.0
@@ -370,13 +370,13 @@ importers:
         version: link:../../packages/web
       next:
         specifier: catalog:dep
-        version: 16.2.4(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+        version: 16.2.4(react-dom@19.2.6(react@19.2.5))(react@19.2.5)
       react:
         specifier: catalog:dep
         version: 19.2.5
       react-dom:
         specifier: catalog:dep
-        version: 19.2.5(react@19.2.5)
+        version: 19.2.6(react@19.2.5)
     devDependencies:
       '@ammolite/next':
         specifier: workspace:*
@@ -407,13 +407,13 @@ importers:
         version: link:../../packages/web
       next:
         specifier: catalog:dep
-        version: 16.2.4(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+        version: 16.2.4(react-dom@19.2.6(react@19.2.5))(react@19.2.5)
       react:
         specifier: catalog:dep
         version: 19.2.5
       react-dom:
         specifier: catalog:dep
-        version: 19.2.5(react@19.2.5)
+        version: 19.2.6(react@19.2.5)
     devDependencies:
       '@ammolite/next':
         specifier: workspace:*
@@ -476,7 +476,7 @@ importers:
         version: 19.2.5
       react-dom:
         specifier: catalog:dep
-        version: 19.2.5(react@19.2.5)
+        version: 19.2.6(react@19.2.5)
     devDependencies:
       '@ammolite/rsbuild':
         specifier: workspace:*
@@ -504,7 +504,7 @@ importers:
         version: 19.2.5
       react-dom:
         specifier: catalog:dep
-        version: 19.2.5(react@19.2.5)
+        version: 19.2.6(react@19.2.5)
     devDependencies:
       '@ammolite/postcss':
         specifier: workspace:*
@@ -535,7 +535,7 @@ importers:
         version: 19.2.5
       react-dom:
         specifier: catalog:dep
-        version: 19.2.5(react@19.2.5)
+        version: 19.2.6(react@19.2.5)
     devDependencies:
       '@ammolite/unplugin':
         specifier: workspace:*
@@ -563,7 +563,7 @@ importers:
         version: 19.2.5
       react-dom:
         specifier: catalog:dep
-        version: 19.2.5(react@19.2.5)
+        version: 19.2.6(react@19.2.5)
     devDependencies:
       '@ammolite/postcss':
         specifier: workspace:*
@@ -594,7 +594,7 @@ importers:
         version: 19.2.5
       react-dom:
         specifier: catalog:dep
-        version: 19.2.5(react@19.2.5)
+        version: 19.2.6(react@19.2.5)
     devDependencies:
       '@ammolite/unplugin':
         specifier: workspace:*
@@ -646,7 +646,7 @@ importers:
         version: 19.2.5
       react-dom:
         specifier: catalog:dep
-        version: 19.2.5(react@19.2.5)
+        version: 19.2.6(react@19.2.5)
     devDependencies:
       '@ammolite/postcss':
         specifier: workspace:*
@@ -732,13 +732,13 @@ importers:
         version: link:../../../packages/web
       next:
         specifier: catalog:dep
-        version: 16.2.4(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+        version: 16.2.4(react-dom@19.2.6(react@19.2.5))(react@19.2.5)
       react:
         specifier: catalog:dep
         version: 19.2.5
       react-dom:
         specifier: catalog:dep
-        version: 19.2.5(react@19.2.5)
+        version: 19.2.6(react@19.2.5)
       vitest:
         specifier: catalog:dep
         version: 4.1.5(@types/node@20.19.39)(jiti@2.6.1)(lightningcss@1.32.0)(terser@5.46.1)(yaml@2.8.3)
@@ -769,13 +769,13 @@ importers:
         version: link:../../../packages/web
       next:
         specifier: catalog:dep
-        version: 16.2.4(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+        version: 16.2.4(react-dom@19.2.6(react@19.2.5))(react@19.2.5)
       react:
         specifier: catalog:dep
         version: 19.2.5
       react-dom:
         specifier: catalog:dep
-        version: 19.2.5(react@19.2.5)
+        version: 19.2.6(react@19.2.5)
       vitest:
         specifier: catalog:dep
         version: 4.1.5(@types/node@20.19.39)(jiti@2.6.1)(lightningcss@1.32.0)(terser@5.46.1)(yaml@2.8.3)
@@ -5226,10 +5226,10 @@ packages:
     resolution: {integrity: sha512-y3bGgqKj3QBdxLbLkomlohkvsA8gdAiUQlSBJnBhfn+BPxg4bc62d8TcBW15wavDfgexCgccckhcZvywyQYPOw==}
     hasBin: true
 
-  react-dom@19.2.5:
-    resolution: {integrity: sha512-J5bAZz+DXMMwW/wV3xzKke59Af6CHY7G4uYLN1OvBcKEsWOs4pQExj86BBKamxl/Ik5bx9whOrvBlSDfWzgSag==}
+  react-dom@19.2.6:
+    resolution: {integrity: sha512-0prMI+hvBbPjsWnxDLxlCGyM8PN6UuWjEUCYmZhO67xIV9Xasa/r/vDnq+Xyq4Lo27g8QSbO5YzARu0D1Sps3g==}
     peerDependencies:
-      react: ^19.2.5
+      react: ^19.2.6
 
   react-refresh@0.18.0:
     resolution: {integrity: sha512-QgT5//D3jfjJb6Gsjxv0Slpj23ip+HtOpnNgnb2S5zU3CB26G/IDPGoy4RJB42wzFE46DRsstbW6tKHoKbhAxw==}
@@ -9241,14 +9241,14 @@ snapshots:
 
   neo-async@2.6.2: {}
 
-  next@16.0.0(react-dom@19.2.5(react@19.2.5))(react@19.2.5):
+  next@16.0.0(react-dom@19.2.6(react@19.2.5))(react@19.2.5):
     dependencies:
       '@next/env': 16.0.0
       '@swc/helpers': 0.5.15
       caniuse-lite: 1.0.30001766
       postcss: 8.4.31
       react: 19.2.5
-      react-dom: 19.2.5(react@19.2.5)
+      react-dom: 19.2.6(react@19.2.5)
       styled-jsx: 5.1.6(react@19.2.5)
     optionalDependencies:
       '@next/swc-darwin-arm64': 16.0.0
@@ -9264,7 +9264,7 @@ snapshots:
       - '@babel/core'
       - babel-plugin-macros
 
-  next@16.2.4(react-dom@19.2.5(react@19.2.5))(react@19.2.5):
+  next@16.2.4(react-dom@19.2.6(react@19.2.5))(react@19.2.5):
     dependencies:
       '@next/env': 16.2.4
       '@swc/helpers': 0.5.15
@@ -9272,7 +9272,7 @@ snapshots:
       caniuse-lite: 1.0.30001766
       postcss: 8.4.31
       react: 19.2.5
-      react-dom: 19.2.5(react@19.2.5)
+      react-dom: 19.2.6(react@19.2.5)
       styled-jsx: 5.1.6(react@19.2.5)
     optionalDependencies:
       '@next/swc-darwin-arm64': 16.2.4
@@ -9846,7 +9846,7 @@ snapshots:
       minimist: 1.2.8
       strip-json-comments: 2.0.1
 
-  react-dom@19.2.5(react@19.2.5):
+  react-dom@19.2.6(react@19.2.5):
     dependencies:
       react: 19.2.5
       scheduler: 0.27.0
