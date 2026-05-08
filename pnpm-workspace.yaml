@@ -41,7 +41,7 @@ catalogs:
         react: ^19.2.5
         react-dom: ^19.2.6
         # next
-        next: ^16.2.4
+        next: ^16.2.5
     dev:
         # unplugin
         webpack: 5.76.0
