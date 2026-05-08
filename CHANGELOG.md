@@ -1,6 +1,13 @@
 [< Back](./README.md)
 
+## Next
+
+### Compiler
+
 ## 0.1.4 (2026-04-25)
+
+- upgrade `oxc-parser` to `~0.129.0`
+- upgrade `rolldown` to `^1.0.0`
 
 ### Compiler
 
