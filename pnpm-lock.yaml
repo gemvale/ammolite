@@ -97,8 +97,8 @@ importers:
         specifier: ~0.3.0
         version: 0.3.0(typescript@6.0.3)
       '@apst/tsdown':
-        specifier: ~0.3.1
-        version: 0.3.1(tsdown@0.21.10(@typescript/native-preview@7.0.0-dev.20260509.2)(typescript@6.0.3))
+        specifier: ~0.4.0
+        version: 0.4.0(tsdown@0.21.10(@typescript/native-preview@7.0.0-dev.20260509.2)(typescript@6.0.3))
       '@biomejs/biome':
         specifier: ^2.4.15
         version: 2.4.15
@@ -1027,10 +1027,10 @@ packages:
       typescript:
         optional: true
 
-  '@apst/tsdown@0.3.1':
-    resolution: {integrity: sha512-2JItF3F//Xtf7P5EuymvobzphVtvrxlXI53OP9HR1lXTvf987n1RREp04esY1A91HdAeQ99F+SD1qwqU7hwPSQ==}
+  '@apst/tsdown@0.4.0':
+    resolution: {integrity: sha512-oAX02XEau2qwv2v8hPiPgcBDerCnxW326QbRFRc7absSzEWA7pYNCf2jM7SPFqVvVj86CQwYKh2llo7NvaQi2A==}
     peerDependencies:
-      tsdown: ~0.21.0
+      tsdown: ~0.21.0 || ~0.22.0
     peerDependenciesMeta:
       tsdown:
         optional: true
@@ -4038,8 +4038,8 @@ packages:
   es-toolkit@1.43.0:
     resolution: {integrity: sha512-SKCT8AsWvYzBBuUqMk4NPwFlSdqLpJwmy6AP322ERn8W2YLIB6JBXnwMI2Qsh2gfphT3q7EKAxKb23cvFHFwKA==}
 
-  es-toolkit@1.45.1:
-    resolution: {integrity: sha512-/jhoOj/Fx+A+IIyDNOvO3TItGmlMKhtX8ISAHKE90c4b/k1tqaqEZ+uUqfpU8DMnW5cgNJv606zS55jGvza0Xw==}
+  es-toolkit@1.46.1:
+    resolution: {integrity: sha512-5eNtXOs3tbfxXOj04tjjseeWkRWaoCjdEI+96DgwzZoe6c9juL49pXlzAFTI72aWC9Y8p7168g6XIKjh7k6pyQ==}
 
   esbuild@0.25.12:
     resolution: {integrity: sha512-bbPBYYrtZbkt6Os6FiTLCTFxvq4tt3JKall1vRwshA3fdVztsLAatFaZobhkBC8/BrPetoa0oksYoKXoG4ryJg==}
@@ -6117,9 +6117,9 @@ snapshots:
     optionalDependencies:
       typescript: 6.0.3
 
-  '@apst/tsdown@0.3.1(tsdown@0.21.10(@typescript/native-preview@7.0.0-dev.20260509.2)(typescript@6.0.3))':
+  '@apst/tsdown@0.4.0(tsdown@0.21.10(@typescript/native-preview@7.0.0-dev.20260509.2)(typescript@6.0.3))':
     dependencies:
-      es-toolkit: 1.45.1
+      es-toolkit: 1.46.1
     optionalDependencies:
       tsdown: 0.21.10(@tsdown/css@0.22.0)(@typescript/native-preview@7.0.0-dev.20260509.2)(typescript@6.0.3)
 
@@ -8548,7 +8548,7 @@ snapshots:
 
   es-toolkit@1.43.0: {}
 
-  es-toolkit@1.45.1: {}
+  es-toolkit@1.46.1: {}
 
   esbuild@0.25.12:
     optionalDependencies:
