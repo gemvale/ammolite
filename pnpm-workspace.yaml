@@ -24,7 +24,7 @@ catalogs:
         # postcss
         postcss-flexbugs-fixes: ^5.0.0
         postcss-load-config: ^6.0.0
-        postcss-preset-env: ^11.2.1
+        postcss-preset-env: ^11.3.0
         # oxc
         oxc-parser: ~0.129.0
         oxc-minify: ~0.129.0
