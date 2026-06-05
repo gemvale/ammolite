@@ -31,7 +31,7 @@ catalogs:
         rolldown: ^1.0.0
         # tsdown
         "@tsdown/css": ~0.22.1
-        tsdown: ~0.22.0
+        tsdown: ~0.22.1
         # vite
         vitest: ^4.1.8
         vite-tsconfig-paths: ^6.1.0
