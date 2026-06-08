@@ -27,6 +27,11 @@
         "email": "contact@alphe.us"
     },
     "exports": {
+        ".": {
+            "types": "./dist/rollup/index.d.ts",
+            "import": "./dist/rollup/index.mjs",
+            "require": "./dist/rollup/index.js"
+        },
         "./webpack": {
             "types": "./dist/webpack/index.d.ts",
             "import": "./dist/webpack/index.mjs",
@@ -74,9 +79,9 @@
         },
         "./package.json": "./package.json"
     },
-    "main": "./dist/rollup.js",
-    "module": "./dist/rollup.js",
-    "types": "./dist/rollup.d.ts",
+    "main": "./dist/rollup/index.js",
+    "module": "./dist/rollup/index.mjs",
+    "types": "./dist/rollup/index.d.ts",
     "files": [
         "dist"
     ],
