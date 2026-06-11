@@ -13,7 +13,7 @@
     "devDependencies": {
         "@ammolite/postcss": "workspace:*",
         "@ammolite/unplugin": "workspace:*",
-        "@swc/core": "^1.15.40",
+        "@swc/core": "^1.15.41",
         "@types/react": "catalog:dep",
         "@types/react-dom": "catalog:dep",
         "clean-webpack-plugin": "^4.0.0",
