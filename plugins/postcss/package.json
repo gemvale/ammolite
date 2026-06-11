@@ -1,6 +1,6 @@
 {
     "name": "@ammolite/postcss",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "description": "A PostCSS plugin for Ammolite",
     "keywords": [
         "ammolite",
