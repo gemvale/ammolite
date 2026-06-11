@@ -4,8 +4,12 @@
 
 ### Compiler
 
-- upgrade `oxc-parser` to `~0.132.0`
+- upgrade `oxc-parser` to `~0.135.0`
 - upgrade `rolldown` to `^1.0.0`
+
+### Unplugin
+
+- fix root package export
 
 ## 0.1.4 (2026-04-25)
 
