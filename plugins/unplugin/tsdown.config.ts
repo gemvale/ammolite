@@ -20,7 +20,6 @@ export default defineConfig(
             "webpack/loader": "./src/bundlers/webpack/loader.ts",
         },
         platform: "node",
-        shims: false,
         unbundle: true,
     },
     [

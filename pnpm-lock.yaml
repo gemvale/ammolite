@@ -7,8 +7,8 @@ settings:
 catalogs:
   dep:
     '@tsdown/css':
-      specifier: 0.22.0
-      version: 0.22.0
+      specifier: ~0.22.2
+      version: 0.22.2
     '@types/react':
       specifier: ^19.2.17
       version: 19.2.17
@@ -52,8 +52,8 @@ catalogs:
       specifier: ~0.2.3
       version: 0.2.3
     tsdown:
-      specifier: 0.22.0
-      version: 0.22.0
+      specifier: ~0.22.2
+      version: 0.22.2
     vite-tsconfig-paths:
       specifier: ^6.1.0
       version: 6.1.1
@@ -97,8 +97,8 @@ importers:
         specifier: ~0.3.0
         version: 0.3.0(typescript@6.0.3)
       '@apst/tsdown':
-        specifier: ~0.4.0
-        version: 0.4.0(tsdown@0.22.0)
+        specifier: ~0.5.0
+        version: 0.5.0(tsdown@0.22.2)
       '@biomejs/biome':
         specifier: ^2.4.16
         version: 2.4.16
@@ -110,7 +110,7 @@ importers:
         version: 7.0.0-dev.20260609.1
       tsdown:
         specifier: catalog:dep
-        version: 0.22.0(@tsdown/css@0.22.0)(@typescript/native-preview@7.0.0-dev.20260609.1)(typescript@6.0.3)
+        version: 0.22.2(@tsdown/css@0.22.2)(@typescript/native-preview@7.0.0-dev.20260609.1)(typescript@6.0.3)
       typedoc:
         specifier: ~0.28.19
         version: 0.28.19(typescript@6.0.3)
@@ -879,10 +879,10 @@ importers:
         version: link:../../../plugins/unplugin
       '@tsdown/css':
         specifier: catalog:dep
-        version: 0.22.0(jiti@2.6.1)(postcss@8.5.6)(tsdown@0.22.0)(yaml@2.8.3)
+        version: 0.22.2(jiti@2.6.1)(postcss@8.5.6)(tsdown@0.22.2)(yaml@2.8.3)
       tsdown:
         specifier: catalog:dep
-        version: 0.22.0(@tsdown/css@0.22.0)(@typescript/native-preview@7.0.0-dev.20260609.1)(typescript@6.0.3)
+        version: 0.22.2(@tsdown/css@0.22.2)(@typescript/native-preview@7.0.0-dev.20260609.1)(typescript@6.0.3)
 
   tests/plugins/vite:
     dependencies:
@@ -1027,8 +1027,8 @@ packages:
       typescript:
         optional: true
 
-  '@apst/tsdown@0.4.0':
-    resolution: {integrity: sha512-oAX02XEau2qwv2v8hPiPgcBDerCnxW326QbRFRc7absSzEWA7pYNCf2jM7SPFqVvVj86CQwYKh2llo7NvaQi2A==}
+  '@apst/tsdown@0.5.0':
+    resolution: {integrity: sha512-y9wJAj5Xz91KEqpgN4D2Ooh+Cg4zIW4cwAt0qlPKNVWPIeCeS/qhyNK9fXf3aBcCQINofgtC9TvK5osSUJs5uQ==}
     peerDependencies:
       tsdown: ~0.21.0 || ~0.22.0
     peerDependenciesMeta:
@@ -3194,8 +3194,8 @@ packages:
   '@swc/types@0.1.26':
     resolution: {integrity: sha512-lyMwd7WGgG79RS7EERZV3T8wMdmPq3xwyg+1nmAM64kIhx5yl+juO2PYIHb7vTiPgPCj8LYjsNV2T5wiQHUEaw==}
 
-  '@tsdown/css@0.22.0':
-    resolution: {integrity: sha512-gpkuNYVwgibCotNlHqgn1TJ9qHcE8Tim1rwaiQR7Ee9Rjb9BDYLypraaGMxqZgR1gr8NGRLGtbIv3eJtt5MHbQ==}
+  '@tsdown/css@0.22.2':
+    resolution: {integrity: sha512-Go3Im9TaQnoX68vfU8Jv0OVzlxAkbKcAhTHBSkO0oC3ULClKcKETFqF4GN3P5Tcsu43NlyzOnob5po5zKSFNCA==}
     engines: {node: ^22.18.0 || >=24.0.0}
     peerDependencies:
       postcss: ^8.4.0
@@ -3203,7 +3203,7 @@ packages:
       postcss-modules: ^6.0.0
       sass: '*'
       sass-embedded: '*'
-      tsdown: 0.22.0
+      tsdown: 0.22.2
     peerDependenciesMeta:
       postcss:
         optional: true
@@ -5725,14 +5725,14 @@ packages:
       typescript:
         optional: true
 
-  tsdown@0.22.0:
-    resolution: {integrity: sha512-FgW0hHb27nGQA/+F3d5+U9wKXkfilk9DVkc5+7x/ZqF03g+Hoz/eeApT32jqxATt9eRoR+1jxk7MUMON+O4CXw==}
+  tsdown@0.22.2:
+    resolution: {integrity: sha512-VX9gsyKXsTnBZjnIM4jsHl9aRv+GfgkE/k1hQslilaBfZMlaw3JuGR+6yhiU0QxWBtOCDnTjwOSoXzgB7Rr50g==}
     engines: {node: ^22.18.0 || >=24.0.0}
     hasBin: true
     peerDependencies:
       '@arethetypeswrong/core': ^0.18.1
-      '@tsdown/css': 0.22.0
-      '@tsdown/exe': 0.22.0
+      '@tsdown/css': 0.22.2
+      '@tsdown/exe': 0.22.2
       '@vitejs/devtools': '*'
       publint: ^0.3.8
       tsx: '*'
@@ -6176,11 +6176,11 @@ snapshots:
     optionalDependencies:
       typescript: 6.0.3
 
-  '@apst/tsdown@0.4.0(tsdown@0.22.0)':
+  '@apst/tsdown@0.5.0(tsdown@0.22.2)':
     dependencies:
       es-toolkit: 1.46.1
     optionalDependencies:
-      tsdown: 0.22.0(@tsdown/css@0.22.0)(@typescript/native-preview@7.0.0-dev.20260609.1)(typescript@6.0.3)
+      tsdown: 0.22.2(@tsdown/css@0.22.2)(@typescript/native-preview@7.0.0-dev.20260609.1)(typescript@6.0.3)
 
   '@babel/code-frame@7.29.0':
     dependencies:
@@ -7777,12 +7777,12 @@ snapshots:
     dependencies:
       '@swc/counter': 0.1.3
 
-  '@tsdown/css@0.22.0(jiti@2.6.1)(postcss@8.5.6)(tsdown@0.22.0)(yaml@2.8.3)':
+  '@tsdown/css@0.22.2(jiti@2.6.1)(postcss@8.5.6)(tsdown@0.22.2)(yaml@2.8.3)':
     dependencies:
       lightningcss: 1.32.0
       postcss-load-config: 6.0.1(jiti@2.6.1)(postcss@8.5.6)(yaml@2.8.3)
       rolldown: 1.1.0
-      tsdown: 0.22.0(@tsdown/css@0.22.0)(@typescript/native-preview@7.0.0-dev.20260609.1)(typescript@6.0.3)
+      tsdown: 0.22.2(@tsdown/css@0.22.2)(@typescript/native-preview@7.0.0-dev.20260609.1)(typescript@6.0.3)
     optionalDependencies:
       postcss: 8.5.6
     transitivePeerDependencies:
@@ -10283,7 +10283,7 @@ snapshots:
     dependencies:
       '@img/colour': 1.0.0
       detect-libc: 2.1.2
-      semver: 7.7.4
+      semver: 7.8.4
     optionalDependencies:
       '@img/sharp-darwin-arm64': 0.34.5
       '@img/sharp-darwin-x64': 0.34.5
@@ -10556,7 +10556,7 @@ snapshots:
     optionalDependencies:
       typescript: 6.0.3
 
-  tsdown@0.22.0(@tsdown/css@0.22.0)(@typescript/native-preview@7.0.0-dev.20260609.1)(typescript@6.0.3):
+  tsdown@0.22.2(@tsdown/css@0.22.2)(@typescript/native-preview@7.0.0-dev.20260609.1)(typescript@6.0.3):
     dependencies:
       ansis: 4.3.1
       cac: 7.0.0
@@ -10574,7 +10574,7 @@ snapshots:
       tree-kill: 1.2.2
       unconfig-core: 7.5.0
     optionalDependencies:
-      '@tsdown/css': 0.22.0(jiti@2.6.1)(postcss@8.5.6)(tsdown@0.22.0)(yaml@2.8.3)
+      '@tsdown/css': 0.22.2(jiti@2.6.1)(postcss@8.5.6)(tsdown@0.22.2)(yaml@2.8.3)
       typescript: 6.0.3
     transitivePeerDependencies:
       - '@ts-macro/tsc'
