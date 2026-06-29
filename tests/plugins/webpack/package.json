@@ -10,7 +10,7 @@
     "devDependencies": {
         "@ammolite/test-core": "workspace:*",
         "@ammolite/unplugin": "workspace:*",
-        "@swc/core": "^1.15.41",
+        "@swc/core": "^1.15.43",
         "css-loader": "^7.1.4",
         "mini-css-extract-plugin": "^2.10.2",
         "swc-loader": "~0.2.7",
