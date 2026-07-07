@@ -22,7 +22,7 @@ catalogs:
       specifier: ^6.5.0
       version: 6.5.0
     next:
-      specifier: 16.2.10
+      specifier: ^16.2.10
       version: 16.2.10
     oxc-minify:
       specifier: ~0.135.0
@@ -6773,7 +6773,7 @@ snapshots:
 
   '@img/sharp-wasm32@0.34.5':
     dependencies:
-      '@emnapi/runtime': 1.10.0
+      '@emnapi/runtime': 1.11.0
     optional: true
 
   '@img/sharp-win32-arm64@0.34.5':
