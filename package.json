@@ -8,7 +8,7 @@
         "@types/node": "^20.19.43",
         "@typescript/native-preview": "7.0.0-dev.20260705.1",
         "tsdown": "catalog:dep",
-        "typedoc": "~0.28.19",
+        "typedoc": "~0.28.20",
         "typedoc-plugin-markdown": "^4.12.0",
         "typescript": "^6.0.3"
     }
