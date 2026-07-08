@@ -33,7 +33,7 @@ catalogs:
         "@tsdown/css": ~0.22.3
         tsdown: ~0.22.3
         # vite
-        vitest: ^4.1.9
+        vitest: ^4.1.10
         vite-tsconfig-paths: ^6.1.0
         # react
         "@types/react": ^19.2.17
