@@ -77,4 +77,6 @@ minimumReleaseAgeExclude:
     - "@apst/tsconfig"
     - "@apst/tsdown"
     # core
-    - "ts-vista"
+    - "@typescript/*"
+    - typescript
+    - ts-vista

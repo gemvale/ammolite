@@ -1,7 +1,7 @@
 set shell := ["bash", "-cu"]
 set windows-shell := ["pwsh", "-Command"]
 
-tsc := "pnpm exec tsgo"
+tsc := "pnpm exec tsc"
 biome := "pnpm exec biome"
 tsdown := "pnpm exec tsdown"
 vitest := "pnpm exec vitest"
