@@ -52,8 +52,8 @@ catalogs:
       specifier: ~0.2.3
       version: 0.2.3
     tsdown:
-      specifier: ~0.22.9
-      version: 0.22.9
+      specifier: ~0.22.12
+      version: 0.22.12
     vite-tsconfig-paths:
       specifier: ^6.1.0
       version: 6.1.1
@@ -98,7 +98,7 @@ importers:
         version: 0.3.0(@typescript/typescript6@6.0.2)
       '@apst/tsdown':
         specifier: ~0.5.0
-        version: 0.5.0(tsdown@0.22.9)
+        version: 0.5.0(tsdown@0.22.12(@typescript/typescript6@6.0.2))
       '@biomejs/biome':
         specifier: ^2.5.4
         version: 2.5.4
@@ -107,7 +107,7 @@ importers:
         version: 20.19.43
       tsdown:
         specifier: catalog:dep
-        version: 0.22.9(@tsdown/css@0.22.9)(@typescript/typescript6@6.0.2)
+        version: 0.22.12(@typescript/typescript6@6.0.2)
       typedoc:
         specifier: ~0.28.20
         version: 0.28.20(@typescript/typescript6@6.0.2)
@@ -879,10 +879,10 @@ importers:
         version: link:../../../plugins/unplugin
       '@tsdown/css':
         specifier: catalog:dep
-        version: 0.22.9(jiti@2.6.1)(postcss@8.5.6)(tsdown@0.22.9)(yaml@2.9.0)
+        version: 0.22.9(jiti@2.6.1)(postcss@8.5.6)(tsdown@0.22.12)(yaml@2.9.0)
       tsdown:
         specifier: catalog:dep
-        version: 0.22.9(@tsdown/css@0.22.9)(typescript@7.0.2)
+        version: 0.22.12(@tsdown/css@0.22.9)(typescript@7.0.2)
 
   tests/plugins/vite:
     dependencies:
@@ -4956,6 +4956,10 @@ packages:
     resolution: {integrity: sha512-9miFgM2OFba7hB+pRgvtV84pYTBaoTHohvmIgiRt6dRIzbwEOIaNaP+dIlGs2fNFoB0SeISs0Jz5WFVRid6Xyg==}
     engines: {node: '>=12.20.0'}
 
+  obug@2.1.4:
+    resolution: {integrity: sha512-4a+OsYv9UktOJKE+l1A4OufDgdRF9PifWj+tJnHURo/P+WOxpG4GzUFL9qCalmWauao6ogiG+QvnCovwPoyAWA==}
+    engines: {node: '>=12.20.0'}
+
   ofetch@1.5.1:
     resolution: {integrity: sha512-2W4oUZlVaqAPAil6FUg/difl6YhqhUR7x2eZY4bQCko22UXg3hptq9KLQdqFClV+Wu85UX7hNtdGTngi/1BxcA==}
 
@@ -5807,14 +5811,14 @@ packages:
       typescript:
         optional: true
 
-  tsdown@0.22.9:
-    resolution: {integrity: sha512-/0QEjQEhOU1t1YxOIAGzFN7bIssd8P0pBpkOmNLCQi3c5UtrcMF5bvq3f30xHJNW9QCA9aUNcNAorMr2CTd6Lg==}
+  tsdown@0.22.12:
+    resolution: {integrity: sha512-IzGRfGwSsufXJWOcQ0tmECKMG/dbxhUwDOySTS7JE1AM8pkB9+bpcTPs8bTxxSNrSvGocSczrBlOh97tZObq9Q==}
     engines: {node: ^22.18.0 || >=24.11.0}
     hasBin: true
     peerDependencies:
       '@arethetypeswrong/core': ^0.18.1
-      '@tsdown/css': 0.22.9
-      '@tsdown/exe': 0.22.9
+      '@tsdown/css': 0.22.12
+      '@tsdown/exe': 0.22.12
       '@vitejs/devtools': '*'
       publint: ^0.3.8
       tsx: '*'
@@ -5996,6 +6000,10 @@ packages:
   vary@1.1.2:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
     engines: {node: '>= 0.8'}
+
+  verkit@0.1.2:
+    resolution: {integrity: sha512-WqkT8n3hqizuCu71W3bUzf5fjBmkbXcudsehe/NbxA8PgqoKnSOY5K0Ba2ckg1qaRaSpSz7as/n9K1R9JXjQKg==}
+    engines: {node: '>=18.12.0'}
 
   vite-tsconfig-paths@6.1.1:
     resolution: {integrity: sha512-2cihq7zliibCCZ8P9cKJrQBkfgdvcFkOOc3Y02o3GWUDLgqjWsZudaoiuOwO/gzTzy17cS5F7ZPo4bsnS4DGkg==}
@@ -6264,11 +6272,11 @@ snapshots:
     optionalDependencies:
       typescript: '@typescript/typescript6@6.0.2'
 
-  '@apst/tsdown@0.5.0(tsdown@0.22.9)':
+  '@apst/tsdown@0.5.0(tsdown@0.22.12(@typescript/typescript6@6.0.2))':
     dependencies:
       es-toolkit: 1.46.1
     optionalDependencies:
-      tsdown: 0.22.9(@tsdown/css@0.22.9)(@typescript/typescript6@6.0.2)
+      tsdown: 0.22.12(@typescript/typescript6@6.0.2)
 
   '@babel/code-frame@7.29.0':
     dependencies:
@@ -7918,12 +7926,12 @@ snapshots:
     dependencies:
       '@swc/counter': 0.1.3
 
-  '@tsdown/css@0.22.9(jiti@2.6.1)(postcss@8.5.6)(tsdown@0.22.9)(yaml@2.9.0)':
+  '@tsdown/css@0.22.9(jiti@2.6.1)(postcss@8.5.6)(tsdown@0.22.12)(yaml@2.9.0)':
     dependencies:
       lightningcss: 1.32.0
       postcss-load-config: 6.0.1(jiti@2.6.1)(postcss@8.5.6)(yaml@2.9.0)
       rolldown: 1.2.0
-      tsdown: 0.22.9(@tsdown/css@0.22.9)(typescript@7.0.2)
+      tsdown: 0.22.12(@tsdown/css@0.22.9)(typescript@7.0.2)
     optionalDependencies:
       postcss: 8.5.6
     transitivePeerDependencies:
@@ -9582,6 +9590,8 @@ snapshots:
 
   obug@2.1.3: {}
 
+  obug@2.1.4: {}
+
   ofetch@1.5.1:
     dependencies:
       destr: 2.0.5
@@ -10191,7 +10201,7 @@ snapshots:
     dependencies:
       dts-resolver: 3.0.0
       get-tsconfig: 5.0.0-beta.5
-      obug: 2.1.3
+      obug: 2.1.4
       rolldown: 1.2.0
       yuku-ast: 0.1.7
       yuku-codegen: 0.6.1
@@ -10205,7 +10215,7 @@ snapshots:
     dependencies:
       dts-resolver: 3.0.0
       get-tsconfig: 5.0.0-beta.5
-      obug: 2.1.3
+      obug: 2.1.4
       rolldown: 1.2.0
       yuku-ast: 0.1.7
       yuku-codegen: 0.6.1
@@ -10361,7 +10371,8 @@ snapshots:
 
   semver@7.7.4: {}
 
-  semver@7.8.5: {}
+  semver@7.8.5:
+    optional: true
 
   send@1.2.1:
     dependencies:
@@ -10675,7 +10686,7 @@ snapshots:
     optionalDependencies:
       typescript: '@typescript/typescript6@6.0.2'
 
-  tsdown@0.22.9(@tsdown/css@0.22.9)(@typescript/typescript6@6.0.2):
+  tsdown@0.22.12(@tsdown/css@0.22.9)(typescript@7.0.2):
     dependencies:
       ansis: 4.3.1
       cac: 7.0.0
@@ -10683,25 +10694,25 @@ snapshots:
       empathic: 2.0.1
       hookable: 6.1.1
       import-without-cache: 0.4.0
-      obug: 2.1.3
+      obug: 2.1.4
       picomatch: 4.0.5
       rolldown: 1.2.0
-      rolldown-plugin-dts: 0.27.9(@typescript/typescript6@6.0.2)(rolldown@1.2.0)
-      semver: 7.8.5
+      rolldown-plugin-dts: 0.27.9(rolldown@1.2.0)(typescript@7.0.2)
       tinyexec: 1.2.4
       tinyglobby: 0.2.17
       tree-kill: 1.2.2
       unconfig-core: 7.5.0
+      verkit: 0.1.2
     optionalDependencies:
-      '@tsdown/css': 0.22.9(jiti@2.6.1)(postcss@8.5.6)(tsdown@0.22.9)(yaml@2.9.0)
-      typescript: '@typescript/typescript6@6.0.2'
+      '@tsdown/css': 0.22.9(jiti@2.6.1)(postcss@8.5.6)(tsdown@0.22.12)(yaml@2.9.0)
+      typescript: 7.0.2
     transitivePeerDependencies:
       - '@ts-macro/tsc'
       - '@typescript/native-preview'
       - oxc-resolver
       - vue-tsc
 
-  tsdown@0.22.9(@tsdown/css@0.22.9)(typescript@7.0.2):
+  tsdown@0.22.12(@typescript/typescript6@6.0.2):
     dependencies:
       ansis: 4.3.1
       cac: 7.0.0
@@ -10709,18 +10720,17 @@ snapshots:
       empathic: 2.0.1
       hookable: 6.1.1
       import-without-cache: 0.4.0
-      obug: 2.1.3
+      obug: 2.1.4
       picomatch: 4.0.5
       rolldown: 1.2.0
-      rolldown-plugin-dts: 0.27.9(rolldown@1.2.0)(typescript@7.0.2)
-      semver: 7.8.5
+      rolldown-plugin-dts: 0.27.9(@typescript/typescript6@6.0.2)(rolldown@1.2.0)
       tinyexec: 1.2.4
       tinyglobby: 0.2.17
       tree-kill: 1.2.2
       unconfig-core: 7.5.0
+      verkit: 0.1.2
     optionalDependencies:
-      '@tsdown/css': 0.22.9(jiti@2.6.1)(postcss@8.5.6)(tsdown@0.22.9)(yaml@2.9.0)
-      typescript: 7.0.2
+      typescript: '@typescript/typescript6@6.0.2'
     transitivePeerDependencies:
       - '@ts-macro/tsc'
       - '@typescript/native-preview'
@@ -10845,6 +10855,8 @@ snapshots:
   utila@0.4.0: {}
 
   vary@1.1.2: {}
+
+  verkit@0.1.2: {}
 
   vite-tsconfig-paths@6.1.1(@typescript/typescript6@6.0.2)(vite@7.3.1(@types/node@26.1.0)(jiti@2.6.1)(lightningcss@1.32.0)(terser@5.46.1)(yaml@2.9.0)):
     dependencies:
