@@ -547,8 +547,8 @@ importers:
         specifier: catalog:dep
         version: 19.2.3(@types/react@19.2.17)
       '@vitejs/plugin-react':
-        specifier: ^6.0.3
-        version: 6.0.3(vite@7.0.0(@types/node@26.1.0)(jiti@2.6.1)(lightningcss@1.33.0)(terser@5.46.1)(yaml@2.9.0))
+        specifier: ^6.0.4
+        version: 6.0.4(vite@7.0.0(@types/node@26.1.0)(jiti@2.6.1)(lightningcss@1.33.0)(terser@5.46.1)(yaml@2.9.0))
       vite:
         specifier: catalog:dev
         version: 7.0.0(@types/node@26.1.0)(jiti@2.6.1)(lightningcss@1.33.0)(terser@5.46.1)(yaml@2.9.0)
@@ -578,8 +578,8 @@ importers:
         specifier: catalog:dep
         version: 19.2.3(@types/react@19.2.17)
       '@vitejs/plugin-react':
-        specifier: ^6.0.3
-        version: 6.0.3(vite@7.0.0(@types/node@26.1.0)(jiti@2.6.1)(lightningcss@1.33.0)(terser@5.46.1)(yaml@2.9.0))
+        specifier: ^6.0.4
+        version: 6.0.4(vite@7.0.0(@types/node@26.1.0)(jiti@2.6.1)(lightningcss@1.33.0)(terser@5.46.1)(yaml@2.9.0))
       vite:
         specifier: catalog:dev
         version: 7.0.0(@types/node@26.1.0)(jiti@2.6.1)(lightningcss@1.33.0)(terser@5.46.1)(yaml@2.9.0)
@@ -3439,8 +3439,8 @@ packages:
     resolution: {integrity: sha512-mbCddXd+jm7hfx7w2YU64/Av4/NqqeG3GoRZgxPcgoTxYjhrcfJRw9ULch71SS4G+Q3bOXFhRvPqjguN0Hyp5w==}
     hasBin: true
 
-  '@vitejs/plugin-react@6.0.3':
-    resolution: {integrity: sha512-vmFvco5/QuC2f9Oj+wTk0+9XeDFkHxSamwZKYc7MxYwKICfvUvlMhqKI0VuICPltGqh1neqBKDvO4kes1ya8vg==}
+  '@vitejs/plugin-react@6.0.4':
+    resolution: {integrity: sha512-XcCQz0TBpBgljhj0gMuuDj49i6Ytqh5q1osT/Gp5uAVJUCTWxyskk/l1jwYYiu2xcNHHipdMz40EGfM1VdamVg==}
     engines: {node: ^20.19.0 || >=22.12.0}
     peerDependencies:
       '@rolldown/plugin-babel': ^0.1.7 || ^0.2.0
@@ -8127,7 +8127,7 @@ snapshots:
     dependencies:
       '@typescript/old': typescript@6.0.3
 
-  '@vitejs/plugin-react@6.0.3(vite@7.0.0(@types/node@26.1.0)(jiti@2.6.1)(lightningcss@1.33.0)(terser@5.46.1)(yaml@2.9.0))':
+  '@vitejs/plugin-react@6.0.4(vite@7.0.0(@types/node@26.1.0)(jiti@2.6.1)(lightningcss@1.33.0)(terser@5.46.1)(yaml@2.9.0))':
     dependencies:
       '@rolldown/pluginutils': 1.0.1
       vite: 7.0.0(@types/node@26.1.0)(jiti@2.6.1)(lightningcss@1.33.0)(terser@5.46.1)(yaml@2.9.0)
