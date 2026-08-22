@@ -16,6 +16,7 @@ import * as Path from "node:path";
 
 import { getOutput } from "#/functions/output";
 import { pickAsset } from "#/functions/rollup/pick";
+import { replaceBundleReferences } from "#/functions/rollup/replace";
 
 type CompleteEmitPluginOptions = {
     logger: Logger;
@@ -59,7 +60,27 @@ const emitPlugin = ({
                         ? asset.source
                         : Buffer.from(asset.source).toString("utf-8");
 
-                asset.source = `${source}${result}`;
+                const combined: string = `${source}${result}`;
+
+                const oldFileName: string = asset.fileName;
+
+                delete bundle[oldFileName];
+
+                const referenceId: string = this.emitFile({
+                    type: "asset",
+                    name: output.name,
+                    source: combined,
+                });
+
+                const nextFileName: string = this.getFileName(referenceId);
+
+                if (nextFileName && oldFileName !== nextFileName) {
+                    replaceBundleReferences({
+                        bundle,
+                        oldFileName,
+                        nextFileName,
+                    });
+                }
 
                 return void 0;
             }

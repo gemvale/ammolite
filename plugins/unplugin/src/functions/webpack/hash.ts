@@ -14,11 +14,11 @@ const createGetHashContent = ({
     const { hashDigest, hashDigestLength, hashFunction, hashSalt } =
         compilation.outputOptions;
 
-    const hash = compiler.webpack.util.createHash(hashFunction ?? "md5");
-
-    if (hashSalt) hash.update(hashSalt);
-
     return (source: string): string => {
+        const hash = compiler.webpack.util.createHash(hashFunction ?? "md5");
+
+        if (hashSalt) hash.update(hashSalt);
+
         hash.update(source);
 
         return hash.digest(hashDigest).toString().slice(0, hashDigestLength);
