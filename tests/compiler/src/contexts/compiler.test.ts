@@ -27,12 +27,15 @@ describe("bundler tests", (): void => {
         "rspack",
         "rollup",
         "vite",
-    ] as const)("should resolve tsconfig paths for %s", (bundlerName: BundlerName): void => {
-        const context: CompilerContext = createContext(bundlerName);
+    ] as const)(
+        "should resolve tsconfig paths for %s",
+        (bundlerName: BundlerName): void => {
+            const context: CompilerContext = createContext(bundlerName);
 
-        expect(context.file).toEqual(FILE);
-        expect(context.code).toEqual(CODE);
-        expect(context.bundler.name).toEqual(bundlerName);
-        expect(context.bundler.version).toEqual(VERSION);
-    });
+            expect(context.file).toEqual(FILE);
+            expect(context.code).toEqual(CODE);
+            expect(context.bundler.name).toEqual(bundlerName);
+            expect(context.bundler.version).toEqual(VERSION);
+        },
+    );
 });
