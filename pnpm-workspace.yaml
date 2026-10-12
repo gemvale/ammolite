@@ -37,11 +37,11 @@ catalogs:
         vite-tsconfig-paths: ^6.1.0
         # react
         "@types/react": ^19.2.17
-        "@types/react-dom": ^19.2.0
+        "@types/react-dom": ^19.2.4
         react: ^19.2.8
         react-dom: ^19.2.8
         # next
-        next: ^16.2.12
+        next: ^16.3.2
     dev:
         # unplugin
         webpack: 5.76.0
