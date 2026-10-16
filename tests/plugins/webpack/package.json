@@ -11,7 +11,7 @@
         "@ammolite/test-core": "workspace:*",
         "@ammolite/unplugin": "workspace:*",
         "@swc/core": "^1.16.1",
-        "css-loader": "^7.1.4",
+        "css-loader": "^7.1.5",
         "mini-css-extract-plugin": "^2.10.2",
         "swc-loader": "~0.2.7",
         "webpack": "catalog:dev"
