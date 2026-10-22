@@ -12,7 +12,7 @@
         "@ammolite/test-core": "workspace:*",
         "@ammolite/unplugin": "workspace:*",
         "@swc/core": "^1.16.1",
-        "css-loader": "^7.1.4",
+        "css-loader": "^7.1.5",
         "mini-css-extract-plugin": "^2.10.2",
         "postcss": "^8.5.6",
         "postcss-loader": "^8.2.1",
